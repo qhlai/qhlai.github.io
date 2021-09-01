@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Kquark blog</title>
+    <link>https://blog.kquark.com/post/</link>
+    <description>Recent content in Posts on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客从wordpress迁移至hugo</title>
+      <link>https://blog.kquark.com/post/16/</link>
+      <pubDate>Wed, 01 Sep 2021 05:33:25 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/16/</guid>
+      <description>缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hex</description>
+    </item>
+    
+    <item>
+      <title>wireshark install and privileges on Archlinux</title>
+      <link>https://blog.kquark.com/post/15/</link>
+      <pubDate>Tue, 06 Jul 2021 05:33:25 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/15/</guid>
+      <description>wireshark install and privileges reference:https://wiki.archlinux.org/title/Wireshark install: sudo pacman -S wireshark-qt Capturing privileges： 1.添加wireshark用户组&amp;l</description>
+    </item>
+    
+    <item>
+      <title>容器(Docker)自建邮箱poste.io</title>
+      <link>https://blog.kquark.com/post/14/</link>
+      <pubDate>Sun, 04 Jul 2021 08:46:07 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/14/</guid>
+      <description>在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有</description>
+    </item>
+    
+    <item>
+      <title>最简单方式实现bing背景获取（php）</title>
+      <link>https://blog.kquark.com/post/13/</link>
+      <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/13/</guid>
+      <description>测试链接： https://api.kquark.com/bing https://api.kquark.com/bing/?idx=1&amp;amp;n=1&amp;amp;size=UHD idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无</description>
+    </item>
+    
+    <item>
+      <title>opencv 查找圆与亚像素定位</title>
+      <link>https://blog.kquark.com/post/12/</link>
+      <pubDate>Fri, 18 Jun 2021 04:53:19 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/12/</guid>
+      <description>原图（左）边缘检测（右） 角点检测（左）矩形检测（右） 仿射变换 截图 圆检测，粗略定位</description>
+    </item>
+    
+    <item>
+      <title>红米 AX6 解锁 SSH 安装使用 ShellClash 教程</title>
+      <link>https://blog.kquark.com/post/11/</link>
+      <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/11/</guid>
+      <description>宣传图 拆机 AX6与AX3600对比 红米 AX6 和小米 AX3600 配置基本相同，少了ROM和功放，</description>
+    </item>
+    
+    <item>
+      <title>EUserv ipv4一键脚本</title>
+      <link>https://blog.kquark.com/post/10/</link>
+      <pubDate>Thu, 20 May 2021 08:28:15 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/10/</guid>
+      <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，</description>
+    </item>
+    
+    <item>
+      <title>WordPress页面打开加速</title>
+      <link>https://blog.kquark.com/post/9/</link>
+      <pubDate>Wed, 12 May 2021 18:08:51 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/9/</guid>
+      <description>测试链接 GTmetrix https://gtmetrix.comPageSpeed Insights https://developers.google.com/speed/pagespeed/insights/ Pingdom Website Speed Test https://tools.pingdom.comPingdom 安装memcached，宝塔加速 memcached要在</description>
+    </item>
+    
+    <item>
+      <title>JD签到docker配置</title>
+      <link>https://blog.kquark.com/post/8/</link>
+      <pubDate>Tue, 04 May 2021 13:48:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/8/</guid>
+      <description>仅作测试，滥用不承担任何责任 配置 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 e大v4部署 sudo docker run</description>
+    </item>
+    
+    <item>
+      <title>宝塔面板安装笔记</title>
+      <link>https://blog.kquark.com/post/7/</link>
+      <pubDate>Sun, 02 May 2021 13:33:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/7/</guid>
+      <description>宝塔面板安装与配置指令 指令参考宝塔官网 https://www.bt.cn/ 宝塔安装指令： ubuntu： 1 wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp;</description>
+    </item>
+    
+    <item>
+      <title>ssh常见问题</title>
+      <link>https://blog.kquark.com/post/6/</link>
+      <pubDate>Thu, 29 Apr 2021 08:23:05 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/6/</guid>
+      <description>记录遇到的ssh问题 1 2 3 4 5 6 7 Connecting to 1.116.126.*:22… Connection established. To escape to local</description>
+    </item>
+    
+    <item>
+      <title>常用DNS/DOH</title>
+      <link>https://blog.kquark.com/post/4/</link>
+      <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/4/</guid>
+      <description>收集国内外可用DNS/DOH 国内：https://pod.pub/dns-que</description>
+    </item>
+    
+    <item>
+      <title>rust 服务端</title>
+      <link>https://blog.kquark.com/post/5/</link>
+      <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/5/</guid>
+      <description>参考：https://blog.csdn.net/tianlangstudio/</description>
+    </item>
+    
+    <item>
+      <title>Delta Robot 正逆运动学推导与代码</title>
+      <link>https://blog.kquark.com/post/3/</link>
+      <pubDate>Sat, 24 Apr 2021 11:10:53 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/3/</guid>
+      <description>Delta Robot Kinematics with code C++ Matlab Forward Kinematics c++ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30</description>
+    </item>
+    
+    <item>
+      <title>vps 初始配置与性能测试</title>
+      <link>https://blog.kquark.com/post/2/</link>
+      <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/2/</guid>
+      <description>以腾讯云为例 sudo passwd root 输入密码 一、云镜&amp;amp;安全监控卸载 1 2 3 /usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh 二、验证卸载</description>
+    </item>
+    
+  </channel>
+</rss>

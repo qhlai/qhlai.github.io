@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>最简单方式实现bing背景获取（php） | Kquark blog</title>
+    <meta property="og:title" content="最简单方式实现bing背景获取（php） - Kquark blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-07-01T17:35:52&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-07-01T17:35:52&#43;08:00'>
+        
+    <meta name="Keywords" content="python,rust,linux,vps,服务器,机器学习,robot,AI">
+    <meta name="description" content="最简单方式实现bing背景获取（php）">
+        <meta name="author" content="admin">
+        
+    <meta property="og:url" content="https://blog.kquark.com/post/13/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+        <link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    
+    
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.kquark.com">
+                        Kquark blog
+                    </a>
+                
+                <p class="description">一个 个人网站</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.kquark.com">首页</a>
+                    
+                    <a  href="https://blog.kquark.com/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.kquark.com/about/" title="关于/联系">关于/联系</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">最简单方式实现bing背景获取（php）</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年7月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/php'>php</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8'>服务器</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <p>测试链接：
+<a href="https://api.kquark.com/bing">https://api.kquark.com/bing</a></p>
+<p><a href="https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD">https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD</a></p>
+<p>idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下
+size参数：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">resolutions<span style="color:#000;font-weight:bold">:</span> [
+    <span style="color:#d14">&#39;UHD&#39;</span>,
+    <span style="color:#d14">&#39;1920x1200&#39;</span>,
+    <span style="color:#d14">&#39;1920x1080&#39;</span>,
+    <span style="color:#d14">&#39;1366x768&#39;</span>,
+    <span style="color:#d14">&#39;1280x768&#39;</span>,
+    <span style="color:#d14">&#39;1024x768&#39;</span>,
+    <span style="color:#d14">&#39;800x600&#39;</span>,
+    <span style="color:#d14">&#39;800x480&#39;</span>,
+    <span style="color:#d14">&#39;768x1280&#39;</span>,
+    <span style="color:#d14">&#39;720x1280&#39;</span>,
+    <span style="color:#d14">&#39;640x480&#39;</span>,
+    <span style="color:#d14">&#39;480x800&#39;</span>,
+    <span style="color:#d14">&#39;400x240&#39;</span>,
+    <span style="color:#d14">&#39;320x240&#39;</span>,
+    <span style="color:#d14">&#39;240x320&#39;</span>
+]
+</code></pre></td></tr></table>
+</div>
+</div><p>设计原理依据bing api 获取</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">https<span style="color:#000;font-weight:bold">://</span>bing<span style="color:#000;font-weight:bold">.</span>com<span style="color:#000;font-weight:bold">/</span>HPImageArchive<span style="color:#000;font-weight:bold">.</span>aspx<span style="color:#000;font-weight:bold">?</span>idx<span style="color:#000;font-weight:bold">=</span><span style="color:#099">0</span><span style="color:#000;font-weight:bold">&amp;</span>n<span style="color:#000;font-weight:bold">=</span><span style="color:#099">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>php代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#000;font-weight:bold">&lt;?</span>php
+<span style="color:#008080">$predate</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$_GET</span>[<span style="color:#d14">&#39;idx&#39;</span>];
+<span style="color:#008080">$num</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$_GET</span>[<span style="color:#d14">&#39;n&#39;</span>];
+<span style="color:#008080">$size</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$_GET</span>[<span style="color:#d14">&#39;size&#39;</span>];
+
+<span style="color:#000;font-weight:bold">if</span>(strlen(<span style="color:#008080">$predate</span>)<span style="color:#000;font-weight:bold">==</span><span style="color:#099">0</span>){
+    <span style="color:#008080">$predate</span><span style="color:#000;font-weight:bold">=</span>rand(<span style="color:#099">0</span>,<span style="color:#099">8</span>);
+}
+<span style="color:#000;font-weight:bold">if</span>(strlen(<span style="color:#008080">$num</span>)<span style="color:#000;font-weight:bold">==</span><span style="color:#099">0</span>){
+    <span style="color:#008080">$num</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>;
+}
+<span style="color:#000;font-weight:bold">if</span>(strlen(<span style="color:#008080">$size</span>)<span style="color:#000;font-weight:bold">==</span><span style="color:#099">0</span>){
+    <span style="color:#008080">$size</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;UHD&#39;</span>;
+}
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;predate:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$predate</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;num:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$num</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;size:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$size</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+
+<span style="color:#008080">$bingurl</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$predate</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&amp;n=&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$num</span>;
+<span style="color:#998;font-style:italic">//&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1&#39;
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#008080">$bingurl</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#008080">$str</span> <span style="color:#000;font-weight:bold">=</span> file_get_contents(<span style="color:#008080">$bingurl</span>);   <span style="color:#998;font-style:italic">// 从bing获取数据
+</span><span style="color:#998;font-style:italic"></span> 
+<span style="color:#000;font-weight:bold">if</span>(preg_match(<span style="color:#d14">&#39;/&lt;url&gt;([^&lt;]+)&lt;\/url&gt;/isU&#39;</span>, <span style="color:#008080">$str</span>, <span style="color:#008080">$matches</span>)) { <span style="color:#998;font-style:italic">// 正则匹配抓取图片url
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#008080">$imgurl</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;http://bing.com&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$matches</span>[<span style="color:#099">1</span>];
+} <span style="color:#000;font-weight:bold">else</span> {  <span style="color:#998;font-style:italic">// 如果由于某些原因，没抓取到图片地址
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#008080">$imgurl</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;https://bing.com/th?id=OHR.GreaterFlamingosIndia_ZH-CN5655181892_UHD.jpg&#39;</span>; <span style="color:#998;font-style:italic">// 使用默认的图像(默认图像链接可修改为自己的)
+</span><span style="color:#998;font-style:italic"></span>}
+<span style="color:#008080">$imgurl</span><span style="color:#000;font-weight:bold">=</span>str_replace(<span style="color:#d14">&#34;1920x1080&#34;</span>,<span style="color:#008080">$size</span>,<span style="color:#008080">$imgurl</span>);
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#008080">$imgurl</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+
+header(<span style="color:#d14">&#34;Location: </span><span style="color:#d14">{</span><span style="color:#008080">$imgurl</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span>);    <span style="color:#998;font-style:italic">// 跳转至目标图像
+</span></code></pre></td></tr></table>
+</div>
+</div><p>nginx伪静态：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">location <span style="color:#000;font-weight:bold">/</span>bing<span style="color:#000;font-weight:bold">/</span> {
+<span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">-</span>f <span style="color:#008080">$request_filename</span>) {
+<span style="color:#000;font-weight:bold">break</span>;
+        }
+rewrite <span style="color:#000;font-weight:bold">^/</span>bing<span style="color:#000;font-weight:bold">/</span>(<span style="color:#000;font-weight:bold">.*</span>)<span style="color:#a61717;background-color:#e3d2d2">$</span> <span style="color:#000;font-weight:bold">/</span>bing<span style="color:#000;font-weight:bold">/</span>bing<span style="color:#000;font-weight:bold">.</span>php<span style="color:#000;font-weight:bold">?</span>idx<span style="color:#000;font-weight:bold">=</span><span style="color:#a61717;background-color:#e3d2d2">$</span><span style="color:#099">1</span><span style="color:#000;font-weight:bold">&amp;</span>n<span style="color:#000;font-weight:bold">=</span><span style="color:#a61717;background-color:#e3d2d2">$</span><span style="color:#099">2</span><span style="color:#000;font-weight:bold">&amp;</span>size<span style="color:#000;font-weight:bold">=</span><span style="color:#a61717;background-color:#e3d2d2">$</span><span style="color:#099">3</span> last;
+}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>php 保存图片：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#000;font-weight:bold">&lt;?</span>php
+<span style="color:#998;font-style:italic">//error_reporting(0);
+</span><span style="color:#998;font-style:italic">//$predate = $_GET[&#39;idx&#39;];
+</span><span style="color:#998;font-style:italic">//$num= $_GET[&#39;n&#39;];
+</span><span style="color:#998;font-style:italic"></span><span style="color:#008080">$predate</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$_GET</span>[<span style="color:#d14">&#39;idx&#39;</span>];
+<span style="color:#008080">$num</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$_GET</span>[<span style="color:#d14">&#39;n&#39;</span>];
+<span style="color:#008080">$size</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$_GET</span>[<span style="color:#d14">&#39;size&#39;</span>];
+
+<span style="color:#008080">$path</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;img&#39;</span>;   <span style="color:#998;font-style:italic">//设置图片缓存文件夹
+</span><span style="color:#998;font-style:italic"></span><span style="color:#008080">$filename</span> <span style="color:#000;font-weight:bold">=</span> date(<span style="color:#d14">&#34;Ymd&#34;</span>) <span style="color:#000;font-weight:bold">.</span> <span style="color:#d14">&#39;.jpg&#39;</span>;  <span style="color:#998;font-style:italic">//用年月日来命名新的文件名
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#000;font-weight:bold">if</span>(strlen(<span style="color:#008080">$predate</span>)<span style="color:#000;font-weight:bold">==</span><span style="color:#099">0</span>){
+    <span style="color:#008080">$predate</span><span style="color:#000;font-weight:bold">=</span>rand(<span style="color:#099">0</span>,<span style="color:#099">8</span>);
+}
+<span style="color:#000;font-weight:bold">if</span>(strlen(<span style="color:#008080">$num</span>)<span style="color:#000;font-weight:bold">==</span><span style="color:#099">0</span>){
+    <span style="color:#008080">$num</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>;
+}
+<span style="color:#000;font-weight:bold">if</span>(strlen(<span style="color:#008080">$size</span>)<span style="color:#000;font-weight:bold">==</span><span style="color:#099">0</span>){
+    <span style="color:#008080">$size</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;UHD&#39;</span>;
+}
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;predate:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$predate</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;num:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$num</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;size:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$size</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+
+
+<span style="color:#998;font-style:italic">//https://api.kquark.com/bing
+</span><span style="color:#998;font-style:italic"></span><span style="color:#008080">$bingurl</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$predate</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&amp;n=&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$num</span>;
+<span style="color:#998;font-style:italic">//&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1&#39;
+</span><span style="color:#998;font-style:italic"></span>
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#008080">$bingurl</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+<span style="color:#008080">$str</span> <span style="color:#000;font-weight:bold">=</span> file_get_contents(<span style="color:#008080">$bingurl</span>);   <span style="color:#998;font-style:italic">// 从bing获取数据
+</span><span style="color:#998;font-style:italic"></span> 
+<span style="color:#000;font-weight:bold">if</span>(preg_match(<span style="color:#d14">&#39;/&lt;url&gt;([^&lt;]+)&lt;\/url&gt;/isU&#39;</span>, <span style="color:#008080">$str</span>, <span style="color:#008080">$matches</span>)) { <span style="color:#998;font-style:italic">// 正则匹配抓取图片url
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#008080">$imgurl</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;http://bing.com&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$matches</span>[<span style="color:#099">1</span>];
+} <span style="color:#000;font-weight:bold">else</span> {  <span style="color:#998;font-style:italic">// 如果由于某些原因，没抓取到图片地址
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#008080">$imgurl</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;https://bing.com/th?id=OHR.BlossomsBC_ROW7514274008_UHD.jpg&amp;amp;rf=LaDigue_UHD.jpg&amp;amp;pid=hp&#39;</span>; <span style="color:#998;font-style:italic">// 使用默认的图像(默认图像链接可修改为自己的)
+</span><span style="color:#998;font-style:italic"></span>}
+<span style="color:#008080">$imgurl</span><span style="color:#000;font-weight:bold">=</span>str_replace(<span style="color:#d14">&#34;1920x1080&#34;</span>,<span style="color:#008080">$size</span>,<span style="color:#008080">$imgurl</span>);
+<span style="color:#000;font-weight:bold">echo</span> <span style="color:#008080">$imgurl</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+saveImage(<span style="color:#008080">$path</span>,<span style="color:#008080">$filename</span>);
+
+header(<span style="color:#d14">&#34;Location: </span><span style="color:#d14">{</span><span style="color:#008080">$imgurl</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span>);    <span style="color:#998;font-style:italic">// 跳转至目标图像
+</span><span style="color:#998;font-style:italic"></span>
+
+<span style="color:#000;font-weight:bold">function</span> <span style="color:#900;font-weight:bold">saveImage</span>(<span style="color:#008080">$path</span><span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;&#34;</span>,<span style="color:#008080">$filename</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;&#34;</span>)
+{
+    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>file_exists(<span style="color:#008080">$path</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;/&#39;</span><span style="color:#000;font-weight:bold">.</span> <span style="color:#008080">$filename</span>))    <span style="color:#998;font-style:italic">//如果文件不存在，则说明今天还没有进行缓存
+</span><span style="color:#998;font-style:italic"></span>    {
+        <span style="color:#000;font-weight:bold">if</span>(<span style="color:#000;font-weight:bold">!</span>file_exists(<span style="color:#008080">$path</span>)) <span style="color:#998;font-style:italic">//如果目录不存在
+</span><span style="color:#998;font-style:italic"></span>        {
+            <span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;create path&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+            mkdir(<span style="color:#008080">$path</span>, <span style="color:#099">0777</span>); <span style="color:#998;font-style:italic">//创建缓存目录
+</span><span style="color:#998;font-style:italic"></span>        }
+        <span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;try save&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$filename</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+        <span style="color:#008080">$str</span> <span style="color:#000;font-weight:bold">=</span> file_get_contents(<span style="color:#d14">&#39;http://bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&#39;</span>); 
+        <span style="color:#008080">$str</span> <span style="color:#000;font-weight:bold">=</span> json_decode(<span style="color:#008080">$str</span>,<span style="color:#000;font-weight:bold">true</span>);
+        <span style="color:#008080">$imgurl</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;http://bing.com&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;url&#39;</span>];    <span style="color:#998;font-style:italic">//获取图片url
+</span><span style="color:#998;font-style:italic"></span>        
+        <span style="color:#008080">$imgurl</span><span style="color:#000;font-weight:bold">=</span>str_replace(<span style="color:#d14">&#34;1920x1080&#34;</span>,<span style="color:#d14">&#39;UHD&#39;</span>,<span style="color:#008080">$imgurl</span>);
+        
+        <span style="color:#008080">$img</span> <span style="color:#000;font-weight:bold">=</span> grabImage(<span style="color:#008080">$imgurl</span>, <span style="color:#008080">$path</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;/&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$filename</span>); <span style="color:#998;font-style:italic">//读取并保存图片
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#008080">$handle</span> <span style="color:#000;font-weight:bold">=</span> fopen(<span style="color:#d14">&#34;dat.txt&#34;</span>, <span style="color:#d14">&#34;a&#34;</span>);    <span style="color:#998;font-style:italic">//用于存放图片信息，如果不需要保存图片的相关信息，可以把下面这些去掉。
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#000;font-weight:bold">if</span> (<span style="color:#008080">$handle</span>)
+        {
+            <span style="color:#008080">$copyright</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;copyright&#39;</span>];    <span style="color:#998;font-style:italic">//说明
+</span><span style="color:#998;font-style:italic"></span>            <span style="color:#008080">$startdate</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;startdate&#39;</span>];
+            <span style="color:#008080">$fullstartdate</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;fullstartdate&#39;</span>];
+            <span style="color:#008080">$enddate</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;enddate&#39;</span>];
+            <span style="color:#008080">$urlbase</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;urlbase&#39;</span>];
+            <span style="color:#008080">$copyrightlink</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;copyrightlink&#39;</span>];
+            <span style="color:#008080">$quiz</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;quiz&#39;</span>];
+            <span style="color:#008080">$wp</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;wp&#39;</span>];
+            <span style="color:#008080">$hsh</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;hsh&#39;</span>];
+            <span style="color:#008080">$drk</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;drk&#39;</span>];
+            <span style="color:#008080">$top</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;top&#39;</span>];
+            <span style="color:#008080">$bot</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$str</span>[<span style="color:#d14">&#39;images&#39;</span>][<span style="color:#099">0</span>][<span style="color:#d14">&#39;bot&#39;</span>];
+            <span style="color:#008080">$tempArr</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">array</span>(<span style="color:#d14">&#34;imgurl&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$imgurl</span>,<span style="color:#d14">&#34;copyright&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$copyright</span>, <span style="color:#d14">&#34;startdate&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$startdate</span>,
+            <span style="color:#d14">&#34;fullstartdate&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$fullstartdate</span>, <span style="color:#d14">&#34;enddate&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#008080">$enddate</span>, <span style="color:#d14">&#34;urlbase&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$urlbase</span>,
+            <span style="color:#d14">&#34;copyrightlink&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#008080">$copyrightlink</span>, <span style="color:#d14">&#34;quiz&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$quiz</span>, <span style="color:#d14">&#34;wp&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#008080">$wp</span>,
+            <span style="color:#d14">&#34;hsh&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$hsh</span>,<span style="color:#d14">&#34;drk&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#008080">$drk</span>, <span style="color:#d14">&#34;top&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#008080">$top</span>, <span style="color:#d14">&#34;bot&#34;</span><span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#008080">$bot</span>);   <span style="color:#998;font-style:italic">//将相关信息放进数组中
+</span><span style="color:#998;font-style:italic"></span>            fwrite(<span style="color:#008080">$handle</span>, json_encode(<span style="color:#008080">$tempArr</span>) <span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#34;</span><span style="color:#d14">\r\n</span><span style="color:#d14">&#34;</span>); <span style="color:#998;font-style:italic">//最终以json格式保存在文本文档中
+</span><span style="color:#998;font-style:italic"></span>            fclose(<span style="color:#008080">$handle</span>);
+        }
+        <span style="color:#008080">$handle</span> <span style="color:#000;font-weight:bold">=</span> fopen(<span style="color:#d14">&#34;url_dat.txt&#34;</span>, <span style="color:#d14">&#34;a&#34;</span>);    <span style="color:#998;font-style:italic">//用于存放图片信息，如果不需要保存图片的相关信息，可以把下面这些去掉。
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#000;font-weight:bold">if</span> (<span style="color:#008080">$handle</span>)
+        {
+            fwrite(<span style="color:#008080">$handle</span>,date(<span style="color:#d14">&#34;Ymd&#34;</span>)<span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$imgurl</span> <span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#34;</span><span style="color:#d14">\r\n</span><span style="color:#d14">&#34;</span>);
+            fclose(<span style="color:#008080">$handle</span>);
+        }
+    }
+    <span style="color:#000;font-weight:bold">else</span>
+    {
+        <span style="color:#000;font-weight:bold">echo</span> <span style="color:#d14">&#39;today saved:&#39;</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">$path</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;/&#39;</span><span style="color:#000;font-weight:bold">.</span> <span style="color:#008080">$filename</span><span style="color:#000;font-weight:bold">.</span><span style="color:#d14">&#39;&lt;br&gt;&#39;</span>;
+    }
+}
+<span style="color:#d14">/**
+</span><span style="color:#d14"> * 远程抓取图片并保存
+</span><span style="color:#d14"> * @param $url 图片url
+</span><span style="color:#d14"> * @param $filename 保存名称和路径
+</span><span style="color:#d14"> */</span>
+<span style="color:#000;font-weight:bold">function</span> <span style="color:#900;font-weight:bold">grabImage</span>(<span style="color:#008080">$url</span>, <span style="color:#008080">$filename</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;&#34;</span>)
+{
+    <span style="color:#000;font-weight:bold">if</span>(<span style="color:#008080">$url</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;&#34;</span>) <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">false</span>; <span style="color:#998;font-style:italic">//如果$url地址为空，直接退出
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#008080">$filename</span> <span style="color:#000;font-weight:bold">==</span> <span style="color:#d14">&#34;&#34;</span>) <span style="color:#998;font-style:italic">//如果没有指定新的文件名
+</span><span style="color:#998;font-style:italic"></span>    {
+        <span style="color:#008080">$ext</span> <span style="color:#000;font-weight:bold">=</span> strrchr(<span style="color:#008080">$url</span>, <span style="color:#d14">&#34;.&#34;</span>);  <span style="color:#998;font-style:italic">//得到$url的图片格式
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#008080">$filename</span> <span style="color:#000;font-weight:bold">=</span> date(<span style="color:#d14">&#34;Ymd&#34;</span>) <span style="color:#000;font-weight:bold">.</span> <span style="color:#008080">$ext</span>;  <span style="color:#998;font-style:italic">//用天月面时分秒来命名新的文件名
+</span><span style="color:#998;font-style:italic"></span>    }
+    ob_start();         <span style="color:#998;font-style:italic">//打开输出
+</span><span style="color:#998;font-style:italic"></span>    readfile(<span style="color:#008080">$url</span>);     <span style="color:#998;font-style:italic">//输出图片文件
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#008080">$img</span> <span style="color:#000;font-weight:bold">=</span> ob_get_contents();   <span style="color:#998;font-style:italic">//得到浏览器输出
+</span><span style="color:#998;font-style:italic"></span>    ob_end_clean();             <span style="color:#998;font-style:italic">//清除输出并关闭
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#008080">$size</span> <span style="color:#000;font-weight:bold">=</span> strlen(<span style="color:#008080">$img</span>);       <span style="color:#998;font-style:italic">//得到图片大小
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#008080">$fp2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">@</span>fopen(<span style="color:#008080">$filename</span>, <span style="color:#d14">&#34;a&#34;</span>);
+    fwrite(<span style="color:#008080">$fp2</span>, <span style="color:#008080">$img</span>);         <span style="color:#998;font-style:italic">//向当前目录写入图片文件，并重新命名
+</span><span style="color:#998;font-style:italic"></span>    fclose(<span style="color:#008080">$fp2</span>);
+    <span style="color:#000;font-weight:bold">return</span> <span style="color:#008080">$filename</span>;           <span style="color:#998;font-style:italic">//返回新的文件名
+</span><span style="color:#998;font-style:italic"></span>}
+</code></pre></td></tr></table>
+</div>
+</div>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://blog.kquark.com">Kquark</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://blog.kquark.com/post/13/">https://blog.kquark.com/post/13/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/12/">opencv 查找圆与亚像素定位</a></li>
+        
+        <li><a href="/post/11/">红米 AX6 解锁 SSH 安装使用 ShellClash 教程</a></li>
+        
+        <li><a href="/post/10/">EUserv ipv4一键脚本</a></li>
+        
+        <li><a href="/post/9/">WordPress页面打开加速</a></li>
+        
+        <li><a href="/post/8/">JD签到docker配置</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="https://blog.kquark.com">Kquark blog By Kquark</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script><script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-M10DXH06WC', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://blog.kquark.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.kquark.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.kquark.com/post/16/" title="博客从wordpress迁移至hugo">博客从wordpress迁移至hugo</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/15/" title="wireshark install and privileges on Archlinux">wireshark install and privileges on Archlinux</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/14/" title="容器(Docker)自建邮箱poste.io">容器(Docker)自建邮箱poste.io</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/13/" title="最简单方式实现bing背景获取（php）">最简单方式实现bing背景获取（php）</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/12/" title="opencv 查找圆与亚像素定位">opencv 查找圆与亚像素定位</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/11/" title="红米 AX6 解锁 SSH 安装使用 ShellClash 教程">红米 AX6 解锁 SSH 安装使用 ShellClash 教程</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/10/" title="EUserv ipv4一键脚本">EUserv ipv4一键脚本</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/9/" title="WordPress页面打开加速">WordPress页面打开加速</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/8/" title="JD签到docker配置">JD签到docker配置</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.kquark.com/post/7/" title="宝塔面板安装笔记">宝塔面板安装笔记</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://blog.kquark.com/categories/c&#43;&#43;/">C&#43;&#43; (1)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/dns/">DNS (1)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/linux/">Linux (4)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/opencv/">opencv (1)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/php/">php (1)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/robot/">Robot (1)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/rust/">rust (1)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式 (2)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器 (7)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (2)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/%E7%AC%94%E8%AE%B0/">笔记 (2)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/%E7%AD%BE%E5%88%B0/">签到 (1)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/%E7%BC%96%E7%A8%8B/">编程 (2)</a></li>
+    
+    <li><a href="https://blog.kquark.com/categories/%E7%BD%91%E7%BB%9C/">网络 (2)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.kquark.com/tags/c&#43;&#43;/">C&#43;&#43;</a>
+    
+    <a href="https://blog.kquark.com/tags/dns/">DNS</a>
+    
+    <a href="https://blog.kquark.com/tags/jd/">JD</a>
+    
+    <a href="https://blog.kquark.com/tags/opencv/">opencv</a>
+    
+    <a href="https://blog.kquark.com/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.kquark.com/tags/vps/">vps</a>
+    
+    <a href="https://blog.kquark.com/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.kquark.com/tags/%E5%AE%9D%E5%A1%94/">宝塔</a>
+    
+    <a href="https://blog.kquark.com/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+    
+    <a href="https://blog.kquark.com/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+    
+    <a href="https://blog.kquark.com/tags/%E7%AD%BE%E5%88%B0/">签到</a>
+    
+    <a href="https://blog.kquark.com/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+    
+    <a href="https://blog.kquark.com/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.kquark.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

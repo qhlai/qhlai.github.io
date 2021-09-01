@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程 on Kquark blog</title>
+    <link>https://blog.kquark.com/tags/%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 编程 on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Jun 2021 04:53:19 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opencv 查找圆与亚像素定位</title>
+      <link>https://blog.kquark.com/post/12/</link>
+      <pubDate>Fri, 18 Jun 2021 04:53:19 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/12/</guid>
+      <description>原图（左）边缘检测（右） 角点检测（左）矩形检测（右） 仿射变换 截图 圆检测，粗略定位</description>
+    </item>
+    
+  </channel>
+</rss>

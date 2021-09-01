@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务器 on Kquark blog</title>
+    <link>https://blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 服务器 on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 01 Jul 2021 17:35:52 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>最简单方式实现bing背景获取（php）</title>
+      <link>https://blog.kquark.com/post/13/</link>
+      <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/13/</guid>
+      <description>测试链接： https://api.kquark.com/bing https://api.kquark.com/bing/?idx=1&amp;amp;n=1&amp;amp;size=UHD idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无</description>
+    </item>
+    
+    <item>
+      <title>EUserv ipv4一键脚本</title>
+      <link>https://blog.kquark.com/post/10/</link>
+      <pubDate>Thu, 20 May 2021 08:28:15 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/10/</guid>
+      <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，</description>
+    </item>
+    
+    <item>
+      <title>WordPress页面打开加速</title>
+      <link>https://blog.kquark.com/post/9/</link>
+      <pubDate>Wed, 12 May 2021 18:08:51 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/9/</guid>
+      <description>测试链接 GTmetrix https://gtmetrix.comPageSpeed Insights https://developers.google.com/speed/pagespeed/insights/ Pingdom Website Speed Test https://tools.pingdom.comPingdom 安装memcached，宝塔加速 memcached要在</description>
+    </item>
+    
+    <item>
+      <title>JD签到docker配置</title>
+      <link>https://blog.kquark.com/post/8/</link>
+      <pubDate>Tue, 04 May 2021 13:48:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/8/</guid>
+      <description>仅作测试，滥用不承担任何责任 配置 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 e大v4部署 sudo docker run</description>
+    </item>
+    
+    <item>
+      <title>宝塔面板安装笔记</title>
+      <link>https://blog.kquark.com/post/7/</link>
+      <pubDate>Sun, 02 May 2021 13:33:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/7/</guid>
+      <description>宝塔面板安装与配置指令 指令参考宝塔官网 https://www.bt.cn/ 宝塔安装指令： ubuntu： 1 wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp;</description>
+    </item>
+    
+    <item>
+      <title>常用DNS/DOH</title>
+      <link>https://blog.kquark.com/post/4/</link>
+      <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/4/</guid>
+      <description>收集国内外可用DNS/DOH 国内：https://pod.pub/dns-que</description>
+    </item>
+    
+    <item>
+      <title>vps 初始配置与性能测试</title>
+      <link>https://blog.kquark.com/post/2/</link>
+      <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/2/</guid>
+      <description>以腾讯云为例 sudo passwd root 输入密码 一、云镜&amp;amp;安全监控卸载 1 2 3 /usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh 二、验证卸载</description>
+    </item>
+    
+  </channel>
+</rss>

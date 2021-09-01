@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Kquark blog</title>
+    <link>https://blog.kquark.com/categories/linux/</link>
+    <description>Recent content in Linux on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Jun 2021 15:33:11 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>红米 AX6 解锁 SSH 安装使用 ShellClash 教程</title>
+      <link>https://blog.kquark.com/post/11/</link>
+      <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/11/</guid>
+      <description>宣传图 拆机 AX6与AX3600对比 红米 AX6 和小米 AX3600 配置基本相同，少了ROM和功放，</description>
+    </item>
+    
+    <item>
+      <title>EUserv ipv4一键脚本</title>
+      <link>https://blog.kquark.com/post/10/</link>
+      <pubDate>Thu, 20 May 2021 08:28:15 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/10/</guid>
+      <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，</description>
+    </item>
+    
+    <item>
+      <title>ssh常见问题</title>
+      <link>https://blog.kquark.com/post/6/</link>
+      <pubDate>Thu, 29 Apr 2021 08:23:05 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/6/</guid>
+      <description>记录遇到的ssh问题 1 2 3 4 5 6 7 Connecting to 1.116.126.*:22… Connection established. To escape to local</description>
+    </item>
+    
+    <item>
+      <title>rust 服务端</title>
+      <link>https://blog.kquark.com/post/5/</link>
+      <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/5/</guid>
+      <description>参考：https://blog.csdn.net/tianlangstudio/</description>
+    </item>
+    
+  </channel>
+</rss>

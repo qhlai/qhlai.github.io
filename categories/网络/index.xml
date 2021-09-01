@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络 on Kquark blog</title>
+    <link>https://blog.kquark.com/categories/%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 网络 on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客从wordpress迁移至hugo</title>
+      <link>https://blog.kquark.com/post/16/</link>
+      <pubDate>Wed, 01 Sep 2021 05:33:25 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/16/</guid>
+      <description>缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hex</description>
+    </item>
+    
+    <item>
+      <title>wireshark install and privileges on Archlinux</title>
+      <link>https://blog.kquark.com/post/15/</link>
+      <pubDate>Tue, 06 Jul 2021 05:33:25 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/15/</guid>
+      <description>wireshark install and privileges reference:https://wiki.archlinux.org/title/Wireshark install: sudo pacman -S wireshark-qt Capturing privileges： 1.添加wireshark用户组&amp;l</description>
+    </item>
+    
+  </channel>
+</rss>

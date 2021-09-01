@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置 on Kquark blog</title>
+    <link>https://blog.kquark.com/tags/%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 配置 on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 02 May 2021 13:33:00 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>宝塔面板安装笔记</title>
+      <link>https://blog.kquark.com/post/7/</link>
+      <pubDate>Sun, 02 May 2021 13:33:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/7/</guid>
+      <description>宝塔面板安装与配置指令 指令参考宝塔官网 https://www.bt.cn/ 宝塔安装指令： ubuntu： 1 wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp;</description>
+    </item>
+    
+    <item>
+      <title>vps 初始配置与性能测试</title>
+      <link>https://blog.kquark.com/post/2/</link>
+      <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/2/</guid>
+      <description>以腾讯云为例 sudo passwd root 输入密码 一、云镜&amp;amp;安全监控卸载 1 2 3 /usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh 二、验证卸载</description>
+    </item>
+    
+  </channel>
+</rss>

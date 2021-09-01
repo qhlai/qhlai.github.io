@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DNS on Kquark blog</title>
+    <link>https://blog.kquark.com/categories/dns/</link>
+    <description>Recent content in DNS on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 26 Apr 2021 14:00:00 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/categories/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用DNS/DOH</title>
+      <link>https://blog.kquark.com/post/4/</link>
+      <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/4/</guid>
+      <description>收集国内外可用DNS/DOH 国内：https://pod.pub/dns-que</description>
+    </item>
+    
+  </channel>
+</rss>
