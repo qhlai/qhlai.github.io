@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>analytics on Kquark blog</title>
+    <link>https://blog.kquark.com/categories/analytics/</link>
+    <description>Recent content in analytics on Kquark blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 02 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/categories/analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>matomo防屏蔽</title>
+      <link>https://blog.kquark.com/post/17/</link>
+      <pubDate>Thu, 02 Sep 2021 05:33:25 +0000</pubDate>
+      
+      <guid>https://blog.kquark.com/post/17/</guid>
+      <description>缘由 matomo ，google等一系列会被屏蔽， 操作 使用软连接改名 reference: https://issues.matomo.org/7364</description>
+    </item>
+    
+  </channel>
+</rss>
