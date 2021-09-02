@@ -1,1 +1,5 @@
+# robots.txt
 User-agent: *
+Disallow: 
+Disallow: /about/
+Sitemap: sitemap.xml
