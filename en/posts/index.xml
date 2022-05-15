@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on blog</title>
-    <link>blog.kquark.com/en/posts/</link>
+    <link>/en/posts/</link>
     <description>Recent content in Posts on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Tue, 20 Apr 2021 13:43:00 +0000</lastBuildDate><atom:link href="blog.kquark.com/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Apr 2021 13:43:00 +0000</lastBuildDate><atom:link href="/en/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>no page</title>
-      <link>blog.kquark.com/post/1/</link>
+      <link>/post/1/</link>
       <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
       
-      <guid>blog.kquark.com/post/1/</guid>
+      <guid>/post/1/</guid>
       <description></description>
     </item>
     

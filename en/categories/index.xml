@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on blog</title>
-    <link>blog.kquark.com/en/categories/</link>
+    <link>/en/categories/</link>
     <description>Recent content in Categories on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
-</copyright><atom:link href="blog.kquark.com/en/categories/index.xml" rel="self" type="application/rss+xml" />
+</copyright><atom:link href="/en/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

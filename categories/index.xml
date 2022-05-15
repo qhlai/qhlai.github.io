@@ -2,145 +2,145 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 博客</title>
-    <link>blog.kquark.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Thu, 02 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>analytics</title>
-      <link>blog.kquark.com/categories/analytics/</link>
+      <link>/categories/analytics/</link>
       <pubDate>Thu, 02 Sep 2021 05:33:25 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/analytics/</guid>
+      <guid>/categories/analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>网络</title>
-      <link>blog.kquark.com/categories/%E7%BD%91%E7%BB%9C/</link>
+      <link>/categories/%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Wed, 01 Sep 2021 05:33:25 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/%E7%BD%91%E7%BB%9C/</guid>
+      <guid>/categories/%E7%BD%91%E7%BB%9C/</guid>
       <description></description>
     </item>
     
     <item>
       <title>未分类</title>
-      <link>blog.kquark.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/</link>
+      <link>/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/</link>
       <pubDate>Sun, 04 Jul 2021 08:46:07 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/</guid>
+      <guid>/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
-      <link>blog.kquark.com/categories/php/</link>
+      <link>/categories/php/</link>
       <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/php/</guid>
+      <guid>/categories/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>服务器</title>
-      <link>blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>blog.kquark.com/categories/c&#43;&#43;/</link>
+      <link>/categories/c&#43;&#43;/</link>
       <pubDate>Fri, 18 Jun 2021 04:53:19 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/c&#43;&#43;/</guid>
+      <guid>/categories/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>opencv</title>
-      <link>blog.kquark.com/categories/opencv/</link>
+      <link>/categories/opencv/</link>
       <pubDate>Fri, 18 Jun 2021 04:53:19 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/opencv/</guid>
+      <guid>/categories/opencv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>编程</title>
-      <link>blog.kquark.com/categories/%E7%BC%96%E7%A8%8B/</link>
+      <link>/categories/%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Fri, 18 Jun 2021 04:53:19 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/%E7%BC%96%E7%A8%8B/</guid>
+      <guid>/categories/%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>blog.kquark.com/categories/linux/</link>
+      <link>/categories/linux/</link>
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/linux/</guid>
+      <guid>/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>嵌入式</title>
-      <link>blog.kquark.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+      <link>/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
+      <guid>/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>笔记</title>
-      <link>blog.kquark.com/categories/%E7%AC%94%E8%AE%B0/</link>
+      <link>/categories/%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 04 May 2021 13:48:00 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/%E7%AC%94%E8%AE%B0/</guid>
+      <guid>/categories/%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>签到</title>
-      <link>blog.kquark.com/categories/%E7%AD%BE%E5%88%B0/</link>
+      <link>/categories/%E7%AD%BE%E5%88%B0/</link>
       <pubDate>Tue, 04 May 2021 13:48:00 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/%E7%AD%BE%E5%88%B0/</guid>
+      <guid>/categories/%E7%AD%BE%E5%88%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DNS</title>
-      <link>blog.kquark.com/categories/dns/</link>
+      <link>/categories/dns/</link>
       <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/dns/</guid>
+      <guid>/categories/dns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rust</title>
-      <link>blog.kquark.com/categories/rust/</link>
+      <link>/categories/rust/</link>
       <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/rust/</guid>
+      <guid>/categories/rust/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robot</title>
-      <link>blog.kquark.com/categories/robot/</link>
+      <link>/categories/robot/</link>
       <pubDate>Sat, 24 Apr 2021 11:10:53 +0000</pubDate>
       
-      <guid>blog.kquark.com/categories/robot/</guid>
+      <guid>/categories/robot/</guid>
       <description></description>
     </item>
     

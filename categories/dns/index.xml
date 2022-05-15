@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DNS on 博客</title>
-    <link>blog.kquark.com/categories/dns/</link>
+    <link>/categories/dns/</link>
     <description>Recent content in DNS on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 14:00:00 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/dns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 14:00:00 +0000</lastBuildDate><atom:link href="/categories/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用DNS/DOH</title>
-      <link>blog.kquark.com/post/4/</link>
+      <link>/post/4/</link>
       <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
       
-      <guid>blog.kquark.com/post/4/</guid>
+      <guid>/post/4/</guid>
       <description>收集国内外可用DNS/DOH
 国内：https://pod.pub/dns-query
 USTC（中科大，建议停止使用53转而使用5353端口避免运营商（比如移动大内网）劫持；听大雕昨天说劫持反而更好，因为运营商服务器有内容缓存？我不用移动所以不知道）支持ECS

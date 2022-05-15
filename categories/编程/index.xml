@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程 on 博客</title>
-    <link>blog.kquark.com/categories/%E7%BC%96%E7%A8%8B/</link>
+    <link>/categories/%E7%BC%96%E7%A8%8B/</link>
     <description>Recent content in 编程 on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Fri, 18 Jun 2021 04:53:19 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Jun 2021 04:53:19 +0000</lastBuildDate><atom:link href="/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>opencv 查找圆与亚像素定位</title>
-      <link>blog.kquark.com/post/12/</link>
+      <link>/post/12/</link>
       <pubDate>Fri, 18 Jun 2021 04:53:19 +0000</pubDate>
       
-      <guid>blog.kquark.com/post/12/</guid>
+      <guid>/post/12/</guid>
       <description>原图（左）边缘检测（右）
 角点检测（左）矩形检测（右）
 仿射变换
@@ -27,10 +27,10 @@
     
     <item>
       <title>rust 服务端</title>
-      <link>blog.kquark.com/post/5/</link>
+      <link>/post/5/</link>
       <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
       
-      <guid>blog.kquark.com/post/5/</guid>
+      <guid>/post/5/</guid>
       <description>参考：https://blog.csdn.net/tianlangstudio/article/details/106169242
  1.安装rust  sudo curl https://sh.rustup.rs -sSf | sh  https://www.rust-lang.org/zh-CN/tools/install
  2.创建项目  cargo new rust_login &amp;amp;#8211;bin   3.在Cargo.toml文件中配置需要的依赖  [package] name = &amp;quot;rust_login&amp;quot; version = &amp;quot;0.1.0&amp;quot; authors = &amp;amp;#91;&amp;quot;Tianlang &amp;amp;lt;qhlai666@gmail.com&amp;amp;gt;&amp;quot;] edition = &amp;quot;2018&amp;quot; # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html &amp;amp;#91;dependencies] actix-web=&amp;quot;2&amp;quot; #使用的actix-web 提供web服务器、request解析、response生成等功能 actix-rt=&amp;quot;1&amp;quot; #actix-rt actix的运行时，用于运行异步函数等，可以理解为Java　concurrent下的Executor #serde用于序列化和反序列化对象的，比如把对象转换成一个Json字符串，就是序列化；　#把Json字符串转换为一个对象，就是反序列化 serde=&amp;quot;1&amp;quot;  </description>
