@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Eureka Demo</title>
-    <link>/categories/linux/</link>
-    <description>Recent content in Linux on Eureka Demo</description>
+    <title>Linux on 博客</title>
+    <link>blog.kquark.com/categories/linux/</link>
+    <description>Recent content in Linux on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 09 Jun 2021 15:33:11 +0000</lastBuildDate><atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Jun 2021 15:33:11 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>红米 AX6 解锁 SSH 安装使用 ShellClash 教程</title>
-      <link>/post/11/</link>
+      <link>blog.kquark.com/post/11/</link>
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
       
-      <guid>/post/11/</guid>
+      <guid>blog.kquark.com/post/11/</guid>
       <description>宣传图
 拆机
 AX6与AX3600对比
@@ -36,10 +36,10 @@ scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 open
     
     <item>
       <title>EUserv ipv4一键脚本</title>
-      <link>/post/10/</link>
+      <link>blog.kquark.com/post/10/</link>
       <pubDate>Thu, 20 May 2021 08:28:15 +0000</pubDate>
       
-      <guid>/post/10/</guid>
+      <guid>blog.kquark.com/post/10/</guid>
       <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，套上WARP的ip,变成双栈VPS！
 2：基本能隐藏VPS的真实IP！
 3：支持代理协议直连电报Telegram，支持代理协议连通软路由Openwrt各种翻墙插件！
@@ -54,10 +54,10 @@ echo -e &amp;quot;search blue.kundencontroller.de\noptions rotate\nnameserver 2a
     
     <item>
       <title>ssh常见问题</title>
-      <link>/post/6/</link>
+      <link>blog.kquark.com/post/6/</link>
       <pubDate>Thu, 29 Apr 2021 08:23:05 +0000</pubDate>
       
-      <guid>/post/6/</guid>
+      <guid>blog.kquark.com/post/6/</guid>
       <description>记录遇到的ssh问题
 Connecting to 1.116.126.*:22… Connection established. To escape to local shell, press Ctrl+Alt+] Socket error Event: 32 Error: 10053. Connection closing…Socket close. Connection closed by foreign host. Disconnected from remote host(1.116.126.*) at 15:17:58.  检查端口和协议
 改port防扫描 sudo vim /etc/ssh/sshd_config  
@@ -66,10 +66,10 @@ sudo service ssh restart  </description>
     
     <item>
       <title>rust 服务端</title>
-      <link>/post/5/</link>
+      <link>blog.kquark.com/post/5/</link>
       <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
       
-      <guid>/post/5/</guid>
+      <guid>blog.kquark.com/post/5/</guid>
       <description>参考：https://blog.csdn.net/tianlangstudio/article/details/106169242
  1.安装rust  sudo curl https://sh.rustup.rs -sSf | sh  https://www.rust-lang.org/zh-CN/tools/install
  2.创建项目  cargo new rust_login &amp;amp;#8211;bin   3.在Cargo.toml文件中配置需要的依赖  [package] name = &amp;quot;rust_login&amp;quot; version = &amp;quot;0.1.0&amp;quot; authors = &amp;amp;#91;&amp;quot;Tianlang &amp;amp;lt;qhlai666@gmail.com&amp;amp;gt;&amp;quot;] edition = &amp;quot;2018&amp;quot; # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html &amp;amp;#91;dependencies] actix-web=&amp;quot;2&amp;quot; #使用的actix-web 提供web服务器、request解析、response生成等功能 actix-rt=&amp;quot;1&amp;quot; #actix-rt actix的运行时，用于运行异步函数等，可以理解为Java　concurrent下的Executor #serde用于序列化和反序列化对象的，比如把对象转换成一个Json字符串，就是序列化；　#把Json字符串转换为一个对象，就是反序列化 serde=&amp;quot;1&amp;quot;  </description>

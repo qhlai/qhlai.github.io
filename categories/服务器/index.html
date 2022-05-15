@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html
-  lang="en"
+  lang="zh"
   dir="ltr"
   
 ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>服务器 | Eureka Demo</title>
+<title>服务器 | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.1" />
-<link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
-<script defer src="/js/eureka.min.f1639ee98d6cbd85b2b5f034d27320da962002ff83159ed4e01dbc5948c42a1ab26c2d6e74c66e93f5cec4d24dbd166d.js"></script>
+<link rel="stylesheet" href="/blog.kquark.com/css/eureka.css">
+<script defer src="/blog.kquark.com/js/eureka.min.f1639ee98d6cbd85b2b5f034d27320da962002ff83159ed4e01dbc5948c42a1ab26c2d6e74c66e93f5cec4d24dbd166d.js"></script>
 
 
 
@@ -40,10 +40,10 @@
    crossorigin></script>
   <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
      crossorigin></script>
-<link rel="stylesheet" href="/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+<link rel="stylesheet" href="/blog.kquark.com/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
 
 
-<script defer type="text/javascript" src="/js/fontawesome.min.d985ac16c7535cb80993ed54c495ca11e688d0c0dc6d5b42dfe36f85a5f1e3544f45c0d2c4b6941eaaec6084da6f19e0.js"></script>
+<script defer type="text/javascript" src="/blog.kquark.com/js/fontawesome.min.62367250f865fb431e8f98254d504ce92aa2a3c00e6cd4abecf076b04968c871718654c3184c818163cea55e9ca4de53.js"></script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
@@ -71,8 +71,8 @@
   integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/blog.kquark.com/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/blog.kquark.com/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
   content="Eureka is a elegant and powerful theme for Hugo.">
@@ -84,11 +84,11 @@
       "@type": "ListItem",
       "position": 1 ,
       "name":"Categories",
-      "item":"/categories/"},{
+      "item":"blog.kquark.com/categories/"},{
       "@type": "ListItem",
       "position": 2 ,
       "name":"服务器",
-      "item":"/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"}]
+      "item":"blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"}]
 }
 </script>
 
@@ -104,30 +104,42 @@
             "position":  1 ,
             "name": "最简单方式实现bing背景获取（php）",
             "description": "测试链接： https://api.kquark.com/bing\nhttps://api.kquark.com/bing/?idx=1\u0026amp;n=1\u0026amp;size=UHD\nidx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：\nresolutions: [ 'UHD', '1920x1200', '1920x1080', '1366x768', '1280x768', '1024x768', '800x600', '800x480', '768x1280', '720x1280', '640x480', '480x800', '400x240', '320x240', '240x320' ]  设计原理依据bing api 获取\nhttps://bing.com/HPImageArchive.aspx?idx=0\u0026amp;n=1  php代码：\n\u0026lt;?php $predate = $_GET['idx']; $num = $_GET['n']; $size = $_GET['size']; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = 'UHD'; } echo 'predate:'.$predate.'\u0026lt;br\u0026gt;'; echo 'num:'.$num.'\u0026lt;br\u0026gt;'; echo 'size:'.$size.'\u0026lt;br\u0026gt;'; $bingurl='https://bing.com/HPImageArchive.aspx?idx='.$predate.'\u0026amp;n='.$num; //'https://bing.com/HPImageArchive.aspx?idx=0\u0026amp;n=1' echo $bingurl.'\u0026lt;br\u0026gt;'; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match('/\u0026lt;url\u0026gt;([^\u0026lt;]+)\u0026lt;\\/url\u0026gt;/isU', $str, $matches)) { // 正则匹配抓取图片url $imgurl = 'http://bing.",
-            "url": "/post/13/"
+            "url": "blog.kquark.com/post/13/"
         },{
             "@type":"ListItem",
             "position":  2 ,
             "name": "EUserv ipv4一键脚本",
             "description": "IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，套上WARP的ip,变成双栈VPS！\n2：基本能隐藏VPS的真实IP！\n3：支持代理协议直连电报Telegram，支持代理协议连通软路由Openwrt各种翻墙插件！\n4：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！\n5：支持原本需要IPV4支持的Docker等应用！\n6：加速VPS到CloudFlare CDN节点访问速度！\n7：避开原VPS的IP需要谷歌验证码问题！\n8：替代NAT64/DNS64方案，网络效率更高！\n一：恢复EUserv官方DNS64（重装系统者，可直接跳到第二步脚本安装）\necho -e \u0026quot;search blue.kundencontroller.de\\noptions rotate\\nnameserver 2a02:180:6:5::1c\\nnameserver 2a02:180:6:5::4\\nnameserver 2a02:180:6:5::1e\\nnameserver 2a02:180:6:5::1d\u0026quot; \u0026amp;gt; /etc/resolv.conf  二、重装系统能解决99%的问题！无须添加DNS64！一键到底！  仅支持Debian 10/Ubuntu 20.04系统，根据自己需求选择以下脚本1或者脚本2（有无成功可查看脚本末尾提示）  脚本1：IPV4是WARP分配的IP，IPV6是VPS本地IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp4.sh|bash  脚本2：IPV4与IPV6都是WARP分配的IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp64.sh|bash  转自：https://github.com/YG-tsj/EUserv-warp",
-            "url": "/post/10/"
+            "url": "blog.kquark.com/post/10/"
         },{
             "@type":"ListItem",
             "position":  3 ,
             "name": "WordPress页面打开加速",
             "description": "测试链接  GTmetrix\nhttps://gtmetrix.com\nGTmetrix  PageSpeed Insights\nhttps://developers.google.com/speed/pagespeed/insights/\nPageSpeed Insights  Pingdom Website Speed Test\nhttps://tools.pingdom.comPingdom\n 安装memcached，宝塔加速  memcached要在php处安装\n模块   WP安装LiteSpeed Cache  LiteSpeed Cache  对象缓存  其他里面能开的都开，关掉谷歌字体",
-            "url": "/post/9/"
+            "url": "blog.kquark.com/post/9/"
+        },{
+            "@type":"ListItem",
+            "position":  4 ,
+            "name": "JD签到docker配置",
+            "description": "仅作测试，滥用不承担任何责任\n配置 e大v4部署 sudo docker run -dit \\ -v /jd/config:/jd/config \\ -v /jd/log:/jd/log \\ -v /jd/scripts:/jd/scripts \\ -v /jd/own:/jd/own \\ -v /jd/panel:/jd/panel \\ -p 5678:5678 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ -e ENABLE_WEB_TTYD=true \\ --name jd \\ --hostname jd \\ --restart always \\ nevinee/jd:v4  青龙部署\nsudo docker run -dit \\ -v /qinglong/config:/ql/config \\ -v /qinglong/log:/ql/log \\ -v /qinglong/scripts:/ql/scripts \\ -v /qinglong/db:/ql/db \\ -p 5700:5700 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ --name qinglong \\ --hostname qinglong \\ --restart always \\ whyour/qinglong:latest  \u0026lt;ul style=\u0026quot;font-size:20px\u0026quot;\u0026gt; \u0026lt;li\u0026gt; 多容器配置 \u0026lt;/li\u0026gt; \u0026lt;/ul\u0026gt; \u0026lt;h1 style=\u0026quot;font-size:20px\u0026quot;\u0026gt; 要想换库直接改最后一行 \u0026lt;/h1\u0026gt; ```shell docker run -dit \\ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \\ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \\ -v /jd/own:/jd/own \\ -p 5679:5678 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ -e ENABLE_WEB_TTYD=true \\ --name jd1 \\ --hostname jd1 \\ --restart always \\ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \\ --name watchtower \\ -v /var/run/docker.",
+            "url": "blog.kquark.com/post/8/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "宝塔面板安装笔记",
+            "description": "宝塔面板安装与配置指令\n指令参考宝塔官网 https://www.bt.cn/\n 宝塔安装指令：  ubuntu：\nwget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh \u0026amp;\u0026amp; sudo bash install.sh\u0026lt;br\u0026gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i \u0026quot;s|bind_user == 'True'|bind_user == 'XXXX'|\u0026quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  ",
+            "url": "blog.kquark.com/post/7/"
         }
     ]
 }
-</script><meta property="og:title" content="服务器 | Eureka Demo" />
+</script><meta property="og:title" content="服务器 | 博客" />
 <meta property="og:type" content="website" />
 
 
-<meta property="og:image" content="/images/icon.png">
+<meta property="og:image" content="/blog.kquark.com/images/icon.png">
 
 
-<meta property="og:url" content="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" />
+<meta property="og:url" content="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" />
 
 
 
@@ -139,12 +151,12 @@
 
 
 
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh" />
 
 
 
 
-<meta property="og:site_name" content="Eureka Demo" />
+<meta property="og:site_name" content="博客" />
 
 
 
@@ -158,7 +170,7 @@
 <meta property="article:section" content="categories" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" title="Eureka Demo" />
+<link rel="alternate" type="application/rss+xml" href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" title="博客" />
 
 
   <body class="flex min-h-screen flex-col">
@@ -172,7 +184,7 @@
     }
 </script>
 <nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
-    <a href="/" class="me-6 text-primary-text text-xl font-bold">Eureka Demo</a>
+    <a href="/blog.kquark.com/" class="me-6 text-primary-text text-xl font-bold">博客</a>
     <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
         <i class="fas fa-bars"></i>
     </button>
@@ -180,9 +192,10 @@
     <div id="target"
         class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">About</a>
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Posts</a>
-            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">Docs</a>
+            <a href="/blog.kquark.com/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文章</a>
+            <a href="/blog.kquark.com/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文档</a>
+            <a href="/blog.kquark.com/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于</a>
+            <a href="/blog.kquark.com/archives/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">存档</a>
         </div>
 
         <div class="flex">
@@ -194,9 +207,9 @@
                 </div>
                 <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
                     id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
             </div>
         </div>
@@ -246,7 +259,7 @@
   
   <div class="w-full ">
     <div class="prose">
-  <a href="/post/13/" class="no-underline">
+  <a href="blog.kquark.com/post/13/" class="no-underline">
     <h3 class="mt-0">最简单方式实现bing背景获取（php）</h3>
   </a>
   
@@ -270,26 +283,26 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>2 min read</span>
+    <span>2分钟阅读时长</span>
   </div>
 
   
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
-        <a href="/categories/php/" class="hover:text-eureka"
+        <a href="blog.kquark.com/categories/php/" class="hover:text-eureka"
           >php</a
         >
       
         
           <span>, </span>
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
           >服务器</a
         >
       
         
           <span>, </span>
-        <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" class="hover:text-eureka"
+        <a href="blog.kquark.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" class="hover:text-eureka"
           >未分类</a
         >
       
@@ -313,7 +326,7 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
   
   <div class="w-full ">
     <div class="prose">
-  <a href="/post/10/" class="no-underline">
+  <a href="blog.kquark.com/post/10/" class="no-underline">
     <h3 class="mt-0">EUserv ipv4一键脚本</h3>
   </a>
   
@@ -341,20 +354,20 @@ echo -e &#34;search blue.kundencontroller.de\noptions rotate\nnameserver 2a02:18
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>1 min read</span>
+    <span>1分钟阅读时长</span>
   </div>
 
   
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
-        <a href="/categories/linux/" class="hover:text-eureka"
+        <a href="blog.kquark.com/categories/linux/" class="hover:text-eureka"
           >Linux</a
         >
       
         
           <span>, </span>
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
           >服务器</a
         >
       
@@ -378,7 +391,7 @@ echo -e &#34;search blue.kundencontroller.de\noptions rotate\nnameserver 2a02:18
   
   <div class="w-full ">
     <div class="prose">
-  <a href="/post/9/" class="no-underline">
+  <a href="blog.kquark.com/post/9/" class="no-underline">
     <h3 class="mt-0">WordPress页面打开加速</h3>
   </a>
   
@@ -404,15 +417,138 @@ https://tools.pingdom.comPingdom
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>1 min read</span>
+    <span>1分钟阅读时长</span>
   </div>
 
   
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
           >服务器</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="blog.kquark.com/post/8/" class="no-underline">
+    <h3 class="mt-0">JD签到docker配置</h3>
+  </a>
+  
+    仅作测试，滥用不承担任何责任
+配置 e大v4部署 sudo docker run -dit \ -v /jd/config:/jd/config \ -v /jd/log:/jd/log \ -v /jd/scripts:/jd/scripts \ -v /jd/own:/jd/own \ -v /jd/panel:/jd/panel \ -p 5678:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd \ --hostname jd \ --restart always \ nevinee/jd:v4  青龙部署
+sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log \ -v /qinglong/scripts:/ql/scripts \ -v /qinglong/db:/ql/db \ -p 5700:5700 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ --name qinglong \ --hostname qinglong \ --restart always \ whyour/qinglong:latest  &lt;ul style=&#34;font-size:20px&#34;&gt; &lt;li&gt; 多容器配置 &lt;/li&gt; &lt;/ul&gt; &lt;h1 style=&#34;font-size:20px&#34;&gt; 要想换库直接改最后一行 &lt;/h1&gt; ```shell docker run -dit \ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \ -v /jd/own:/jd/own \ -p 5679:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd1 \ --hostname jd1 \ --restart always \ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \ --name watchtower \ -v /var/run/docker.
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2021-05-04</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
+          >服务器</a
+        >
+      
+        
+          <span>, </span>
+        <a href="blog.kquark.com/categories/%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >笔记</a
+        >
+      
+        
+          <span>, </span>
+        <a href="blog.kquark.com/categories/%E7%AD%BE%E5%88%B0/" class="hover:text-eureka"
+          >签到</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="blog.kquark.com/post/7/" class="no-underline">
+    <h3 class="mt-0">宝塔面板安装笔记</h3>
+  </a>
+  
+    宝塔面板安装与配置指令
+指令参考宝塔官网 https://www.bt.cn/
+ 宝塔安装指令：  ubuntu：
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh&lt;br&gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &#34;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&#34; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2021-05-02</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>1分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
+          >服务器</a
+        >
+      
+        
+          <span>, </span>
+        <a href="blog.kquark.com/categories/%E7%AC%94%E8%AE%B0/" class="hover:text-eureka"
+          >笔记</a
         >
       
     </div>
@@ -446,16 +582,13 @@ https://tools.pingdom.comPingdom
         <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
       </li>
       <li class="page-item">
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
       </li>
       <li class="page-item">
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
 
@@ -465,7 +598,7 @@ https://tools.pingdom.comPingdom
     </main>
     <footer class="pl-scrollbar">
       <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">WANG Chucheng</a> and <a href="https://www.ruiqima.com/">MA Ruiqi</a>
+    <p class="text-sm text-tertiary-text">&copy; 2022 <a href="https://blog.kquark.com/">Eli</a>
  &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
 </div></div>
     </footer>

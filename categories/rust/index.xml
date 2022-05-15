@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rust on Eureka Demo</title>
-    <link>/categories/rust/</link>
-    <description>Recent content in rust on Eureka Demo</description>
+    <title>rust on 博客</title>
+    <link>blog.kquark.com/categories/rust/</link>
+    <description>Recent content in rust on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 11:30:06 +0000</lastBuildDate><atom:link href="/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 11:30:06 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rust 服务端</title>
-      <link>/post/5/</link>
+      <link>blog.kquark.com/post/5/</link>
       <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
       
-      <guid>/post/5/</guid>
+      <guid>blog.kquark.com/post/5/</guid>
       <description>参考：https://blog.csdn.net/tianlangstudio/article/details/106169242
  1.安装rust  sudo curl https://sh.rustup.rs -sSf | sh  https://www.rust-lang.org/zh-CN/tools/install
  2.创建项目  cargo new rust_login &amp;amp;#8211;bin   3.在Cargo.toml文件中配置需要的依赖  [package] name = &amp;quot;rust_login&amp;quot; version = &amp;quot;0.1.0&amp;quot; authors = &amp;amp;#91;&amp;quot;Tianlang &amp;amp;lt;qhlai666@gmail.com&amp;amp;gt;&amp;quot;] edition = &amp;quot;2018&amp;quot; # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html &amp;amp;#91;dependencies] actix-web=&amp;quot;2&amp;quot; #使用的actix-web 提供web服务器、request解析、response生成等功能 actix-rt=&amp;quot;1&amp;quot; #actix-rt actix的运行时，用于运行异步函数等，可以理解为Java　concurrent下的Executor #serde用于序列化和反序列化对象的，比如把对象转换成一个Json字符串，就是序列化；　#把Json字符串转换为一个对象，就是反序列化 serde=&amp;quot;1&amp;quot;  </description>

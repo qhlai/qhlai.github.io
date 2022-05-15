@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog</title>
+    <link>blog.kquark.com/en/</link>
+    <description>Recent content on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Tue, 20 Apr 2021 13:43:00 +0000</lastBuildDate><atom:link href="blog.kquark.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>no page</title>
+      <link>blog.kquark.com/post/1/</link>
+      <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
+      
+      <guid>blog.kquark.com/post/1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chapter 1</title>
+      <link>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/chapter-1/</link>
+      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/chapter-1/</guid>
+      <description>&lt;p&gt;This is chapter 1 of example doc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 1</title>
+      <link>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/nested-chapter/chapter-1/</link>
+      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/nested-chapter/chapter-1/</guid>
+      <description>&lt;p&gt;This is chapter 1 of nested chapter.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 2</title>
+      <link>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/chapter-2/</link>
+      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/chapter-2/</guid>
+      <description>&lt;p&gt;This is chapter 2 of example doc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chapter 2</title>
+      <link>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/nested-chapter/chapter-2/</link>
+      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>blog.kquark.com/en/docs/%E6%96%87%E6%A1%A3/nested-chapter/chapter-2/</guid>
+      <description>&lt;p&gt;This is chapter 2 of nested chapter.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>archives</title>
+      <link>blog.kquark.com/en/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>blog.kquark.com/en/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Index</title>
+      <link>blog.kquark.com/en/homepage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>blog.kquark.com/en/homepage/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

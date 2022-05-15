@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>测试 on Eureka Demo</title>
-    <link>/tags/%E6%B5%8B%E8%AF%95/</link>
-    <description>Recent content in 测试 on Eureka Demo</description>
+    <title>测试 on 博客</title>
+    <link>blog.kquark.com/tags/%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 测试 on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Tue, 20 Apr 2021 13:43:00 +0000</lastBuildDate><atom:link href="/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Apr 2021 13:43:00 +0000</lastBuildDate><atom:link href="blog.kquark.com/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vps 初始配置与性能测试</title>
-      <link>/post/2/</link>
+      <link>blog.kquark.com/post/2/</link>
       <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
       
-      <guid>/post/2/</guid>
+      <guid>blog.kquark.com/post/2/</guid>
       <description>以腾讯云为例
  root密码设置：   sudo passwd root
 输入密码

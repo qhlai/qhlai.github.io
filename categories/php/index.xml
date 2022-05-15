@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>php on Eureka Demo</title>
-    <link>/categories/php/</link>
-    <description>Recent content in php on Eureka Demo</description>
+    <title>php on 博客</title>
+    <link>blog.kquark.com/categories/php/</link>
+    <description>Recent content in php on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Thu, 01 Jul 2021 17:35:52 +0000</lastBuildDate><atom:link href="/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jul 2021 17:35:52 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>最简单方式实现bing背景获取（php）</title>
-      <link>/post/13/</link>
+      <link>blog.kquark.com/post/13/</link>
       <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
       
-      <guid>/post/13/</guid>
+      <guid>blog.kquark.com/post/13/</guid>
       <description>测试链接： https://api.kquark.com/bing
 https://api.kquark.com/bing/?idx=1&amp;amp;n=1&amp;amp;size=UHD
 idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：

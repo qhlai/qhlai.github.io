@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>analytics on Eureka Demo</title>
-    <link>/categories/analytics/</link>
-    <description>Recent content in analytics on Eureka Demo</description>
+    <title>analytics on 博客</title>
+    <link>blog.kquark.com/categories/analytics/</link>
+    <description>Recent content in analytics on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Thu, 02 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="/categories/analytics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/analytics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>matomo防屏蔽</title>
-      <link>/post/17/</link>
+      <link>blog.kquark.com/post/17/</link>
       <pubDate>Thu, 02 Sep 2021 05:33:25 +0000</pubDate>
       
-      <guid>/post/17/</guid>
+      <guid>blog.kquark.com/post/17/</guid>
       <description>缘由 matomo ，google等一系列会被屏蔽，
 操作 使用软连接改名
 reference: https://issues.matomo.org/7364</description>

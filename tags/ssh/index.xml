@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ssh on Eureka Demo</title>
-    <link>/tags/ssh/</link>
-    <description>Recent content in ssh on Eureka Demo</description>
+    <title>ssh on 博客</title>
+    <link>blog.kquark.com/tags/ssh/</link>
+    <description>Recent content in ssh on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Thu, 29 Apr 2021 08:23:05 +0000</lastBuildDate><atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Apr 2021 08:23:05 +0000</lastBuildDate><atom:link href="blog.kquark.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ssh常见问题</title>
-      <link>/post/6/</link>
+      <link>blog.kquark.com/post/6/</link>
       <pubDate>Thu, 29 Apr 2021 08:23:05 +0000</pubDate>
       
-      <guid>/post/6/</guid>
+      <guid>blog.kquark.com/post/6/</guid>
       <description>记录遇到的ssh问题
 Connecting to 1.116.126.*:22… Connection established. To escape to local shell, press Ctrl+Alt+] Socket error Event: 32 Error: 10053. Connection closing…Socket close. Connection closed by foreign host. Disconnected from remote host(1.116.126.*) at 15:17:58.  检查端口和协议
 改port防扫描 sudo vim /etc/ssh/sshd_config  

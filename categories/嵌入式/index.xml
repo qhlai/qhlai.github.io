@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>嵌入式 on Eureka Demo</title>
-    <link>/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
-    <description>Recent content in 嵌入式 on Eureka Demo</description>
+    <title>嵌入式 on 博客</title>
+    <link>blog.kquark.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+    <description>Recent content in 嵌入式 on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 09 Jun 2021 15:33:11 +0000</lastBuildDate><atom:link href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Jun 2021 15:33:11 +0000</lastBuildDate><atom:link href="blog.kquark.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>红米 AX6 解锁 SSH 安装使用 ShellClash 教程</title>
-      <link>/post/11/</link>
+      <link>blog.kquark.com/post/11/</link>
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
       
-      <guid>/post/11/</guid>
+      <guid>blog.kquark.com/post/11/</guid>
       <description>宣传图
 拆机
 AX6与AX3600对比
@@ -36,10 +36,10 @@ scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 open
     
     <item>
       <title>Delta Robot 正逆运动学推导与代码</title>
-      <link>/post/3/</link>
+      <link>blog.kquark.com/post/3/</link>
       <pubDate>Sat, 24 Apr 2021 11:10:53 +0000</pubDate>
       
-      <guid>/post/3/</guid>
+      <guid>blog.kquark.com/post/3/</guid>
       <description>Delta Robot Kinematics with code C++ Matlab
 Forward Kinematics c++
 void robotForward(const double* q, double* TransVector, bool mconfig) { double fi[3] = { 0,120,240 }; double theta_tmp[6]; for (int i = 0; i &amp;lt; 6; i++) { theta_tmp[i] = q[i]; //cout &amp;lt;&amp;lt; &amp;quot;theta：&amp;quot; &amp;lt;&amp;lt; theta_tmp[i] &amp;lt;&amp;lt; endl; } double D[3][3] = { 0 }; for (int i = 0; i &amp;lt; 3; i++) { D[i][0] = (R - r + L * cos_angle(theta_tmp[i])) * cos_angle(fi[i]); D[i][1] = (R - r + L * cos_angle(theta_tmp[i])) * sin_angle(fi[i]); D[i][2] = -L * sin_angle(theta_tmp[i]); //D[i][0] = (R - r - L * sin_angle(theta_tmp[i])) * cos_angle(fi[i]); //D[i][1] = (R - r - L * sin_angle(theta_tmp[i])) * sin_angle(fi[i]); //D[i][2] = -L*cos_angle(theta_tmp[i]); } double a= PointDist(D[0],D[1]); double b = PointDist(D[1], D[2]); double c = PointDist(D[2], D[0]); double p = (a + b + c) / 2; double S = sqrt(p * (p-a) * (p-b) * (p-c)); double FE_norm = (a * a + b * b - c * c) * c / (8 * S); double nFE; nFE = sqrt(pow(a * b * c / 4 / S, 2) - pow(b / 2, 2)); double vD21[3], vD23[3], vD32[3]; VectorSub(D[1], D[0], vD21); VectorSub(D[1], D[2], vD23); VectorSub(D[2], D[1], vD32); double D21xD23[3]; VectorCross(vD21, vD23, D21xD23); double D21xD23xD32[3]; VectorCross(D21xD23, vD32, D21xD23xD32); //double nFE_norm=VectorNorm(nFE); //VectorNumDivide(nFE, nFE_norm, nFE); double nD21xD23 = VectorNorm(D21xD23); double nD21xD23xD32 = VectorNorm(D21xD23xD32); double R11 = a * b * c / 4 / S; for (int i = 0; i &amp;lt; 3; i++) { TransVector[(i+1)*4-1] = nFE * D21xD23xD32[i] / nD21xD23xD32 + sqrt(pow(l, 2) - pow(R11, 2)) * D21xD23[i] / nD21xD23 + (D[2-1][i] + D[3 - 1][i]) / 2; } }  matlab</description>
