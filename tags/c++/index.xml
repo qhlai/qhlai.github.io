@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C&#43;&#43; on Kquark blog</title>
-    <link>https://blog.kquark.com/tags/c&#43;&#43;/</link>
-    <description>Recent content in C&#43;&#43; on Kquark blog</description>
+    <title>C&#43;&#43; on Eureka Demo</title>
+    <link>/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Eureka Demo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Fri, 18 Jun 2021 04:53:19 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Fri, 18 Jun 2021 04:53:19 +0000</lastBuildDate><atom:link href="/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>opencv 查找圆与亚像素定位</title>
-      <link>https://blog.kquark.com/post/12/</link>
+      <link>/post/12/</link>
       <pubDate>Fri, 18 Jun 2021 04:53:19 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/12/</guid>
-      <description>原图（左）边缘检测（右） 角点检测（左）矩形检测（右） 仿射变换 截图 圆检测，粗略定位</description>
+      <guid>/post/12/</guid>
+      <description>原图（左）边缘检测（右）
+角点检测（左）矩形检测（右）
+仿射变换
+截图
+圆检测，粗略定位
+亚像素检测，最小二乘圆定位
+计算坐标
+仿射逆变换后坐标</description>
     </item>
     
   </channel>

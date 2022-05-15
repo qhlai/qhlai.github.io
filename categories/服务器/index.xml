@@ -1,73 +1,160 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>服务器 on Kquark blog</title>
-    <link>https://blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-    <description>Recent content in 服务器 on Kquark blog</description>
+    <title>服务器 on Eureka Demo</title>
+    <link>/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 服务器 on Eureka Demo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 01 Jul 2021 17:35:52 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 01 Jul 2021 17:35:52 +0000</lastBuildDate><atom:link href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>最简单方式实现bing背景获取（php）</title>
-      <link>https://blog.kquark.com/post/13/</link>
+      <link>/post/13/</link>
       <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/13/</guid>
-      <description>测试链接： https://api.kquark.com/bing https://api.kquark.com/bing/?idx=1&amp;amp;n=1&amp;amp;size=UHD idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无</description>
+      <guid>/post/13/</guid>
+      <description>测试链接： https://api.kquark.com/bing
+https://api.kquark.com/bing/?idx=1&amp;amp;n=1&amp;amp;size=UHD
+idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：
+resolutions: [ &#39;UHD&#39;, &#39;1920x1200&#39;, &#39;1920x1080&#39;, &#39;1366x768&#39;, &#39;1280x768&#39;, &#39;1024x768&#39;, &#39;800x600&#39;, &#39;800x480&#39;, &#39;768x1280&#39;, &#39;720x1280&#39;, &#39;640x480&#39;, &#39;480x800&#39;, &#39;400x240&#39;, &#39;320x240&#39;, &#39;240x320&#39; ]  设计原理依据bing api 获取
+https://bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1  php代码：
+&amp;lt;?php $predate = $_GET[&#39;idx&#39;]; $num = $_GET[&#39;n&#39;]; $size = $_GET[&#39;size&#39;]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = &#39;UHD&#39;; } echo &#39;predate:&#39;.$predate.&#39;&amp;lt;br&amp;gt;&#39;; echo &#39;num:&#39;.$num.&#39;&amp;lt;br&amp;gt;&#39;; echo &#39;size:&#39;.$size.&#39;&amp;lt;br&amp;gt;&#39;; $bingurl=&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;.$predate.&#39;&amp;amp;n=&#39;.$num; //&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1&#39; echo $bingurl.&#39;&amp;lt;br&amp;gt;&#39;; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match(&#39;/&amp;lt;url&amp;gt;([^&amp;lt;]+)&amp;lt;\/url&amp;gt;/isU&#39;, $str, $matches)) { // 正则匹配抓取图片url $imgurl = &#39;http://bing.</description>
     </item>
     
     <item>
       <title>EUserv ipv4一键脚本</title>
-      <link>https://blog.kquark.com/post/10/</link>
+      <link>/post/10/</link>
       <pubDate>Thu, 20 May 2021 08:28:15 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/10/</guid>
-      <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，</description>
+      <guid>/post/10/</guid>
+      <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，套上WARP的ip,变成双栈VPS！
+2：基本能隐藏VPS的真实IP！
+3：支持代理协议直连电报Telegram，支持代理协议连通软路由Openwrt各种翻墙插件！
+4：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！
+5：支持原本需要IPV4支持的Docker等应用！
+6：加速VPS到CloudFlare CDN节点访问速度！
+7：避开原VPS的IP需要谷歌验证码问题！
+8：替代NAT64/DNS64方案，网络效率更高！
+一：恢复EUserv官方DNS64（重装系统者，可直接跳到第二步脚本安装）
+echo -e &amp;quot;search blue.kundencontroller.de\noptions rotate\nnameserver 2a02:180:6:5::1c\nnameserver 2a02:180:6:5::4\nnameserver 2a02:180:6:5::1e\nnameserver 2a02:180:6:5::1d&amp;quot; &amp;amp;gt; /etc/resolv.conf  二、重装系统能解决99%的问题！无须添加DNS64！一键到底！  仅支持Debian 10/Ubuntu 20.04系统，根据自己需求选择以下脚本1或者脚本2（有无成功可查看脚本末尾提示）  脚本1：IPV4是WARP分配的IP，IPV6是VPS本地IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp4.sh|bash  脚本2：IPV4与IPV6都是WARP分配的IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp64.sh|bash  转自：https://github.com/YG-tsj/EUserv-warp</description>
     </item>
     
     <item>
       <title>WordPress页面打开加速</title>
-      <link>https://blog.kquark.com/post/9/</link>
+      <link>/post/9/</link>
       <pubDate>Wed, 12 May 2021 18:08:51 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/9/</guid>
-      <description>测试链接 GTmetrix https://gtmetrix.comPageSpeed Insights https://developers.google.com/speed/pagespeed/insights/ Pingdom Website Speed Test https://tools.pingdom.comPingdom 安装memcached，宝塔加速 memcached要在</description>
+      <guid>/post/9/</guid>
+      <description>测试链接  GTmetrix
+https://gtmetrix.com
+GTmetrix  PageSpeed Insights
+https://developers.google.com/speed/pagespeed/insights/
+PageSpeed Insights  Pingdom Website Speed Test
+https://tools.pingdom.comPingdom
+ 安装memcached，宝塔加速  memcached要在php处安装
+模块   WP安装LiteSpeed Cache  LiteSpeed Cache  对象缓存  其他里面能开的都开，关掉谷歌字体</description>
     </item>
     
     <item>
       <title>JD签到docker配置</title>
-      <link>https://blog.kquark.com/post/8/</link>
+      <link>/post/8/</link>
       <pubDate>Tue, 04 May 2021 13:48:00 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/8/</guid>
-      <description>仅作测试，滥用不承担任何责任 配置 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 e大v4部署 sudo docker run</description>
+      <guid>/post/8/</guid>
+      <description>仅作测试，滥用不承担任何责任
+配置 e大v4部署 sudo docker run -dit \ -v /jd/config:/jd/config \ -v /jd/log:/jd/log \ -v /jd/scripts:/jd/scripts \ -v /jd/own:/jd/own \ -v /jd/panel:/jd/panel \ -p 5678:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd \ --hostname jd \ --restart always \ nevinee/jd:v4  青龙部署
+sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log \ -v /qinglong/scripts:/ql/scripts \ -v /qinglong/db:/ql/db \ -p 5700:5700 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ --name qinglong \ --hostname qinglong \ --restart always \ whyour/qinglong:latest  &amp;lt;ul style=&amp;quot;font-size:20px&amp;quot;&amp;gt; &amp;lt;li&amp;gt; 多容器配置 &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;h1 style=&amp;quot;font-size:20px&amp;quot;&amp;gt; 要想换库直接改最后一行 &amp;lt;/h1&amp;gt; ```shell docker run -dit \ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \ -v /jd/own:/jd/own \ -p 5679:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd1 \ --hostname jd1 \ --restart always \ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \ --name watchtower \ -v /var/run/docker.</description>
     </item>
     
     <item>
       <title>宝塔面板安装笔记</title>
-      <link>https://blog.kquark.com/post/7/</link>
+      <link>/post/7/</link>
       <pubDate>Sun, 02 May 2021 13:33:00 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/7/</guid>
-      <description>宝塔面板安装与配置指令 指令参考宝塔官网 https://www.bt.cn/ 宝塔安装指令： ubuntu： 1 wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp;</description>
+      <guid>/post/7/</guid>
+      <description>宝塔面板安装与配置指令
+指令参考宝塔官网 https://www.bt.cn/
+ 宝塔安装指令：  ubuntu：
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp; sudo bash install.sh&amp;lt;br&amp;gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &amp;quot;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&amp;quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  </description>
     </item>
     
     <item>
       <title>常用DNS/DOH</title>
-      <link>https://blog.kquark.com/post/4/</link>
+      <link>/post/4/</link>
       <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/4/</guid>
-      <description>收集国内外可用DNS/DOH 国内：https://pod.pub/dns-que</description>
+      <guid>/post/4/</guid>
+      <description>收集国内外可用DNS/DOH
+国内：https://pod.pub/dns-query
+USTC（中科大，建议停止使用53转而使用5353端口避免运营商（比如移动大内网）劫持；听大雕昨天说劫持反而更好，因为运营商服务器有内容缓存？我不用移动所以不知道）支持ECS
+首选服务器：
+202.38.93.153 (教育网)
+202.141.162.123 (电信)
+202.141.178.13 (移动)
+备选服务器：
+202.38.93.94 (教育网，新增)
+RixCloud:
+https://doh.rixcloud.dev/dns-query
+Ali:
+https://dns.alidns.com/dns-query
+Apple:
+https://doh.dns.apple.com/dns-query
+DNSPod:支持ECS
+tls://dns.pub
+https://doh.pub/dns-query
+RubyFish:支持ECS
+tls://dns.rubyfish.cn
+https://dns.rubyfish.cn/dns-query
+Geek:支持ECS
+https://i.233py.com/dns-query
+国外：
+AdGuard:
+tls://dns.adguard.com
+https://dns.adguard.com/dns-query
+CloudFlare:支持ECS
+https://cloudflare-dns.com/dns-query
+tls://1.1.1.1
+ContainerPi:
+tls://dns.containerpi.com/dns-query
+DNSLify:
+tls://a.ns.dnslify.com
+tls://b.ns.dnslify.com
+Google:支持ECS
+tls://dns.google
+https://dns.google/dns-query
+GeekOverseas:支持ECS
+https://dns.233py.com/dns-query
+OpenDNS:
+https://doh.opendns.com/dns-query
+Quad9:支持ECS
+https://dns11.quad9.net/dns-query
+101:
+https://dns.twnic.tw/dns-query
+绑定端口：
+bind [::]5053 -group china
+bind-tcp [::]5053 -group china
+bind [::]7913 -group world # passwall默认端口号
+bind-tcp [::]7913 -group world # passwall默认端口号
+若要全部使用域名形式的DNS，设置bootstrap组，指定nameserver规则：（以下填在custom.conf中）
+server-https https://223.5.5.5/dns-query-group bootstrap-china</description>
     </item>
     
     <item>
       <title>vps 初始配置与性能测试</title>
-      <link>https://blog.kquark.com/post/2/</link>
+      <link>/post/2/</link>
       <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/2/</guid>
-      <description>以腾讯云为例 sudo passwd root 输入密码 一、云镜&amp;amp;安全监控卸载 1 2 3 /usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh 二、验证卸载</description>
+      <guid>/post/2/</guid>
+      <description>以腾讯云为例
+ root密码设置：   sudo passwd root
+输入密码
+ 卸载监控   一、云镜&amp;amp;安全监控卸载
+/usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh  二、验证卸载
+ps aux | grep -i agent | grep -v grep`   测试   参考：https://zhuanlan.zhihu.com/p/117547388
+Bench.sh  秋水逸冰大佬的写的Bench.sh脚本
+特点  显示当前测试的各种系统信息； 取自世界多处的知名数据中心的测试点，下载测试比较全面； 支持 IPv6 下载测速； IO 测试三次，并显示平均值。  使用 wget -qO- bench.sh | bash #或者 curl -Lso- bench.sh | bash #或者 wget -qO- 86.re/bench.sh | bash #或者 curl -so- 86.re/bench.sh | bash  演示 SuperBench.sh 老鬼大佬的SuperBench测试脚本</description>
     </item>
     
   </channel>

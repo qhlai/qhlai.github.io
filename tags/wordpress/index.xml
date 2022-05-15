@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wordpress on Kquark blog</title>
-    <link>https://blog.kquark.com/tags/wordpress/</link>
-    <description>Recent content in wordpress on Kquark blog</description>
+    <title>wordpress on Eureka Demo</title>
+    <link>/tags/wordpress/</link>
+    <description>Recent content in wordpress on Eureka Demo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 May 2021 18:08:51 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 12 May 2021 18:08:51 +0000</lastBuildDate><atom:link href="/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WordPress页面打开加速</title>
-      <link>https://blog.kquark.com/post/9/</link>
+      <link>/post/9/</link>
       <pubDate>Wed, 12 May 2021 18:08:51 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/9/</guid>
-      <description>测试链接 GTmetrix https://gtmetrix.comPageSpeed Insights https://developers.google.com/speed/pagespeed/insights/ Pingdom Website Speed Test https://tools.pingdom.comPingdom 安装memcached，宝塔加速 memcached要在</description>
+      <guid>/post/9/</guid>
+      <description>测试链接  GTmetrix
+https://gtmetrix.com
+GTmetrix  PageSpeed Insights
+https://developers.google.com/speed/pagespeed/insights/
+PageSpeed Insights  Pingdom Website Speed Test
+https://tools.pingdom.comPingdom
+ 安装memcached，宝塔加速  memcached要在php处安装
+模块   WP安装LiteSpeed Cache  LiteSpeed Cache  对象缓存  其他里面能开的都开，关掉谷歌字体</description>
     </item>
     
   </channel>

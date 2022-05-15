@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vps on Kquark blog</title>
-    <link>https://blog.kquark.com/tags/vps/</link>
-    <description>Recent content in vps on Kquark blog</description>
+    <title>vps on Eureka Demo</title>
+    <link>/tags/vps/</link>
+    <description>Recent content in vps on Eureka Demo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 20 Apr 2021 13:43:00 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Tue, 20 Apr 2021 13:43:00 +0000</lastBuildDate><atom:link href="/tags/vps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vps 初始配置与性能测试</title>
-      <link>https://blog.kquark.com/post/2/</link>
+      <link>/post/2/</link>
       <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/2/</guid>
-      <description>以腾讯云为例 sudo passwd root 输入密码 一、云镜&amp;amp;安全监控卸载 1 2 3 /usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh 二、验证卸载</description>
+      <guid>/post/2/</guid>
+      <description>以腾讯云为例
+ root密码设置：   sudo passwd root
+输入密码
+ 卸载监控   一、云镜&amp;amp;安全监控卸载
+/usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh  二、验证卸载
+ps aux | grep -i agent | grep -v grep`   测试   参考：https://zhuanlan.zhihu.com/p/117547388
+Bench.sh  秋水逸冰大佬的写的Bench.sh脚本
+特点  显示当前测试的各种系统信息； 取自世界多处的知名数据中心的测试点，下载测试比较全面； 支持 IPv6 下载测速； IO 测试三次，并显示平均值。  使用 wget -qO- bench.sh | bash #或者 curl -Lso- bench.sh | bash #或者 wget -qO- 86.re/bench.sh | bash #或者 curl -so- 86.re/bench.sh | bash  演示 SuperBench.sh 老鬼大佬的SuperBench测试脚本</description>
     </item>
     
   </channel>

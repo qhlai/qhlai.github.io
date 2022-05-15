@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>网络 on Kquark blog</title>
-    <link>https://blog.kquark.com/categories/%E7%BD%91%E7%BB%9C/</link>
-    <description>Recent content in 网络 on Kquark blog</description>
+    <title>网络 on Eureka Demo</title>
+    <link>/categories/%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 网络 on Eureka Demo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="https://blog.kquark.com/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 01 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>博客从wordpress迁移至hugo</title>
-      <link>https://blog.kquark.com/post/16/</link>
+      <link>/post/16/</link>
       <pubDate>Wed, 01 Sep 2021 05:33:25 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/16/</guid>
-      <description>缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hex</description>
+      <guid>/post/16/</guid>
+      <description>缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错。
+操作 ./hugo new site ./blog mv ./wp-hugo.zip ./blog cd ./blog/themes git clone https://github.com/rujews/maupassant-hugo.git cd ../ vi config.toml  主题：https://github.com/flysnow-org/maupassant-hugo
+config baseURL = &amp;quot;https://blog.kquark.com&amp;quot; languageCode = &amp;quot;zh-cn&amp;quot; title = &amp;quot;Kquark blog&amp;quot; hasCJKLanguage = true # 中日韩语言支持 theme = &amp;quot;maupassant-hugo&amp;quot; # 主题名称，与themes目录下名称一致 enableRobotsTXT = true # 爬虫支持 PaginatePath = &amp;quot;page&amp;quot; # 分页 summaryLength = 140 # 摘要显示字数 #googleAnalytics = &amp;quot;UA-110008600-0&amp;quot; [author] name = &amp;quot;Kquark&amp;quot; [params] subtitle = &amp;quot;一个 个人网站&amp;quot; description = &amp;quot;奇技淫巧和技术分享&amp;quot; # 在页面meta属性里 keywords = &amp;quot;python,rust,linux,vps,服务器,机器学习,robot,AI&amp;quot; # 在页面meta属性里 toc = true # 支持文章大纲 #busuanzi = true #registerInfo = &amp;quot;粤ICP备18000000号-1&amp;quot; related = true #googleAd = &amp;quot;ca-pub-300057030000200&amp;quot; [[menu.</description>
     </item>
     
     <item>
       <title>wireshark install and privileges on Archlinux</title>
-      <link>https://blog.kquark.com/post/15/</link>
+      <link>/post/15/</link>
       <pubDate>Tue, 06 Jul 2021 05:33:25 +0000</pubDate>
       
-      <guid>https://blog.kquark.com/post/15/</guid>
-      <description>wireshark install and privileges reference:https://wiki.archlinux.org/title/Wireshark install: sudo pacman -S wireshark-qt Capturing privileges： 1.添加wireshark用户组&amp;l</description>
+      <guid>/post/15/</guid>
+      <description>wireshark install and privileges
+reference:https://wiki.archlinux.org/title/Wireshark
+install:
+sudo pacman -S wireshark-qt
+Capturing privileges：
+1.添加wireshark用户组&amp;lt;br&amp;gt;sudo groupadd wireshark
+2.将dumpcap更改为wireshark用户组&amp;lt;br&amp;gt;sudo chgrp wireshark /usr/bin/dumpcap
+3.让wireshark用户组有root权限使用dumpcap&amp;lt;br&amp;gt;sudo chmod 4755 /usr/bin/dumpcap
+4.将需要使用的用户名加入wireshark用户组&amp;lt;br&amp;gt;sudo gpasswd -a username wireshark1</description>
     </item>
     
   </channel>
