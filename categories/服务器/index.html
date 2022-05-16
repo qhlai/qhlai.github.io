@@ -102,32 +102,32 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "最简单方式实现bing背景获取（php）",
-            "description": "测试链接： https://api.kquark.com/bing\nhttps://api.kquark.com/bing/?idx=1\u0026amp;n=1\u0026amp;size=UHD\nidx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：\nresolutions: [ 'UHD', '1920x1200', '1920x1080', '1366x768', '1280x768', '1024x768', '800x600', '800x480', '768x1280', '720x1280', '640x480', '480x800', '400x240', '320x240', '240x320' ]  设计原理依据bing api 获取\nhttps://bing.com/HPImageArchive.aspx?idx=0\u0026amp;n=1  php代码：\n\u0026lt;?php $predate = $_GET['idx']; $num = $_GET['n']; $size = $_GET['size']; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = 'UHD'; } echo 'predate:'.$predate.'\u0026lt;br\u0026gt;'; echo 'num:'.$num.'\u0026lt;br\u0026gt;'; echo 'size:'.$size.'\u0026lt;br\u0026gt;'; $bingurl='https://bing.com/HPImageArchive.aspx?idx='.$predate.'\u0026amp;n='.$num; //'https://bing.com/HPImageArchive.aspx?idx=0\u0026amp;n=1' echo $bingurl.'\u0026lt;br\u0026gt;'; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match('/\u0026lt;url\u0026gt;([^\u0026lt;]+)\u0026lt;\\/url\u0026gt;/isU', $str, $matches)) { // 正则匹配抓取图片url $imgurl = 'http://bing.",
+            "name": "实现bing背景获取（php）",
+            "description": "\u003cp\u003ephp获取bing背景图\u003c/p\u003e",
             "url": "/post/13/"
         },{
             "@type":"ListItem",
             "position":  2 ,
             "name": "EUserv ipv4一键脚本",
-            "description": "IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，套上WARP的ip,变成双栈VPS！\n2：基本能隐藏VPS的真实IP！\n3：支持代理协议直连电报Telegram，支持代理协议连通软路由Openwrt各种翻墙插件！\n4：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！\n5：支持原本需要IPV4支持的Docker等应用！\n6：加速VPS到CloudFlare CDN节点访问速度！\n7：避开原VPS的IP需要谷歌验证码问题！\n8：替代NAT64/DNS64方案，网络效率更高！\n一：恢复EUserv官方DNS64（重装系统者，可直接跳到第二步脚本安装）\necho -e \u0026quot;search blue.kundencontroller.de\\noptions rotate\\nnameserver 2a02:180:6:5::1c\\nnameserver 2a02:180:6:5::4\\nnameserver 2a02:180:6:5::1e\\nnameserver 2a02:180:6:5::1d\u0026quot; \u0026amp;gt; /etc/resolv.conf  二、重装系统能解决99%的问题！无须添加DNS64！一键到底！  仅支持Debian 10/Ubuntu 20.04系统，根据自己需求选择以下脚本1或者脚本2（有无成功可查看脚本末尾提示）  脚本1：IPV4是WARP分配的IP，IPV6是VPS本地IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp4.sh|bash  脚本2：IPV4与IPV6都是WARP分配的IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp64.sh|bash  转自：https://github.com/YG-tsj/EUserv-warp",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/10/"
         },{
             "@type":"ListItem",
             "position":  3 ,
             "name": "WordPress页面打开加速",
-            "description": "测试链接  GTmetrix\nhttps://gtmetrix.com\nGTmetrix  PageSpeed Insights\nhttps://developers.google.com/speed/pagespeed/insights/\nPageSpeed Insights  Pingdom Website Speed Test\nhttps://tools.pingdom.comPingdom\n 安装memcached，宝塔加速  memcached要在php处安装\n模块   WP安装LiteSpeed Cache  LiteSpeed Cache  对象缓存  其他里面能开的都开，关掉谷歌字体",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/9/"
         },{
             "@type":"ListItem",
             "position":  4 ,
             "name": "JD签到docker配置",
-            "description": "仅作测试，滥用不承担任何责任\n配置 e大v4部署 sudo docker run -dit \\ -v /jd/config:/jd/config \\ -v /jd/log:/jd/log \\ -v /jd/scripts:/jd/scripts \\ -v /jd/own:/jd/own \\ -v /jd/panel:/jd/panel \\ -p 5678:5678 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ -e ENABLE_WEB_TTYD=true \\ --name jd \\ --hostname jd \\ --restart always \\ nevinee/jd:v4  青龙部署\nsudo docker run -dit \\ -v /qinglong/config:/ql/config \\ -v /qinglong/log:/ql/log \\ -v /qinglong/scripts:/ql/scripts \\ -v /qinglong/db:/ql/db \\ -p 5700:5700 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ --name qinglong \\ --hostname qinglong \\ --restart always \\ whyour/qinglong:latest  \u0026lt;ul style=\u0026quot;font-size:20px\u0026quot;\u0026gt; \u0026lt;li\u0026gt; 多容器配置 \u0026lt;/li\u0026gt; \u0026lt;/ul\u0026gt; \u0026lt;h1 style=\u0026quot;font-size:20px\u0026quot;\u0026gt; 要想换库直接改最后一行 \u0026lt;/h1\u0026gt; ```shell docker run -dit \\ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \\ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \\ -v /jd/own:/jd/own \\ -p 5679:5678 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ -e ENABLE_WEB_TTYD=true \\ --name jd1 \\ --hostname jd1 \\ --restart always \\ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \\ --name watchtower \\ -v /var/run/docker.",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/8/"
         },{
             "@type":"ListItem",
             "position":  5 ,
             "name": "宝塔面板安装笔记",
-            "description": "宝塔面板安装与配置指令\n指令参考宝塔官网 https://www.bt.cn/\n 宝塔安装指令：  ubuntu：\nwget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh \u0026amp;\u0026amp; sudo bash install.sh\u0026lt;br\u0026gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i \u0026quot;s|bind_user == 'True'|bind_user == 'XXXX'|\u0026quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  ",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/7/"
         }
     ]
@@ -260,15 +260,11 @@
   <div class="w-full ">
     <div class="prose">
   <a href="/post/13/" class="no-underline">
-    <h3 class="mt-0">最简单方式实现bing背景获取（php）</h3>
+    <h3 class="mt-0">实现bing背景获取（php）</h3>
   </a>
   
-    测试链接： https://api.kquark.com/bing
-https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD
-idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：
-resolutions: [ &#39;UHD&#39;, &#39;1920x1200&#39;, &#39;1920x1080&#39;, &#39;1366x768&#39;, &#39;1280x768&#39;, &#39;1024x768&#39;, &#39;800x600&#39;, &#39;800x480&#39;, &#39;768x1280&#39;, &#39;720x1280&#39;, &#39;640x480&#39;, &#39;480x800&#39;, &#39;400x240&#39;, &#39;320x240&#39;, &#39;240x320&#39; ]  设计原理依据bing api 获取
-https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
-&lt;?php $predate = $_GET[&#39;idx&#39;]; $num = $_GET[&#39;n&#39;]; $size = $_GET[&#39;size&#39;]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = &#39;UHD&#39;; } echo &#39;predate:&#39;.$predate.&#39;&lt;br&gt;&#39;; echo &#39;num:&#39;.$num.&#39;&lt;br&gt;&#39;; echo &#39;size:&#39;.$size.&#39;&lt;br&gt;&#39;; $bingurl=&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;.$predate.&#39;&amp;n=&#39;.$num; //&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1&#39; echo $bingurl.&#39;&lt;br&gt;&#39;; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match(&#39;/&lt;url&gt;([^&lt;]&#43;)&lt;\/url&gt;/isU&#39;, $str, $matches)) { // 正则匹配抓取图片url $imgurl = &#39;http://bing.
+    php获取bing背景图
+
   
 
   
@@ -330,17 +326,6 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
     <h3 class="mt-0">EUserv ipv4一键脚本</h3>
   </a>
   
-    IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，套上WARP的ip,变成双栈VPS！
-2：基本能隐藏VPS的真实IP！
-3：支持代理协议直连电报Telegram，支持代理协议连通软路由Openwrt各种翻墙插件！
-4：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！
-5：支持原本需要IPV4支持的Docker等应用！
-6：加速VPS到CloudFlare CDN节点访问速度！
-7：避开原VPS的IP需要谷歌验证码问题！
-8：替代NAT64/DNS64方案，网络效率更高！
-一：恢复EUserv官方DNS64（重装系统者，可直接跳到第二步脚本安装）
-echo -e &#34;search blue.kundencontroller.de\noptions rotate\nnameserver 2a02:180:6:5::1c\nnameserver 2a02:180:6:5::4\nnameserver 2a02:180:6:5::1e\nnameserver 2a02:180:6:5::1d&#34; &amp;gt; /etc/resolv.conf  二、重装系统能解决99%的问题！无须添加DNS64！一键到底！  仅支持Debian 10/Ubuntu 20.04系统，根据自己需求选择以下脚本1或者脚本2（有无成功可查看脚本末尾提示）  脚本1：IPV4是WARP分配的IP，IPV6是VPS本地IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp4.sh|bash  脚本2：IPV4与IPV6都是WARP分配的IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp64.sh|bash  转自：https://github.com/YG-tsj/EUserv-warp
-  
 
   
     <div
@@ -395,15 +380,6 @@ echo -e &#34;search blue.kundencontroller.de\noptions rotate\nnameserver 2a02:18
     <h3 class="mt-0">WordPress页面打开加速</h3>
   </a>
   
-    测试链接  GTmetrix
-https://gtmetrix.com
-GTmetrix  PageSpeed Insights
-https://developers.google.com/speed/pagespeed/insights/
-PageSpeed Insights  Pingdom Website Speed Test
-https://tools.pingdom.comPingdom
- 安装memcached，宝塔加速  memcached要在php处安装
-模块   WP安装LiteSpeed Cache  LiteSpeed Cache  对象缓存  其他里面能开的都开，关掉谷歌字体
-  
 
   
     <div
@@ -451,10 +427,6 @@ https://tools.pingdom.comPingdom
   <a href="/post/8/" class="no-underline">
     <h3 class="mt-0">JD签到docker配置</h3>
   </a>
-  
-    仅作测试，滥用不承担任何责任
-配置 e大v4部署 sudo docker run -dit \ -v /jd/config:/jd/config \ -v /jd/log:/jd/log \ -v /jd/scripts:/jd/scripts \ -v /jd/own:/jd/own \ -v /jd/panel:/jd/panel \ -p 5678:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd \ --hostname jd \ --restart always \ nevinee/jd:v4  青龙部署
-sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log \ -v /qinglong/scripts:/ql/scripts \ -v /qinglong/db:/ql/db \ -p 5700:5700 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ --name qinglong \ --hostname qinglong \ --restart always \ whyour/qinglong:latest  &lt;ul style=&#34;font-size:20px&#34;&gt; &lt;li&gt; 多容器配置 &lt;/li&gt; &lt;/ul&gt; &lt;h1 style=&#34;font-size:20px&#34;&gt; 要想换库直接改最后一行 &lt;/h1&gt; ```shell docker run -dit \ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \ -v /jd/own:/jd/own \ -p 5679:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd1 \ --hostname jd1 \ --restart always \ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \ --name watchtower \ -v /var/run/docker.
   
 
   
@@ -515,11 +487,6 @@ sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log
   <a href="/post/7/" class="no-underline">
     <h3 class="mt-0">宝塔面板安装笔记</h3>
   </a>
-  
-    宝塔面板安装与配置指令
-指令参考宝塔官网 https://www.bt.cn/
- 宝塔安装指令：  ubuntu：
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh&lt;br&gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &#34;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&#34; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  
   
 
   

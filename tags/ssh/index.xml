@@ -15,10 +15,7 @@
       <pubDate>Thu, 29 Apr 2021 08:23:05 +0000</pubDate>
       
       <guid>/post/6/</guid>
-      <description>记录遇到的ssh问题
-Connecting to 1.116.126.*:22… Connection established. To escape to local shell, press Ctrl+Alt+] Socket error Event: 32 Error: 10053. Connection closing…Socket close. Connection closed by foreign host. Disconnected from remote host(1.116.126.*) at 15:17:58.  检查端口和协议
-改port防扫描 sudo vim /etc/ssh/sshd_config  
-sudo service ssh restart  </description>
+      <description></description>
     </item>
     
   </channel>

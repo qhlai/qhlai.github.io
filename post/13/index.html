@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>最简单方式实现bing背景获取（php） | 博客</title>
+<title>实现bing背景获取（php） | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.1" />
 <link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -75,12 +75,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="测试链接： https://api.kquark.com/bing
-https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD
-idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：
-resolutions: [ &#39;UHD&#39;, &#39;1920x1200&#39;, &#39;1920x1080&#39;, &#39;1366x768&#39;, &#39;1280x768&#39;, &#39;1024x768&#39;, &#39;800x600&#39;, &#39;800x480&#39;, &#39;768x1280&#39;, &#39;720x1280&#39;, &#39;640x480&#39;, &#39;480x800&#39;, &#39;400x240&#39;, &#39;320x240&#39;, &#39;240x320&#39; ]  设计原理依据bing api 获取
-https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
-&lt;?php $predate = $_GET[&#39;idx&#39;]; $num = $_GET[&#39;n&#39;]; $size = $_GET[&#39;size&#39;]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = &#39;UHD&#39;; } echo &#39;predate:&#39;.$predate.&#39;&lt;br&gt;&#39;; echo &#39;num:&#39;.$num.&#39;&lt;br&gt;&#39;; echo &#39;size:&#39;.$size.&#39;&lt;br&gt;&#39;; $bingurl=&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;.$predate.&#39;&amp;n=&#39;.$num; //&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1&#39; echo $bingurl.&#39;&lt;br&gt;&#39;; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match(&#39;/&lt;url&gt;([^&lt;]&#43;)&lt;\/url&gt;/isU&#39;, $str, $matches)) { // 正则匹配抓取图片url $imgurl = &#39;http://bing.">
+  content="php获取bing背景图">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,7 +87,7 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"最简单方式实现bing背景获取（php）",
+      "name":"实现bing背景获取（php）",
       "item":"/post/13/"}]
 }
 </script>
@@ -107,9 +102,9 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
         "@type": "WebPage",
         "@id": "/post/13/"
     },
-    "headline": "最简单方式实现bing背景获取（php） | 博客","datePublished": "2021-07-01T17:35:52+00:00",
-    "dateModified": "2021-07-01T17:35:52+00:00",
-    "wordCount":  393 ,
+    "headline": "实现bing背景获取（php） | 博客","datePublished": "2021-07-01T17:35:52+00:00",
+    "dateModified": "2022-05-16T00:00:00+00:00",
+    "wordCount":  394 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -118,9 +113,9 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
             "url": "/images/icon.png"
         }
         },
-    "description": "测试链接： https:\/\/api.kquark.com\/bing\nhttps:\/\/api.kquark.com\/bing\/?idx=1\u0026amp;n=1\u0026amp;size=UHD\nidx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：\nresolutions: [ \u0027UHD\u0027, \u00271920x1200\u0027, \u00271920x1080\u0027, \u00271366x768\u0027, \u00271280x768\u0027, \u00271024x768\u0027, \u0027800x600\u0027, \u0027800x480\u0027, \u0027768x1280\u0027, \u0027720x1280\u0027, \u0027640x480\u0027, \u0027480x800\u0027, \u0027400x240\u0027, \u0027320x240\u0027, \u0027240x320\u0027 ]  设计原理依据bing api 获取\nhttps:\/\/bing.com\/HPImageArchive.aspx?idx=0\u0026amp;n=1  php代码：\n\u0026lt;?php $predate = $_GET[\u0027idx\u0027]; $num = $_GET[\u0027n\u0027]; $size = $_GET[\u0027size\u0027]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = \u0027UHD\u0027; } echo \u0027predate:\u0027.$predate.\u0027\u0026lt;br\u0026gt;\u0027; echo \u0027num:\u0027.$num.\u0027\u0026lt;br\u0026gt;\u0027; echo \u0027size:\u0027.$size.\u0027\u0026lt;br\u0026gt;\u0027; $bingurl=\u0027https:\/\/bing.com\/HPImageArchive.aspx?idx=\u0027.$predate.\u0027\u0026amp;n=\u0027.$num; \/\/\u0027https:\/\/bing.com\/HPImageArchive.aspx?idx=0\u0026amp;n=1\u0027 echo $bingurl.\u0027\u0026lt;br\u0026gt;\u0027; $str = file_get_contents($bingurl); \/\/ 从bing获取数据 if(preg_match(\u0027\/\u0026lt;url\u0026gt;([^\u0026lt;]\u002b)\u0026lt;\\\/url\u0026gt;\/isU\u0027, $str, $matches)) { \/\/ 正则匹配抓取图片url $imgurl = \u0027http:\/\/bing."
+    "description": "\u003cp\u003ephp获取bing背景图\u003c\/p\u003e"
 }
-</script><meta property="og:title" content="最简单方式实现bing背景获取（php） | 博客" />
+</script><meta property="og:title" content="实现bing背景获取（php） | 博客" />
 <meta property="og:type" content="article" />
 
 
@@ -132,12 +127,7 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
 
 
 
-<meta property="og:description" content="测试链接： https://api.kquark.com/bing
-https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD
-idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：
-resolutions: [ &#39;UHD&#39;, &#39;1920x1200&#39;, &#39;1920x1080&#39;, &#39;1366x768&#39;, &#39;1280x768&#39;, &#39;1024x768&#39;, &#39;800x600&#39;, &#39;800x480&#39;, &#39;768x1280&#39;, &#39;720x1280&#39;, &#39;640x480&#39;, &#39;480x800&#39;, &#39;400x240&#39;, &#39;320x240&#39;, &#39;240x320&#39; ]  设计原理依据bing api 获取
-https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
-&lt;?php $predate = $_GET[&#39;idx&#39;]; $num = $_GET[&#39;n&#39;]; $size = $_GET[&#39;size&#39;]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = &#39;UHD&#39;; } echo &#39;predate:&#39;.$predate.&#39;&lt;br&gt;&#39;; echo &#39;num:&#39;.$num.&#39;&lt;br&gt;&#39;; echo &#39;size:&#39;.$size.&#39;&lt;br&gt;&#39;; $bingurl=&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;.$predate.&#39;&amp;n=&#39;.$num; //&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1&#39; echo $bingurl.&#39;&lt;br&gt;&#39;; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match(&#39;/&lt;url&gt;([^&lt;]&#43;)&lt;\/url&gt;/isU&#39;, $str, $matches)) { // 正则匹配抓取图片url $imgurl = &#39;http://bing." />
+<meta property="og:description" content="php获取bing背景图" />
 
 
 
@@ -157,7 +147,7 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
 <meta property="article:published_time" content="2021-07-01T17:35:52&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2021-07-01T17:35:52&#43;00:00" />
+<meta property="article:modified_time" content="2022-05-16T00:00:00&#43;00:00" />
 
 
 
@@ -247,7 +237,7 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
       class="lg:col-start-2 bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">最简单方式实现bing背景获取（php）</h1>
+  <h1 class="mb-4">实现bing背景获取（php）</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -293,7 +283,8 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
   
   
 
-  <p>测试链接：
+  <p>php获取bing背景图</p>
+<p>测试链接：
 <a href="https://api.kquark.com/bing">https://api.kquark.com/bing</a></p>
 <p><a href="https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD">https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD</a></p>
 <p>idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下
@@ -483,7 +474,6 @@ function grabImage($url, $filename = &quot;&quot;)
     return $filename;           //返回新的文件名
 }
 </code></pre>
-
 </article>
 
 

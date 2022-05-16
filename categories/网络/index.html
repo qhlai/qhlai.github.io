@@ -102,14 +102,20 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "博客从wordpress迁移至hugo",
-            "description": "缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错。\n操作 ./hugo new site ./blog mv ./wp-hugo.zip ./blog cd ./blog/themes git clone https://github.com/rujews/maupassant-hugo.git cd ../ vi config.toml  主题：https://github.com/flysnow-org/maupassant-hugo\nconfig baseURL = \u0026quot;https://blog.kquark.com\u0026quot; languageCode = \u0026quot;zh-cn\u0026quot; title = \u0026quot;Kquark blog\u0026quot; hasCJKLanguage = true # 中日韩语言支持 theme = \u0026quot;maupassant-hugo\u0026quot; # 主题名称，与themes目录下名称一致 enableRobotsTXT = true # 爬虫支持 PaginatePath = \u0026quot;page\u0026quot; # 分页 summaryLength = 140 # 摘要显示字数 #googleAnalytics = \u0026quot;UA-110008600-0\u0026quot; [author] name = \u0026quot;Kquark\u0026quot; [params] subtitle = \u0026quot;一个 个人网站\u0026quot; description = \u0026quot;奇技淫巧和技术分享\u0026quot; # 在页面meta属性里 keywords = \u0026quot;python,rust,linux,vps,服务器,机器学习,robot,AI\u0026quot; # 在页面meta属性里 toc = true # 支持文章大纲 #busuanzi = true #registerInfo = \u0026quot;粤ICP备18000000号-1\u0026quot; related = true #googleAd = \u0026quot;ca-pub-300057030000200\u0026quot; [[menu.",
-            "url": "/post/16/"
+            "name": "iptable使用小记",
+            "description": "iptable",
+            "url": "/post/18/"
         },{
             "@type":"ListItem",
             "position":  2 ,
+            "name": "博客从wordpress迁移至hugo",
+            "description": "\u003cp\u003e缘由是感觉wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错\u003c/p\u003e",
+            "url": "/post/16/"
+        },{
+            "@type":"ListItem",
+            "position":  3 ,
             "name": "wireshark install and privileges on Archlinux",
-            "description": "wireshark install and privileges\nreference:https://wiki.archlinux.org/title/Wireshark\ninstall:\nsudo pacman -S wireshark-qt\nCapturing privileges：\n1.添加wireshark用户组\u0026lt;br\u0026gt;sudo groupadd wireshark\n2.将dumpcap更改为wireshark用户组\u0026lt;br\u0026gt;sudo chgrp wireshark /usr/bin/dumpcap\n3.让wireshark用户组有root权限使用dumpcap\u0026lt;br\u0026gt;sudo chmod 4755 /usr/bin/dumpcap\n4.将需要使用的用户名加入wireshark用户组\u0026lt;br\u0026gt;sudo gpasswd -a username wireshark1",
+            "description": "\u003cp\u003ewireshark install and privileges\u003c/p\u003e",
             "url": "/post/15/"
         }
     ]
@@ -145,7 +151,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-09-01T05:33:25&#43;00:00" />
+<meta property="og:updated_time" content="2022-05-16T00:00:00&#43;00:00" />
 
 
 
@@ -241,13 +247,62 @@
   
   <div class="w-full ">
     <div class="prose">
+  <a href="/post/18/" class="no-underline">
+    <h3 class="mt-0">iptable使用小记</h3>
+  </a>
+  
+    iptable
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-05-16</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="/categories/%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
+          >网络</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
   <a href="/post/16/" class="no-underline">
     <h3 class="mt-0">博客从wordpress迁移至hugo</h3>
   </a>
   
-    缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错。
-操作 ./hugo new site ./blog mv ./wp-hugo.zip ./blog cd ./blog/themes git clone https://github.com/rujews/maupassant-hugo.git cd ../ vi config.toml  主题：https://github.com/flysnow-org/maupassant-hugo
-config baseURL = &#34;https://blog.kquark.com&#34; languageCode = &#34;zh-cn&#34; title = &#34;Kquark blog&#34; hasCJKLanguage = true # 中日韩语言支持 theme = &#34;maupassant-hugo&#34; # 主题名称，与themes目录下名称一致 enableRobotsTXT = true # 爬虫支持 PaginatePath = &#34;page&#34; # 分页 summaryLength = 140 # 摘要显示字数 #googleAnalytics = &#34;UA-110008600-0&#34; [author] name = &#34;Kquark&#34; [params] subtitle = &#34;一个 个人网站&#34; description = &#34;奇技淫巧和技术分享&#34; # 在页面meta属性里 keywords = &#34;python,rust,linux,vps,服务器,机器学习,robot,AI&#34; # 在页面meta属性里 toc = true # 支持文章大纲 #busuanzi = true #registerInfo = &#34;粤ICP备18000000号-1&#34; related = true #googleAd = &#34;ca-pub-300057030000200&#34; [[menu.
+    缘由是感觉wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错
+
   
 
   
@@ -298,14 +353,7 @@ config baseURL = &#34;https://blog.kquark.com&#34; languageCode = &#34;zh-cn&#34
   </a>
   
     wireshark install and privileges
-reference:https://wiki.archlinux.org/title/Wireshark
-install:
-sudo pacman -S wireshark-qt
-Capturing privileges：
-1.添加wireshark用户组&lt;br&gt;sudo groupadd wireshark
-2.将dumpcap更改为wireshark用户组&lt;br&gt;sudo chgrp wireshark /usr/bin/dumpcap
-3.让wireshark用户组有root权限使用dumpcap&lt;br&gt;sudo chmod 4755 /usr/bin/dumpcap
-4.将需要使用的用户名加入wireshark用户组&lt;br&gt;sudo gpasswd -a username wireshark1
+
   
 
   

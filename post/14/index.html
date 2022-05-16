@@ -75,12 +75,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。
-我在找了很多可以私有部署的邮局之后，最终选择了poste.io，只看中了一个点，轻量化部署，1G内存完全足矣，而且部署方便，也就意味着迁移方便。
-环境 下面我将在良心云的VPS上面部署，配置如下：
-1 Core 1G RAM Ubuntu &#43;宝塔
-uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021 x86_64 x86_64 x86_64 GNU/Linux  docker和docker-componse安装请参考Install Docker Engine on CentOS和Install Docker Compose。
-运行poste.io  创建poste.io运行目录  $ mkdir -p /www/wwwroot/tools/mail $ cd /www/wwwroot/tools/mail   创建数据存放目录  $ mkdir data   创建docker-compose.yml配置文件  $ nano docker-compose.yml version: &quot;3.3&quot; services: mail: image: analogic/poste.io restart: always hostname: mail.kquark.com ports: - &quot;25:25&quot; - &quot;172.17.0.1:62030:8080&quot; #- &quot;4433:4433&quot; - &quot;110:110&quot; - &quot;143:143&quot; - &quot;465:465&quot; - &quot;587:587&quot; - &quot;993:993&quot; - &quot;995:995&quot; environment: - TZ=Asia/Shanghai - DISABLE_CLAMAV=TRUE - DISABLE_RSPAMD=TRUE - HTTPS=OFF - HTTP_PORT=8080 #- HTTPS_PORT=4433 volumes: - .">
+  content="使用poste.io(Docker)自建邮局">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -108,8 +103,8 @@ uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021
         "@id": "/post/14/"
     },
     "headline": "容器(Docker)自建邮箱poste.io | 博客","datePublished": "2021-07-04T08:46:07+00:00",
-    "dateModified": "2021-07-04T08:46:07+00:00",
-    "wordCount":  393 ,
+    "dateModified": "2022-05-16T00:00:00+00:00",
+    "wordCount":  394 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -118,7 +113,7 @@ uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021
             "url": "/images/icon.png"
         }
         },
-    "description": "在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。\n我在找了很多可以私有部署的邮局之后，最终选择了poste.io，只看中了一个点，轻量化部署，1G内存完全足矣，而且部署方便，也就意味着迁移方便。\n环境 下面我将在良心云的VPS上面部署，配置如下：\n1 Core 1G RAM Ubuntu \u002b宝塔\nuname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021 x86_64 x86_64 x86_64 GNU\/Linux  docker和docker-componse安装请参考Install Docker Engine on CentOS和Install Docker Compose。\n运行poste.io  创建poste.io运行目录  $ mkdir -p \/www\/wwwroot\/tools\/mail $ cd \/www\/wwwroot\/tools\/mail   创建数据存放目录  $ mkdir data   创建docker-compose.yml配置文件  $ nano docker-compose.yml version: \u0026quot;3.3\u0026quot; services: mail: image: analogic\/poste.io restart: always hostname: mail.kquark.com ports: - \u0026quot;25:25\u0026quot; - \u0026quot;172.17.0.1:62030:8080\u0026quot; #- \u0026quot;4433:4433\u0026quot; - \u0026quot;110:110\u0026quot; - \u0026quot;143:143\u0026quot; - \u0026quot;465:465\u0026quot; - \u0026quot;587:587\u0026quot; - \u0026quot;993:993\u0026quot; - \u0026quot;995:995\u0026quot; environment: - TZ=Asia\/Shanghai - DISABLE_CLAMAV=TRUE - DISABLE_RSPAMD=TRUE - HTTPS=OFF - HTTP_PORT=8080 #- HTTPS_PORT=4433 volumes: - ."
+    "description": "\u003cp\u003e使用poste.io(Docker)自建邮局\u003c\/p\u003e"
 }
 </script><meta property="og:title" content="容器(Docker)自建邮箱poste.io | 博客" />
 <meta property="og:type" content="article" />
@@ -132,12 +127,7 @@ uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021
 
 
 
-<meta property="og:description" content="在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。
-我在找了很多可以私有部署的邮局之后，最终选择了poste.io，只看中了一个点，轻量化部署，1G内存完全足矣，而且部署方便，也就意味着迁移方便。
-环境 下面我将在良心云的VPS上面部署，配置如下：
-1 Core 1G RAM Ubuntu &#43;宝塔
-uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021 x86_64 x86_64 x86_64 GNU/Linux  docker和docker-componse安装请参考Install Docker Engine on CentOS和Install Docker Compose。
-运行poste.io  创建poste.io运行目录  $ mkdir -p /www/wwwroot/tools/mail $ cd /www/wwwroot/tools/mail   创建数据存放目录  $ mkdir data   创建docker-compose.yml配置文件  $ nano docker-compose.yml version: &quot;3.3&quot; services: mail: image: analogic/poste.io restart: always hostname: mail.kquark.com ports: - &quot;25:25&quot; - &quot;172.17.0.1:62030:8080&quot; #- &quot;4433:4433&quot; - &quot;110:110&quot; - &quot;143:143&quot; - &quot;465:465&quot; - &quot;587:587&quot; - &quot;993:993&quot; - &quot;995:995&quot; environment: - TZ=Asia/Shanghai - DISABLE_CLAMAV=TRUE - DISABLE_RSPAMD=TRUE - HTTPS=OFF - HTTP_PORT=8080 #- HTTPS_PORT=4433 volumes: - ." />
+<meta property="og:description" content="使用poste.io(Docker)自建邮局" />
 
 
 
@@ -157,7 +147,7 @@ uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021
 <meta property="article:published_time" content="2021-07-04T08:46:07&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2021-07-04T08:46:07&#43;00:00" />
+<meta property="article:modified_time" content="2022-05-16T00:00:00&#43;00:00" />
 
 
 
@@ -281,10 +271,11 @@ uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021
   
   
 
-  <p>在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。</p>
+  <p>使用poste.io(Docker)自建邮局</p>
+<p>在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。</p>
 <p>我在找了很多可以私有部署的邮局之后，最终选择了<a href="https://poste.io/">poste.io</a>，只看中了一个点，轻量化部署，1G内存完全足矣，而且部署方便，也就意味着迁移方便。</p>
 <h2 id="环境">环境</h2>
-<p>下面我将在良心云的VPS上面部署，配置如下：</p>
+<p>下面我将在腾讯云的VPS上面部署，配置如下：</p>
 <p>1 Core 1G RAM Ubuntu +宝塔</p>
 <pre><code class="language-shell">uname -a
 Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021 x86_64 x86_64 x86_64 GNU/Linux
@@ -462,7 +453,6 @@ mail_1  | &amp;#91;services.d] done.
 </table>
 <p>其实在了解poste.io是怎么运行的原理之后，在研究其他邮局也都是大同小异。</p>
 <p>参考：<a href="https://ansheng.me/container-docker-deploy-poste-io-private-post-office/" target="_blank" rel="noreferrer noopener"><a href="https://ansheng.me/container-docker-deploy-poste-io-private-post-office/">https://ansheng.me/container-docker-deploy-poste-io-private-post-office/</a></a></p>
-
 </article>
 
 
@@ -489,7 +479,7 @@ mail_1  | &amp;#91;services.d] done.
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="/post/13/" class="block">最简单方式实现bing背景获取（php）</a>
+        <a href="/post/13/" class="block">实现bing背景获取（php）</a>
       
     </div>
   </div>

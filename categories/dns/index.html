@@ -103,7 +103,7 @@
             "@type":"ListItem",
             "position":  1 ,
             "name": "常用DNS/DOH",
-            "description": "收集国内外可用DNS/DOH\n国内：https://pod.pub/dns-query\nUSTC（中科大，建议停止使用53转而使用5353端口避免运营商（比如移动大内网）劫持；听大雕昨天说劫持反而更好，因为运营商服务器有内容缓存？我不用移动所以不知道）支持ECS\n首选服务器：\n202.38.93.153 (教育网)\n202.141.162.123 (电信)\n202.141.178.13 (移动)\n备选服务器：\n202.38.93.94 (教育网，新增)\nRixCloud:\nhttps://doh.rixcloud.dev/dns-query\nAli:\nhttps://dns.alidns.com/dns-query\nApple:\nhttps://doh.dns.apple.com/dns-query\nDNSPod:支持ECS\ntls://dns.pub\nhttps://doh.pub/dns-query\nRubyFish:支持ECS\ntls://dns.rubyfish.cn\nhttps://dns.rubyfish.cn/dns-query\nGeek:支持ECS\nhttps://i.233py.com/dns-query\n国外：\nAdGuard:\ntls://dns.adguard.com\nhttps://dns.adguard.com/dns-query\nCloudFlare:支持ECS\nhttps://cloudflare-dns.com/dns-query\ntls://1.1.1.1\nContainerPi:\ntls://dns.containerpi.com/dns-query\nDNSLify:\ntls://a.ns.dnslify.com\ntls://b.ns.dnslify.com\nGoogle:支持ECS\ntls://dns.google\nhttps://dns.google/dns-query\nGeekOverseas:支持ECS\nhttps://dns.233py.com/dns-query\nOpenDNS:\nhttps://doh.opendns.com/dns-query\nQuad9:支持ECS\nhttps://dns11.quad9.net/dns-query\n101:\nhttps://dns.twnic.tw/dns-query\n绑定端口：\nbind [::]5053 -group china\nbind-tcp [::]5053 -group china\nbind [::]7913 -group world # passwall默认端口号\nbind-tcp [::]7913 -group world # passwall默认端口号\n若要全部使用域名形式的DNS，设置bootstrap组，指定nameserver规则：（以下填在custom.conf中）\nserver-https https://223.5.5.5/dns-query-group bootstrap-china",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/4/"
         }
     ]
@@ -238,60 +238,6 @@
   <a href="/post/4/" class="no-underline">
     <h3 class="mt-0">常用DNS/DOH</h3>
   </a>
-  
-    收集国内外可用DNS/DOH
-国内：https://pod.pub/dns-query
-USTC（中科大，建议停止使用53转而使用5353端口避免运营商（比如移动大内网）劫持；听大雕昨天说劫持反而更好，因为运营商服务器有内容缓存？我不用移动所以不知道）支持ECS
-首选服务器：
-202.38.93.153 (教育网)
-202.141.162.123 (电信)
-202.141.178.13 (移动)
-备选服务器：
-202.38.93.94 (教育网，新增)
-RixCloud:
-https://doh.rixcloud.dev/dns-query
-Ali:
-https://dns.alidns.com/dns-query
-Apple:
-https://doh.dns.apple.com/dns-query
-DNSPod:支持ECS
-tls://dns.pub
-https://doh.pub/dns-query
-RubyFish:支持ECS
-tls://dns.rubyfish.cn
-https://dns.rubyfish.cn/dns-query
-Geek:支持ECS
-https://i.233py.com/dns-query
-国外：
-AdGuard:
-tls://dns.adguard.com
-https://dns.adguard.com/dns-query
-CloudFlare:支持ECS
-https://cloudflare-dns.com/dns-query
-tls://1.1.1.1
-ContainerPi:
-tls://dns.containerpi.com/dns-query
-DNSLify:
-tls://a.ns.dnslify.com
-tls://b.ns.dnslify.com
-Google:支持ECS
-tls://dns.google
-https://dns.google/dns-query
-GeekOverseas:支持ECS
-https://dns.233py.com/dns-query
-OpenDNS:
-https://doh.opendns.com/dns-query
-Quad9:支持ECS
-https://dns11.quad9.net/dns-query
-101:
-https://dns.twnic.tw/dns-query
-绑定端口：
-bind [::]5053 -group china
-bind-tcp [::]5053 -group china
-bind [::]7913 -group world # passwall默认端口号
-bind-tcp [::]7913 -group world # passwall默认端口号
-若要全部使用域名形式的DNS，设置bootstrap组，指定nameserver规则：（以下填在custom.conf中）
-server-https https://223.5.5.5/dns-query-group bootstrap-china
   
 
   

@@ -15,23 +15,7 @@
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
       
       <guid>/post/11/</guid>
-      <description>宣传图
-拆机
-AX6与AX3600对比
-红米 AX6 和小米 AX3600 配置基本相同，少了ROM和功放，性价比极高。
-解锁 SSH 比较麻烦。
-教程主要参考了：
-https://xn--m80a.ml/openwrt/dev/10.html ，GitHub 非常感谢 CN_SZTL天灵巨佬
-https://qust.me/post/hong-mi-ax6-jie-suo-ssh-an-zhuang-shi-yong-shellclash-jiao-cheng/
-https://www.right.com.cn/forum/thread-4032490-1-1.html
-准备 一台电脑（Windows Mac均可）
-另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）
-Windows 需要安装 Xshell，mobaXterm，Putty 和 WinSCP｜Mac 使用命令行即可
-下载好降级固件 红米 ax6 1.0.18 固件 以及 下载 GitHub 脚本
-第一步｜降级并恢复出厂设置 降级
-打开路由器后台选择 系统升级—手动升级—然后选择下载好的固件，勾选恢复出厂设置，等待重启。放在一旁即可
-第二步｜准备 openwrt 服务 我这里准备的是一台刷了 openwrt 的 r2s，插上了usb网卡，配置好wifi，只需要接上电源有 Wi-Fi 信号，然后使用网线连接此 openwrt 路由器。我的这台 openwrt 路由器的地址是 10.0.0.1 你的应该不是，下面也记得改。scp 上传 wireless.sh 到 openwrt 路由器。（如果你是 Windows 命令提示符里没有 scp 功能的话你可以单独下载一个 WinSCP）
-scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 openwrt 路由器。</description>
+      <description></description>
     </item>
     
     <item>
@@ -40,16 +24,7 @@ scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 open
       <pubDate>Thu, 20 May 2021 08:28:15 +0000</pubDate>
       
       <guid>/post/10/</guid>
-      <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，套上WARP的ip,变成双栈VPS！
-2：基本能隐藏VPS的真实IP！
-3：支持代理协议直连电报Telegram，支持代理协议连通软路由Openwrt各种翻墙插件！
-4：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！
-5：支持原本需要IPV4支持的Docker等应用！
-6：加速VPS到CloudFlare CDN节点访问速度！
-7：避开原VPS的IP需要谷歌验证码问题！
-8：替代NAT64/DNS64方案，网络效率更高！
-一：恢复EUserv官方DNS64（重装系统者，可直接跳到第二步脚本安装）
-echo -e &amp;quot;search blue.kundencontroller.de\noptions rotate\nnameserver 2a02:180:6:5::1c\nnameserver 2a02:180:6:5::4\nnameserver 2a02:180:6:5::1e\nnameserver 2a02:180:6:5::1d&amp;quot; &amp;amp;gt; /etc/resolv.conf  二、重装系统能解决99%的问题！无须添加DNS64！一键到底！  仅支持Debian 10/Ubuntu 20.04系统，根据自己需求选择以下脚本1或者脚本2（有无成功可查看脚本末尾提示）  脚本1：IPV4是WARP分配的IP，IPV6是VPS本地IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp4.sh|bash  脚本2：IPV4与IPV6都是WARP分配的IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp64.sh|bash  转自：https://github.com/YG-tsj/EUserv-warp</description>
+      <description></description>
     </item>
     
     <item>
@@ -58,10 +33,7 @@ echo -e &amp;quot;search blue.kundencontroller.de\noptions rotate\nnameserver 2a
       <pubDate>Thu, 29 Apr 2021 08:23:05 +0000</pubDate>
       
       <guid>/post/6/</guid>
-      <description>记录遇到的ssh问题
-Connecting to 1.116.126.*:22… Connection established. To escape to local shell, press Ctrl+Alt+] Socket error Event: 32 Error: 10053. Connection closing…Socket close. Connection closed by foreign host. Disconnected from remote host(1.116.126.*) at 15:17:58.  检查端口和协议
-改port防扫描 sudo vim /etc/ssh/sshd_config  
-sudo service ssh restart  </description>
+      <description></description>
     </item>
     
     <item>
@@ -70,9 +42,7 @@ sudo service ssh restart  </description>
       <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
       
       <guid>/post/5/</guid>
-      <description>参考：https://blog.csdn.net/tianlangstudio/article/details/106169242
- 1.安装rust  sudo curl https://sh.rustup.rs -sSf | sh  https://www.rust-lang.org/zh-CN/tools/install
- 2.创建项目  cargo new rust_login &amp;amp;#8211;bin   3.在Cargo.toml文件中配置需要的依赖  [package] name = &amp;quot;rust_login&amp;quot; version = &amp;quot;0.1.0&amp;quot; authors = &amp;amp;#91;&amp;quot;Tianlang &amp;amp;lt;qhlai666@gmail.com&amp;amp;gt;&amp;quot;] edition = &amp;quot;2018&amp;quot; # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html &amp;amp;#91;dependencies] actix-web=&amp;quot;2&amp;quot; #使用的actix-web 提供web服务器、request解析、response生成等功能 actix-rt=&amp;quot;1&amp;quot; #actix-rt actix的运行时，用于运行异步函数等，可以理解为Java　concurrent下的Executor #serde用于序列化和反序列化对象的，比如把对象转换成一个Json字符串，就是序列化；　#把Json字符串转换为一个对象，就是反序列化 serde=&amp;quot;1&amp;quot;  </description>
+      <description></description>
     </item>
     
   </channel>

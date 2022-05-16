@@ -15,10 +15,7 @@
       <pubDate>Sun, 02 May 2021 13:33:00 +0000</pubDate>
       
       <guid>/post/7/</guid>
-      <description>宝塔面板安装与配置指令
-指令参考宝塔官网 https://www.bt.cn/
- 宝塔安装指令：  ubuntu：
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp; sudo bash install.sh&amp;lt;br&amp;gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &amp;quot;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&amp;quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  </description>
+      <description></description>
     </item>
     
   </channel>

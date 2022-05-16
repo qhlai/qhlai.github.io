@@ -15,14 +15,7 @@
       <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
       
       <guid>/post/2/</guid>
-      <description>以腾讯云为例
- root密码设置：   sudo passwd root
-输入密码
- 卸载监控   一、云镜&amp;amp;安全监控卸载
-/usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh  二、验证卸载
-ps aux | grep -i agent | grep -v grep`   测试   参考：https://zhuanlan.zhihu.com/p/117547388
-Bench.sh  秋水逸冰大佬的写的Bench.sh脚本
-特点  显示当前测试的各种系统信息； 取自世界多处的知名数据中心的测试点，下载测试比较全面； 支持 IPv6 下载测速； IO 测试三次，并显示平均值。  使用 wget -qO- bench.sh | bash #或者 curl -Lso- bench.sh | bash #或者 wget -qO- 86.re/bench.sh | bash #或者 curl -so- 86.re/bench.sh | bash  演示 SuperBench.sh 老鬼大佬的SuperBench测试脚本</description>
+      <description></description>
     </item>
     
   </channel>

@@ -87,33 +87,33 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
+            "name": "iptable使用小记",
+            "description": "iptable",
+            "url": "/post/18/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
             "name": "matomo防屏蔽",
             "description": "缘由 matomo ，google等一系列会被屏蔽，\n操作 使用软连接改名\nreference: https://issues.matomo.org/7364",
             "url": "/post/17/"
         },{
             "@type":"ListItem",
-            "position":  2 ,
+            "position":  3 ,
             "name": "博客从wordpress迁移至hugo",
-            "description": "缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错。\n操作 ./hugo new site ./blog mv ./wp-hugo.zip ./blog cd ./blog/themes git clone https://github.com/rujews/maupassant-hugo.git cd ../ vi config.toml  主题：https://github.com/flysnow-org/maupassant-hugo\nconfig baseURL = \u0026quot;https://blog.kquark.com\u0026quot; languageCode = \u0026quot;zh-cn\u0026quot; title = \u0026quot;Kquark blog\u0026quot; hasCJKLanguage = true # 中日韩语言支持 theme = \u0026quot;maupassant-hugo\u0026quot; # 主题名称，与themes目录下名称一致 enableRobotsTXT = true # 爬虫支持 PaginatePath = \u0026quot;page\u0026quot; # 分页 summaryLength = 140 # 摘要显示字数 #googleAnalytics = \u0026quot;UA-110008600-0\u0026quot; [author] name = \u0026quot;Kquark\u0026quot; [params] subtitle = \u0026quot;一个 个人网站\u0026quot; description = \u0026quot;奇技淫巧和技术分享\u0026quot; # 在页面meta属性里 keywords = \u0026quot;python,rust,linux,vps,服务器,机器学习,robot,AI\u0026quot; # 在页面meta属性里 toc = true # 支持文章大纲 #busuanzi = true #registerInfo = \u0026quot;粤ICP备18000000号-1\u0026quot; related = true #googleAd = \u0026quot;ca-pub-300057030000200\u0026quot; [[menu.",
+            "description": "\u003cp\u003e缘由是感觉wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错\u003c/p\u003e",
             "url": "/post/16/"
         },{
             "@type":"ListItem",
-            "position":  3 ,
+            "position":  4 ,
             "name": "wireshark install and privileges on Archlinux",
-            "description": "wireshark install and privileges\nreference:https://wiki.archlinux.org/title/Wireshark\ninstall:\nsudo pacman -S wireshark-qt\nCapturing privileges：\n1.添加wireshark用户组\u0026lt;br\u0026gt;sudo groupadd wireshark\n2.将dumpcap更改为wireshark用户组\u0026lt;br\u0026gt;sudo chgrp wireshark /usr/bin/dumpcap\n3.让wireshark用户组有root权限使用dumpcap\u0026lt;br\u0026gt;sudo chmod 4755 /usr/bin/dumpcap\n4.将需要使用的用户名加入wireshark用户组\u0026lt;br\u0026gt;sudo gpasswd -a username wireshark1",
+            "description": "\u003cp\u003ewireshark install and privileges\u003c/p\u003e",
             "url": "/post/15/"
         },{
             "@type":"ListItem",
-            "position":  4 ,
-            "name": "容器(Docker)自建邮箱poste.io",
-            "description": "在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。\n我在找了很多可以私有部署的邮局之后，最终选择了poste.io，只看中了一个点，轻量化部署，1G内存完全足矣，而且部署方便，也就意味着迁移方便。\n环境 下面我将在良心云的VPS上面部署，配置如下：\n1 Core 1G RAM Ubuntu +宝塔\nuname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021 x86_64 x86_64 x86_64 GNU/Linux  docker和docker-componse安装请参考Install Docker Engine on CentOS和Install Docker Compose。\n运行poste.io  创建poste.io运行目录  $ mkdir -p /www/wwwroot/tools/mail $ cd /www/wwwroot/tools/mail   创建数据存放目录  $ mkdir data   创建docker-compose.yml配置文件  $ nano docker-compose.yml version: \u0026quot;3.3\u0026quot; services: mail: image: analogic/poste.io restart: always hostname: mail.kquark.com ports: - \u0026quot;25:25\u0026quot; - \u0026quot;172.17.0.1:62030:8080\u0026quot; #- \u0026quot;4433:4433\u0026quot; - \u0026quot;110:110\u0026quot; - \u0026quot;143:143\u0026quot; - \u0026quot;465:465\u0026quot; - \u0026quot;587:587\u0026quot; - \u0026quot;993:993\u0026quot; - \u0026quot;995:995\u0026quot; environment: - TZ=Asia/Shanghai - DISABLE_CLAMAV=TRUE - DISABLE_RSPAMD=TRUE - HTTPS=OFF - HTTP_PORT=8080 #- HTTPS_PORT=4433 volumes: - .",
-            "url": "/post/14/"
-        },{
-            "@type":"ListItem",
             "position":  5 ,
-            "name": "最简单方式实现bing背景获取（php）",
-            "description": "测试链接： https://api.kquark.com/bing\nhttps://api.kquark.com/bing/?idx=1\u0026amp;n=1\u0026amp;size=UHD\nidx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：\nresolutions: [ 'UHD', '1920x1200', '1920x1080', '1366x768', '1280x768', '1024x768', '800x600', '800x480', '768x1280', '720x1280', '640x480', '480x800', '400x240', '320x240', '240x320' ]  设计原理依据bing api 获取\nhttps://bing.com/HPImageArchive.aspx?idx=0\u0026amp;n=1  php代码：\n\u0026lt;?php $predate = $_GET['idx']; $num = $_GET['n']; $size = $_GET['size']; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = 'UHD'; } echo 'predate:'.$predate.'\u0026lt;br\u0026gt;'; echo 'num:'.$num.'\u0026lt;br\u0026gt;'; echo 'size:'.$size.'\u0026lt;br\u0026gt;'; $bingurl='https://bing.com/HPImageArchive.aspx?idx='.$predate.'\u0026amp;n='.$num; //'https://bing.com/HPImageArchive.aspx?idx=0\u0026amp;n=1' echo $bingurl.'\u0026lt;br\u0026gt;'; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match('/\u0026lt;url\u0026gt;([^\u0026lt;]+)\u0026lt;\\/url\u0026gt;/isU', $str, $matches)) { // 正则匹配抓取图片url $imgurl = 'http://bing.",
-            "url": "/post/13/"
+            "name": "容器(Docker)自建邮箱poste.io",
+            "description": "\u003cp\u003e使用poste.io(Docker)自建邮局\u003c/p\u003e",
+            "url": "/post/14/"
         }
     ]
 }
@@ -152,7 +152,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-09-02T05:33:25&#43;00:00" />
+<meta property="og:updated_time" content="2022-05-16T00:00:00&#43;00:00" />
 
 
 
@@ -262,6 +262,56 @@
   
   <div class="w-full ">
     <div class="prose">
+  <a href="/post/18/" class="no-underline">
+    <h3 class="mt-0">iptable使用小记</h3>
+  </a>
+  
+    iptable
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-05-16</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="/categories/%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
+          >网络</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
   <a href="/post/17/" class="no-underline">
     <h3 class="mt-0">matomo防屏蔽</h3>
   </a>
@@ -318,9 +368,8 @@ reference: https://issues.matomo.org/7364
     <h3 class="mt-0">博客从wordpress迁移至hugo</h3>
   </a>
   
-    缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错。
-操作 ./hugo new site ./blog mv ./wp-hugo.zip ./blog cd ./blog/themes git clone https://github.com/rujews/maupassant-hugo.git cd ../ vi config.toml  主题：https://github.com/flysnow-org/maupassant-hugo
-config baseURL = &#34;https://blog.kquark.com&#34; languageCode = &#34;zh-cn&#34; title = &#34;Kquark blog&#34; hasCJKLanguage = true # 中日韩语言支持 theme = &#34;maupassant-hugo&#34; # 主题名称，与themes目录下名称一致 enableRobotsTXT = true # 爬虫支持 PaginatePath = &#34;page&#34; # 分页 summaryLength = 140 # 摘要显示字数 #googleAnalytics = &#34;UA-110008600-0&#34; [author] name = &#34;Kquark&#34; [params] subtitle = &#34;一个 个人网站&#34; description = &#34;奇技淫巧和技术分享&#34; # 在页面meta属性里 keywords = &#34;python,rust,linux,vps,服务器,机器学习,robot,AI&#34; # 在页面meta属性里 toc = true # 支持文章大纲 #busuanzi = true #registerInfo = &#34;粤ICP备18000000号-1&#34; related = true #googleAd = &#34;ca-pub-300057030000200&#34; [[menu.
+    缘由是感觉wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错
+
   
 
   
@@ -371,14 +420,7 @@ config baseURL = &#34;https://blog.kquark.com&#34; languageCode = &#34;zh-cn&#34
   </a>
   
     wireshark install and privileges
-reference:https://wiki.archlinux.org/title/Wireshark
-install:
-sudo pacman -S wireshark-qt
-Capturing privileges：
-1.添加wireshark用户组&lt;br&gt;sudo groupadd wireshark
-2.将dumpcap更改为wireshark用户组&lt;br&gt;sudo chgrp wireshark /usr/bin/dumpcap
-3.让wireshark用户组有root权限使用dumpcap&lt;br&gt;sudo chmod 4755 /usr/bin/dumpcap
-4.将需要使用的用户名加入wireshark用户组&lt;br&gt;sudo gpasswd -a username wireshark1
+
   
 
   
@@ -428,12 +470,8 @@ Capturing privileges：
     <h3 class="mt-0">容器(Docker)自建邮箱poste.io</h3>
   </a>
   
-    在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。
-我在找了很多可以私有部署的邮局之后，最终选择了poste.io，只看中了一个点，轻量化部署，1G内存完全足矣，而且部署方便，也就意味着迁移方便。
-环境 下面我将在良心云的VPS上面部署，配置如下：
-1 Core 1G RAM Ubuntu &#43;宝塔
-uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021 x86_64 x86_64 x86_64 GNU/Linux  docker和docker-componse安装请参考Install Docker Engine on CentOS和Install Docker Compose。
-运行poste.io  创建poste.io运行目录  $ mkdir -p /www/wwwroot/tools/mail $ cd /www/wwwroot/tools/mail   创建数据存放目录  $ mkdir data   创建docker-compose.yml配置文件  $ nano docker-compose.yml version: &#34;3.3&#34; services: mail: image: analogic/poste.io restart: always hostname: mail.kquark.com ports: - &#34;25:25&#34; - &#34;172.17.0.1:62030:8080&#34; #- &#34;4433:4433&#34; - &#34;110:110&#34; - &#34;143:143&#34; - &#34;465:465&#34; - &#34;587:587&#34; - &#34;993:993&#34; - &#34;995:995&#34; environment: - TZ=Asia/Shanghai - DISABLE_CLAMAV=TRUE - DISABLE_RSPAMD=TRUE - HTTPS=OFF - HTTP_PORT=8080 #- HTTPS_PORT=4433 volumes: - .
+    使用poste.io(Docker)自建邮局
+
   
 
   
@@ -455,73 +493,6 @@ uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
-        <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" class="hover:text-eureka"
-          >未分类</a
-        >
-      
-    </div>
-  
-
-  
-</div>
-
-  
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="prose">
-  <a href="/post/13/" class="no-underline">
-    <h3 class="mt-0">最简单方式实现bing背景获取（php）</h3>
-  </a>
-  
-    测试链接： https://api.kquark.com/bing
-https://api.kquark.com/bing/?idx=1&amp;n=1&amp;size=UHD
-idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：
-resolutions: [ &#39;UHD&#39;, &#39;1920x1200&#39;, &#39;1920x1080&#39;, &#39;1366x768&#39;, &#39;1280x768&#39;, &#39;1024x768&#39;, &#39;800x600&#39;, &#39;800x480&#39;, &#39;768x1280&#39;, &#39;720x1280&#39;, &#39;640x480&#39;, &#39;480x800&#39;, &#39;400x240&#39;, &#39;320x240&#39;, &#39;240x320&#39; ]  设计原理依据bing api 获取
-https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1  php代码：
-&lt;?php $predate = $_GET[&#39;idx&#39;]; $num = $_GET[&#39;n&#39;]; $size = $_GET[&#39;size&#39;]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = &#39;UHD&#39;; } echo &#39;predate:&#39;.$predate.&#39;&lt;br&gt;&#39;; echo &#39;num:&#39;.$num.&#39;&lt;br&gt;&#39;; echo &#39;size:&#39;.$size.&#39;&lt;br&gt;&#39;; $bingurl=&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;.$predate.&#39;&amp;n=&#39;.$num; //&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;n=1&#39; echo $bingurl.&#39;&lt;br&gt;&#39;; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match(&#39;/&lt;url&gt;([^&lt;]&#43;)&lt;\/url&gt;/isU&#39;, $str, $matches)) { // 正则匹配抓取图片url $imgurl = &#39;http://bing.
-  
-
-  
-    <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >2021-07-01</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
-  </div>
-
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="/categories/php/" class="hover:text-eureka"
-          >php</a
-        >
-      
-        
-          <span>, </span>
-        <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="hover:text-eureka"
-          >服务器</a
-        >
-      
-        
-          <span>, </span>
         <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" class="hover:text-eureka"
           >未分类</a
         >

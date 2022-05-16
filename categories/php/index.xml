@@ -10,17 +10,12 @@
 </copyright>
     <lastBuildDate>Thu, 01 Jul 2021 17:35:52 +0000</lastBuildDate><atom:link href="/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>最简单方式实现bing背景获取（php）</title>
+      <title>实现bing背景获取（php）</title>
       <link>/post/13/</link>
       <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
       
       <guid>/post/13/</guid>
-      <description>测试链接： https://api.kquark.com/bing
-https://api.kquark.com/bing/?idx=1&amp;amp;n=1&amp;amp;size=UHD
-idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：
-resolutions: [ &#39;UHD&#39;, &#39;1920x1200&#39;, &#39;1920x1080&#39;, &#39;1366x768&#39;, &#39;1280x768&#39;, &#39;1024x768&#39;, &#39;800x600&#39;, &#39;800x480&#39;, &#39;768x1280&#39;, &#39;720x1280&#39;, &#39;640x480&#39;, &#39;480x800&#39;, &#39;400x240&#39;, &#39;320x240&#39;, &#39;240x320&#39; ]  设计原理依据bing api 获取
-https://bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1  php代码：
-&amp;lt;?php $predate = $_GET[&#39;idx&#39;]; $num = $_GET[&#39;n&#39;]; $size = $_GET[&#39;size&#39;]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = &#39;UHD&#39;; } echo &#39;predate:&#39;.$predate.&#39;&amp;lt;br&amp;gt;&#39;; echo &#39;num:&#39;.$num.&#39;&amp;lt;br&amp;gt;&#39;; echo &#39;size:&#39;.$size.&#39;&amp;lt;br&amp;gt;&#39;; $bingurl=&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;.$predate.&#39;&amp;amp;n=&#39;.$num; //&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1&#39; echo $bingurl.&#39;&amp;lt;br&amp;gt;&#39;; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match(&#39;/&amp;lt;url&amp;gt;([^&amp;lt;]+)&amp;lt;\/url&amp;gt;/isU&#39;, $str, $matches)) { // 正则匹配抓取图片url $imgurl = &#39;http://bing.</description>
+      <description>&lt;p&gt;php获取bing背景图&lt;/p&gt;</description>
     </item>
     
   </channel>

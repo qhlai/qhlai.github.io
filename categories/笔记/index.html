@@ -103,13 +103,13 @@
             "@type":"ListItem",
             "position":  1 ,
             "name": "JD签到docker配置",
-            "description": "仅作测试，滥用不承担任何责任\n配置 e大v4部署 sudo docker run -dit \\ -v /jd/config:/jd/config \\ -v /jd/log:/jd/log \\ -v /jd/scripts:/jd/scripts \\ -v /jd/own:/jd/own \\ -v /jd/panel:/jd/panel \\ -p 5678:5678 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ -e ENABLE_WEB_TTYD=true \\ --name jd \\ --hostname jd \\ --restart always \\ nevinee/jd:v4  青龙部署\nsudo docker run -dit \\ -v /qinglong/config:/ql/config \\ -v /qinglong/log:/ql/log \\ -v /qinglong/scripts:/ql/scripts \\ -v /qinglong/db:/ql/db \\ -p 5700:5700 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ --name qinglong \\ --hostname qinglong \\ --restart always \\ whyour/qinglong:latest  \u0026lt;ul style=\u0026quot;font-size:20px\u0026quot;\u0026gt; \u0026lt;li\u0026gt; 多容器配置 \u0026lt;/li\u0026gt; \u0026lt;/ul\u0026gt; \u0026lt;h1 style=\u0026quot;font-size:20px\u0026quot;\u0026gt; 要想换库直接改最后一行 \u0026lt;/h1\u0026gt; ```shell docker run -dit \\ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \\ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \\ -v /jd/own:/jd/own \\ -p 5679:5678 \\ -e ENABLE_HANGUP=true \\ -e ENABLE_WEB_PANEL=true \\ -e ENABLE_WEB_TTYD=true \\ --name jd1 \\ --hostname jd1 \\ --restart always \\ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \\ --name watchtower \\ -v /var/run/docker.",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/8/"
         },{
             "@type":"ListItem",
             "position":  2 ,
             "name": "宝塔面板安装笔记",
-            "description": "宝塔面板安装与配置指令\n指令参考宝塔官网 https://www.bt.cn/\n 宝塔安装指令：  ubuntu：\nwget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh \u0026amp;\u0026amp; sudo bash install.sh\u0026lt;br\u0026gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i \u0026quot;s|bind_user == 'True'|bind_user == 'XXXX'|\u0026quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  ",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/7/"
         }
     ]
@@ -245,10 +245,6 @@
     <h3 class="mt-0">JD签到docker配置</h3>
   </a>
   
-    仅作测试，滥用不承担任何责任
-配置 e大v4部署 sudo docker run -dit \ -v /jd/config:/jd/config \ -v /jd/log:/jd/log \ -v /jd/scripts:/jd/scripts \ -v /jd/own:/jd/own \ -v /jd/panel:/jd/panel \ -p 5678:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd \ --hostname jd \ --restart always \ nevinee/jd:v4  青龙部署
-sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log \ -v /qinglong/scripts:/ql/scripts \ -v /qinglong/db:/ql/db \ -p 5700:5700 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ --name qinglong \ --hostname qinglong \ --restart always \ whyour/qinglong:latest  &lt;ul style=&#34;font-size:20px&#34;&gt; &lt;li&gt; 多容器配置 &lt;/li&gt; &lt;/ul&gt; &lt;h1 style=&#34;font-size:20px&#34;&gt; 要想换库直接改最后一行 &lt;/h1&gt; ```shell docker run -dit \ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \ -v /jd/own:/jd/own \ -p 5679:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd1 \ --hostname jd1 \ --restart always \ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \ --name watchtower \ -v /var/run/docker.
-  
 
   
     <div
@@ -308,11 +304,6 @@ sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log
   <a href="/post/7/" class="no-underline">
     <h3 class="mt-0">宝塔面板安装笔记</h3>
   </a>
-  
-    宝塔面板安装与配置指令
-指令参考宝塔官网 https://www.bt.cn/
- 宝塔安装指令：  ubuntu：
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh&lt;br&gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &#34;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&#34; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  
   
 
   

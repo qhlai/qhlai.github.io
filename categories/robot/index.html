@@ -103,7 +103,7 @@
             "@type":"ListItem",
             "position":  1 ,
             "name": "Delta Robot 正逆运动学推导与代码",
-            "description": "Delta Robot Kinematics with code C++ Matlab\nForward Kinematics c++\nvoid robotForward(const double* q, double* TransVector, bool mconfig) { double fi[3] = { 0,120,240 }; double theta_tmp[6]; for (int i = 0; i \u0026lt; 6; i++) { theta_tmp[i] = q[i]; //cout \u0026lt;\u0026lt; \u0026quot;theta：\u0026quot; \u0026lt;\u0026lt; theta_tmp[i] \u0026lt;\u0026lt; endl; } double D[3][3] = { 0 }; for (int i = 0; i \u0026lt; 3; i++) { D[i][0] = (R - r + L * cos_angle(theta_tmp[i])) * cos_angle(fi[i]); D[i][1] = (R - r + L * cos_angle(theta_tmp[i])) * sin_angle(fi[i]); D[i][2] = -L * sin_angle(theta_tmp[i]); //D[i][0] = (R - r - L * sin_angle(theta_tmp[i])) * cos_angle(fi[i]); //D[i][1] = (R - r - L * sin_angle(theta_tmp[i])) * sin_angle(fi[i]); //D[i][2] = -L*cos_angle(theta_tmp[i]); } double a= PointDist(D[0],D[1]); double b = PointDist(D[1], D[2]); double c = PointDist(D[2], D[0]); double p = (a + b + c) / 2; double S = sqrt(p * (p-a) * (p-b) * (p-c)); double FE_norm = (a * a + b * b - c * c) * c / (8 * S); double nFE; nFE = sqrt(pow(a * b * c / 4 / S, 2) - pow(b / 2, 2)); double vD21[3], vD23[3], vD32[3]; VectorSub(D[1], D[0], vD21); VectorSub(D[1], D[2], vD23); VectorSub(D[2], D[1], vD32); double D21xD23[3]; VectorCross(vD21, vD23, D21xD23); double D21xD23xD32[3]; VectorCross(D21xD23, vD32, D21xD23xD32); //double nFE_norm=VectorNorm(nFE); //VectorNumDivide(nFE, nFE_norm, nFE); double nD21xD23 = VectorNorm(D21xD23); double nD21xD23xD32 = VectorNorm(D21xD23xD32); double R11 = a * b * c / 4 / S; for (int i = 0; i \u0026lt; 3; i++) { TransVector[(i+1)*4-1] = nFE * D21xD23xD32[i] / nD21xD23xD32 + sqrt(pow(l, 2) - pow(R11, 2)) * D21xD23[i] / nD21xD23 + (D[2-1][i] + D[3 - 1][i]) / 2; } }  matlab",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/3/"
         }
     ]
@@ -238,10 +238,6 @@
   <a href="/post/3/" class="no-underline">
     <h3 class="mt-0">Delta Robot 正逆运动学推导与代码</h3>
   </a>
-  
-    Delta Robot Kinematics with code C&#43;&#43; Matlab
-Forward Kinematics c&#43;&#43;
-void robotForward(const double* q, double* TransVector, bool mconfig) { double fi[3] = { 0,120,240 }; double theta_tmp[6]; for (int i = 0; i &lt; 6; i&#43;&#43;) { theta_tmp[i] = q[i]; //cout &lt;&lt; &#34;theta：&#34; &lt;&lt; theta_tmp[i] &lt;&lt; endl; } double D[3][3] = { 0 }; for (int i = 0; i &lt; 3; i&#43;&#43;) { D[i][0] = (R - r &#43; L * cos_angle(theta_tmp[i])) * cos_angle(fi[i]); D[i][1] = (R - r &#43; L * cos_angle(theta_tmp[i])) * sin_angle(fi[i]); D[i][2] = -L * sin_angle(theta_tmp[i]); //D[i][0] = (R - r - L * sin_angle(theta_tmp[i])) * cos_angle(fi[i]); //D[i][1] = (R - r - L * sin_angle(theta_tmp[i])) * sin_angle(fi[i]); //D[i][2] = -L*cos_angle(theta_tmp[i]); } double a= PointDist(D[0],D[1]); double b = PointDist(D[1], D[2]); double c = PointDist(D[2], D[0]); double p = (a &#43; b &#43; c) / 2; double S = sqrt(p * (p-a) * (p-b) * (p-c)); double FE_norm = (a * a &#43; b * b - c * c) * c / (8 * S); double nFE; nFE = sqrt(pow(a * b * c / 4 / S, 2) - pow(b / 2, 2)); double vD21[3], vD23[3], vD32[3]; VectorSub(D[1], D[0], vD21); VectorSub(D[1], D[2], vD23); VectorSub(D[2], D[1], vD32); double D21xD23[3]; VectorCross(vD21, vD23, D21xD23); double D21xD23xD32[3]; VectorCross(D21xD23, vD32, D21xD23xD32); //double nFE_norm=VectorNorm(nFE); //VectorNumDivide(nFE, nFE_norm, nFE); double nD21xD23 = VectorNorm(D21xD23); double nD21xD23xD32 = VectorNorm(D21xD23xD32); double R11 = a * b * c / 4 / S; for (int i = 0; i &lt; 3; i&#43;&#43;) { TransVector[(i&#43;1)*4-1] = nFE * D21xD23xD32[i] / nD21xD23xD32 &#43; sqrt(pow(l, 2) - pow(R11, 2)) * D21xD23[i] / nD21xD23 &#43; (D[2-1][i] &#43; D[3 - 1][i]) / 2; } }  matlab
   
 
   

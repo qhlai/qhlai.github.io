@@ -102,14 +102,20 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
-            "name": "宝塔面板安装笔记",
-            "description": "宝塔面板安装与配置指令\n指令参考宝塔官网 https://www.bt.cn/\n 宝塔安装指令：  ubuntu：\nwget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh \u0026amp;\u0026amp; sudo bash install.sh\u0026lt;br\u0026gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i \u0026quot;s|bind_user == 'True'|bind_user == 'XXXX'|\u0026quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  ",
-            "url": "/post/7/"
+            "name": "iptable使用小记",
+            "description": "iptable",
+            "url": "/post/18/"
         },{
             "@type":"ListItem",
             "position":  2 ,
+            "name": "宝塔面板安装笔记",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
+            "url": "/post/7/"
+        },{
+            "@type":"ListItem",
+            "position":  3 ,
             "name": "vps 初始配置与性能测试",
-            "description": "以腾讯云为例\n root密码设置：   sudo passwd root\n输入密码\n 卸载监控   一、云镜\u0026amp;安全监控卸载\n/usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh  二、验证卸载\nps aux | grep -i agent | grep -v grep`   测试   参考：https://zhuanlan.zhihu.com/p/117547388\nBench.sh  秋水逸冰大佬的写的Bench.sh脚本\n特点  显示当前测试的各种系统信息； 取自世界多处的知名数据中心的测试点，下载测试比较全面； 支持 IPv6 下载测速； IO 测试三次，并显示平均值。  使用 wget -qO- bench.sh | bash #或者 curl -Lso- bench.sh | bash #或者 wget -qO- 86.re/bench.sh | bash #或者 curl -so- 86.re/bench.sh | bash  演示 SuperBench.sh 老鬼大佬的SuperBench测试脚本",
+            "description": "Eureka is a elegant and powerful theme for Hugo.",
             "url": "/post/2/"
         }
     ]
@@ -145,7 +151,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-05-02T13:33:00&#43;00:00" />
+<meta property="og:updated_time" content="2022-05-16T00:00:00&#43;00:00" />
 
 
 
@@ -241,14 +247,59 @@
   
   <div class="w-full ">
     <div class="prose">
+  <a href="/post/18/" class="no-underline">
+    <h3 class="mt-0">iptable使用小记</h3>
+  </a>
+  
+    iptable
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-05-16</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>2分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="/categories/%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
+          >网络</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
   <a href="/post/7/" class="no-underline">
     <h3 class="mt-0">宝塔面板安装笔记</h3>
   </a>
-  
-    宝塔面板安装与配置指令
-指令参考宝塔官网 https://www.bt.cn/
- 宝塔安装指令：  ubuntu：
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh&lt;br&gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &#34;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&#34; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  
   
 
   
@@ -303,15 +354,6 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp
   <a href="/post/2/" class="no-underline">
     <h3 class="mt-0">vps 初始配置与性能测试</h3>
   </a>
-  
-    以腾讯云为例
- root密码设置：   sudo passwd root
-输入密码
- 卸载监控   一、云镜&amp;安全监控卸载
-/usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh  二、验证卸载
-ps aux | grep -i agent | grep -v grep`   测试   参考：https://zhuanlan.zhihu.com/p/117547388
-Bench.sh  秋水逸冰大佬的写的Bench.sh脚本
-特点  显示当前测试的各种系统信息； 取自世界多处的知名数据中心的测试点，下载测试比较全面； 支持 IPv6 下载测速； IO 测试三次，并显示平均值。  使用 wget -qO- bench.sh | bash #或者 curl -Lso- bench.sh | bash #或者 wget -qO- 86.re/bench.sh | bash #或者 curl -so- 86.re/bench.sh | bash  演示 SuperBench.sh 老鬼大佬的SuperBench测试脚本
   
 
   

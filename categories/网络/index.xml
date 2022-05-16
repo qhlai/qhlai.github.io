@@ -8,16 +8,23 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 01 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iptable使用小记</title>
+      <link>/post/18/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/18/</guid>
+      <description>&lt;p&gt;iptable.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>博客从wordpress迁移至hugo</title>
       <link>/post/16/</link>
       <pubDate>Wed, 01 Sep 2021 05:33:25 +0000</pubDate>
       
       <guid>/post/16/</guid>
-      <description>缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错。
-操作 ./hugo new site ./blog mv ./wp-hugo.zip ./blog cd ./blog/themes git clone https://github.com/rujews/maupassant-hugo.git cd ../ vi config.toml  主题：https://github.com/flysnow-org/maupassant-hugo
-config baseURL = &amp;quot;https://blog.kquark.com&amp;quot; languageCode = &amp;quot;zh-cn&amp;quot; title = &amp;quot;Kquark blog&amp;quot; hasCJKLanguage = true # 中日韩语言支持 theme = &amp;quot;maupassant-hugo&amp;quot; # 主题名称，与themes目录下名称一致 enableRobotsTXT = true # 爬虫支持 PaginatePath = &amp;quot;page&amp;quot; # 分页 summaryLength = 140 # 摘要显示字数 #googleAnalytics = &amp;quot;UA-110008600-0&amp;quot; [author] name = &amp;quot;Kquark&amp;quot; [params] subtitle = &amp;quot;一个 个人网站&amp;quot; description = &amp;quot;奇技淫巧和技术分享&amp;quot; # 在页面meta属性里 keywords = &amp;quot;python,rust,linux,vps,服务器,机器学习,robot,AI&amp;quot; # 在页面meta属性里 toc = true # 支持文章大纲 #busuanzi = true #registerInfo = &amp;quot;粤ICP备18000000号-1&amp;quot; related = true #googleAd = &amp;quot;ca-pub-300057030000200&amp;quot; [[menu.</description>
+      <description>&lt;p&gt;缘由是感觉wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,15 +33,7 @@ config baseURL = &amp;quot;https://blog.kquark.com&amp;quot; languageCode = &amp
       <pubDate>Tue, 06 Jul 2021 05:33:25 +0000</pubDate>
       
       <guid>/post/15/</guid>
-      <description>wireshark install and privileges
-reference:https://wiki.archlinux.org/title/Wireshark
-install:
-sudo pacman -S wireshark-qt
-Capturing privileges：
-1.添加wireshark用户组&amp;lt;br&amp;gt;sudo groupadd wireshark
-2.将dumpcap更改为wireshark用户组&amp;lt;br&amp;gt;sudo chgrp wireshark /usr/bin/dumpcap
-3.让wireshark用户组有root权限使用dumpcap&amp;lt;br&amp;gt;sudo chmod 4755 /usr/bin/dumpcap
-4.将需要使用的用户名加入wireshark用户组&amp;lt;br&amp;gt;sudo gpasswd -a username wireshark1</description>
+      <description>&lt;p&gt;wireshark install and privileges&lt;/p&gt;</description>
     </item>
     
   </channel>

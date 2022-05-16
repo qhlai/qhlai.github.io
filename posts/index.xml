@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Thu, 02 Sep 2021 05:33:25 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iptable使用小记</title>
+      <link>/post/18/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/18/</guid>
+      <description>&lt;p&gt;iptable.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>matomo防屏蔽</title>
       <link>/post/17/</link>
@@ -26,9 +35,7 @@ reference: https://issues.matomo.org/7364</description>
       <pubDate>Wed, 01 Sep 2021 05:33:25 +0000</pubDate>
       
       <guid>/post/16/</guid>
-      <description>缘由 wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错。
-操作 ./hugo new site ./blog mv ./wp-hugo.zip ./blog cd ./blog/themes git clone https://github.com/rujews/maupassant-hugo.git cd ../ vi config.toml  主题：https://github.com/flysnow-org/maupassant-hugo
-config baseURL = &amp;quot;https://blog.kquark.com&amp;quot; languageCode = &amp;quot;zh-cn&amp;quot; title = &amp;quot;Kquark blog&amp;quot; hasCJKLanguage = true # 中日韩语言支持 theme = &amp;quot;maupassant-hugo&amp;quot; # 主题名称，与themes目录下名称一致 enableRobotsTXT = true # 爬虫支持 PaginatePath = &amp;quot;page&amp;quot; # 分页 summaryLength = 140 # 摘要显示字数 #googleAnalytics = &amp;quot;UA-110008600-0&amp;quot; [author] name = &amp;quot;Kquark&amp;quot; [params] subtitle = &amp;quot;一个 个人网站&amp;quot; description = &amp;quot;奇技淫巧和技术分享&amp;quot; # 在页面meta属性里 keywords = &amp;quot;python,rust,linux,vps,服务器,机器学习,robot,AI&amp;quot; # 在页面meta属性里 toc = true # 支持文章大纲 #busuanzi = true #registerInfo = &amp;quot;粤ICP备18000000号-1&amp;quot; related = true #googleAd = &amp;quot;ca-pub-300057030000200&amp;quot; [[menu.</description>
+      <description>&lt;p&gt;缘由是感觉wordpress 太卡了，1C1H的服务器使用后台时反应慢所以就换纯静态的了，之前用过hexo，现在感觉hugo不错&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,15 +44,7 @@ config baseURL = &amp;quot;https://blog.kquark.com&amp;quot; languageCode = &amp
       <pubDate>Tue, 06 Jul 2021 05:33:25 +0000</pubDate>
       
       <guid>/post/15/</guid>
-      <description>wireshark install and privileges
-reference:https://wiki.archlinux.org/title/Wireshark
-install:
-sudo pacman -S wireshark-qt
-Capturing privileges：
-1.添加wireshark用户组&amp;lt;br&amp;gt;sudo groupadd wireshark
-2.将dumpcap更改为wireshark用户组&amp;lt;br&amp;gt;sudo chgrp wireshark /usr/bin/dumpcap
-3.让wireshark用户组有root权限使用dumpcap&amp;lt;br&amp;gt;sudo chmod 4755 /usr/bin/dumpcap
-4.将需要使用的用户名加入wireshark用户组&amp;lt;br&amp;gt;sudo gpasswd -a username wireshark1</description>
+      <description>&lt;p&gt;wireshark install and privileges&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -54,26 +53,16 @@ Capturing privileges：
       <pubDate>Sun, 04 Jul 2021 08:46:07 +0000</pubDate>
       
       <guid>/post/14/</guid>
-      <description>在若大的互联网，我们都会通过邮箱注册各种各样的账号，但是很多时候只有一个主邮箱有着诸多不便，所以我们希望，最好是一个平台对应一个email，且无限制。
-我在找了很多可以私有部署的邮局之后，最终选择了poste.io，只看中了一个点，轻量化部署，1G内存完全足矣，而且部署方便，也就意味着迁移方便。
-环境 下面我将在良心云的VPS上面部署，配置如下：
-1 Core 1G RAM Ubuntu +宝塔
-uname -a Linux VM-*-*-ubuntu 5.4.110-bbrplus #1 SMP Sat Apr 10 01:14:42 CST 2021 x86_64 x86_64 x86_64 GNU/Linux  docker和docker-componse安装请参考Install Docker Engine on CentOS和Install Docker Compose。
-运行poste.io  创建poste.io运行目录  $ mkdir -p /www/wwwroot/tools/mail $ cd /www/wwwroot/tools/mail   创建数据存放目录  $ mkdir data   创建docker-compose.yml配置文件  $ nano docker-compose.yml version: &amp;quot;3.3&amp;quot; services: mail: image: analogic/poste.io restart: always hostname: mail.kquark.com ports: - &amp;quot;25:25&amp;quot; - &amp;quot;172.17.0.1:62030:8080&amp;quot; #- &amp;quot;4433:4433&amp;quot; - &amp;quot;110:110&amp;quot; - &amp;quot;143:143&amp;quot; - &amp;quot;465:465&amp;quot; - &amp;quot;587:587&amp;quot; - &amp;quot;993:993&amp;quot; - &amp;quot;995:995&amp;quot; environment: - TZ=Asia/Shanghai - DISABLE_CLAMAV=TRUE - DISABLE_RSPAMD=TRUE - HTTPS=OFF - HTTP_PORT=8080 #- HTTPS_PORT=4433 volumes: - .</description>
+      <description>&lt;p&gt;使用poste.io(Docker)自建邮局&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>最简单方式实现bing背景获取（php）</title>
+      <title>实现bing背景获取（php）</title>
       <link>/post/13/</link>
       <pubDate>Thu, 01 Jul 2021 17:35:52 +0000</pubDate>
       
       <guid>/post/13/</guid>
-      <description>测试链接： https://api.kquark.com/bing
-https://api.kquark.com/bing/?idx=1&amp;amp;n=1&amp;amp;size=UHD
-idx 取值0-8，代表前几天图片，n代表一次获取多少张图片url（暂无用），size代表图片质量部分可取参数如下 size参数：
-resolutions: [ &#39;UHD&#39;, &#39;1920x1200&#39;, &#39;1920x1080&#39;, &#39;1366x768&#39;, &#39;1280x768&#39;, &#39;1024x768&#39;, &#39;800x600&#39;, &#39;800x480&#39;, &#39;768x1280&#39;, &#39;720x1280&#39;, &#39;640x480&#39;, &#39;480x800&#39;, &#39;400x240&#39;, &#39;320x240&#39;, &#39;240x320&#39; ]  设计原理依据bing api 获取
-https://bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1  php代码：
-&amp;lt;?php $predate = $_GET[&#39;idx&#39;]; $num = $_GET[&#39;n&#39;]; $size = $_GET[&#39;size&#39;]; if(strlen($predate)==0){ $predate=rand(0,8); } if(strlen($num)==0){ $num = 1; } if(strlen($size)==0){ $size = &#39;UHD&#39;; } echo &#39;predate:&#39;.$predate.&#39;&amp;lt;br&amp;gt;&#39;; echo &#39;num:&#39;.$num.&#39;&amp;lt;br&amp;gt;&#39;; echo &#39;size:&#39;.$size.&#39;&amp;lt;br&amp;gt;&#39;; $bingurl=&#39;https://bing.com/HPImageArchive.aspx?idx=&#39;.$predate.&#39;&amp;amp;n=&#39;.$num; //&#39;https://bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1&#39; echo $bingurl.&#39;&amp;lt;br&amp;gt;&#39;; $str = file_get_contents($bingurl); // 从bing获取数据 if(preg_match(&#39;/&amp;lt;url&amp;gt;([^&amp;lt;]+)&amp;lt;\/url&amp;gt;/isU&#39;, $str, $matches)) { // 正则匹配抓取图片url $imgurl = &#39;http://bing.</description>
+      <description>&lt;p&gt;php获取bing背景图&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,23 +87,7 @@ https://bing.com/HPImageArchive.aspx?idx=0&amp;amp;n=1  php代码：
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
       
       <guid>/post/11/</guid>
-      <description>宣传图
-拆机
-AX6与AX3600对比
-红米 AX6 和小米 AX3600 配置基本相同，少了ROM和功放，性价比极高。
-解锁 SSH 比较麻烦。
-教程主要参考了：
-https://xn--m80a.ml/openwrt/dev/10.html ，GitHub 非常感谢 CN_SZTL天灵巨佬
-https://qust.me/post/hong-mi-ax6-jie-suo-ssh-an-zhuang-shi-yong-shellclash-jiao-cheng/
-https://www.right.com.cn/forum/thread-4032490-1-1.html
-准备 一台电脑（Windows Mac均可）
-另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）
-Windows 需要安装 Xshell，mobaXterm，Putty 和 WinSCP｜Mac 使用命令行即可
-下载好降级固件 红米 ax6 1.0.18 固件 以及 下载 GitHub 脚本
-第一步｜降级并恢复出厂设置 降级
-打开路由器后台选择 系统升级—手动升级—然后选择下载好的固件，勾选恢复出厂设置，等待重启。放在一旁即可
-第二步｜准备 openwrt 服务 我这里准备的是一台刷了 openwrt 的 r2s，插上了usb网卡，配置好wifi，只需要接上电源有 Wi-Fi 信号，然后使用网线连接此 openwrt 路由器。我的这台 openwrt 路由器的地址是 10.0.0.1 你的应该不是，下面也记得改。scp 上传 wireless.sh 到 openwrt 路由器。（如果你是 Windows 命令提示符里没有 scp 功能的话你可以单独下载一个 WinSCP）
-scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 openwrt 路由器。</description>
+      <description></description>
     </item>
     
     <item>
@@ -123,16 +96,7 @@ scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 open
       <pubDate>Thu, 20 May 2021 08:28:15 +0000</pubDate>
       
       <guid>/post/10/</guid>
-      <description>IPV6 only VPS添加WARP的好处： 1：使只有IPV6的VPS获取访问IPV4的能力，套上WARP的ip,变成双栈VPS！
-2：基本能隐藏VPS的真实IP！
-3：支持代理协议直连电报Telegram，支持代理协议连通软路由Openwrt各种翻墙插件！
-4：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！
-5：支持原本需要IPV4支持的Docker等应用！
-6：加速VPS到CloudFlare CDN节点访问速度！
-7：避开原VPS的IP需要谷歌验证码问题！
-8：替代NAT64/DNS64方案，网络效率更高！
-一：恢复EUserv官方DNS64（重装系统者，可直接跳到第二步脚本安装）
-echo -e &amp;quot;search blue.kundencontroller.de\noptions rotate\nnameserver 2a02:180:6:5::1c\nnameserver 2a02:180:6:5::4\nnameserver 2a02:180:6:5::1e\nnameserver 2a02:180:6:5::1d&amp;quot; &amp;amp;gt; /etc/resolv.conf  二、重装系统能解决99%的问题！无须添加DNS64！一键到底！  仅支持Debian 10/Ubuntu 20.04系统，根据自己需求选择以下脚本1或者脚本2（有无成功可查看脚本末尾提示）  脚本1：IPV4是WARP分配的IP，IPV6是VPS本地IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp4.sh|bash  脚本2：IPV4与IPV6都是WARP分配的IP  wget -qO- https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/warp64.sh|bash  转自：https://github.com/YG-tsj/EUserv-warp</description>
+      <description></description>
     </item>
     
     <item>
@@ -141,14 +105,7 @@ echo -e &amp;quot;search blue.kundencontroller.de\noptions rotate\nnameserver 2a
       <pubDate>Wed, 12 May 2021 18:08:51 +0000</pubDate>
       
       <guid>/post/9/</guid>
-      <description>测试链接  GTmetrix
-https://gtmetrix.com
-GTmetrix  PageSpeed Insights
-https://developers.google.com/speed/pagespeed/insights/
-PageSpeed Insights  Pingdom Website Speed Test
-https://tools.pingdom.comPingdom
- 安装memcached，宝塔加速  memcached要在php处安装
-模块   WP安装LiteSpeed Cache  LiteSpeed Cache  对象缓存  其他里面能开的都开，关掉谷歌字体</description>
+      <description></description>
     </item>
     
     <item>
@@ -157,9 +114,7 @@ https://tools.pingdom.comPingdom
       <pubDate>Tue, 04 May 2021 13:48:00 +0000</pubDate>
       
       <guid>/post/8/</guid>
-      <description>仅作测试，滥用不承担任何责任
-配置 e大v4部署 sudo docker run -dit \ -v /jd/config:/jd/config \ -v /jd/log:/jd/log \ -v /jd/scripts:/jd/scripts \ -v /jd/own:/jd/own \ -v /jd/panel:/jd/panel \ -p 5678:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd \ --hostname jd \ --restart always \ nevinee/jd:v4  青龙部署
-sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log \ -v /qinglong/scripts:/ql/scripts \ -v /qinglong/db:/ql/db \ -p 5700:5700 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ --name qinglong \ --hostname qinglong \ --restart always \ whyour/qinglong:latest  &amp;lt;ul style=&amp;quot;font-size:20px&amp;quot;&amp;gt; &amp;lt;li&amp;gt; 多容器配置 &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;h1 style=&amp;quot;font-size:20px&amp;quot;&amp;gt; 要想换库直接改最后一行 &amp;lt;/h1&amp;gt; ```shell docker run -dit \ -v /你想保存的目录/jd1/config:/jd/config # 配置保存目录，冒号左边请修改为你想存放的路径\ -v /你想保存的目录/jd1/log:/jd/log # 日志保存目录，冒号左边请修改为你想存放的路径 \ -v /你想保存的目录/jd1/scripts:/jd/scripts # 脚本文件目录，映射脚本文件到安装路径 \ -v /jd/own:/jd/own \ -p 5679:5678 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ -e ENABLE_WEB_TTYD=true \ --name jd1 \ --hostname jd1 \ --restart always \ nevinee/jd:v4  自动更新Docker容器（也就是更新京东文件）  sudo docker run -d \ --name watchtower \ -v /var/run/docker.</description>
+      <description></description>
     </item>
     
     <item>
@@ -168,10 +123,7 @@ sudo docker run -dit \ -v /qinglong/config:/ql/config \ -v /qinglong/log:/ql/log
       <pubDate>Sun, 02 May 2021 13:33:00 +0000</pubDate>
       
       <guid>/post/7/</guid>
-      <description>宝塔面板安装与配置指令
-指令参考宝塔官网 https://www.bt.cn/
- 宝塔安装指令：  ubuntu：
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp; sudo bash install.sh&amp;lt;br&amp;gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &amp;quot;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&amp;quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  </description>
+      <description></description>
     </item>
     
     <item>
@@ -180,10 +132,7 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;
       <pubDate>Thu, 29 Apr 2021 08:23:05 +0000</pubDate>
       
       <guid>/post/6/</guid>
-      <description>记录遇到的ssh问题
-Connecting to 1.116.126.*:22… Connection established. To escape to local shell, press Ctrl+Alt+] Socket error Event: 32 Error: 10053. Connection closing…Socket close. Connection closed by foreign host. Disconnected from remote host(1.116.126.*) at 15:17:58.  检查端口和协议
-改port防扫描 sudo vim /etc/ssh/sshd_config  
-sudo service ssh restart  </description>
+      <description></description>
     </item>
     
     <item>
@@ -192,59 +141,7 @@ sudo service ssh restart  </description>
       <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
       
       <guid>/post/4/</guid>
-      <description>收集国内外可用DNS/DOH
-国内：https://pod.pub/dns-query
-USTC（中科大，建议停止使用53转而使用5353端口避免运营商（比如移动大内网）劫持；听大雕昨天说劫持反而更好，因为运营商服务器有内容缓存？我不用移动所以不知道）支持ECS
-首选服务器：
-202.38.93.153 (教育网)
-202.141.162.123 (电信)
-202.141.178.13 (移动)
-备选服务器：
-202.38.93.94 (教育网，新增)
-RixCloud:
-https://doh.rixcloud.dev/dns-query
-Ali:
-https://dns.alidns.com/dns-query
-Apple:
-https://doh.dns.apple.com/dns-query
-DNSPod:支持ECS
-tls://dns.pub
-https://doh.pub/dns-query
-RubyFish:支持ECS
-tls://dns.rubyfish.cn
-https://dns.rubyfish.cn/dns-query
-Geek:支持ECS
-https://i.233py.com/dns-query
-国外：
-AdGuard:
-tls://dns.adguard.com
-https://dns.adguard.com/dns-query
-CloudFlare:支持ECS
-https://cloudflare-dns.com/dns-query
-tls://1.1.1.1
-ContainerPi:
-tls://dns.containerpi.com/dns-query
-DNSLify:
-tls://a.ns.dnslify.com
-tls://b.ns.dnslify.com
-Google:支持ECS
-tls://dns.google
-https://dns.google/dns-query
-GeekOverseas:支持ECS
-https://dns.233py.com/dns-query
-OpenDNS:
-https://doh.opendns.com/dns-query
-Quad9:支持ECS
-https://dns11.quad9.net/dns-query
-101:
-https://dns.twnic.tw/dns-query
-绑定端口：
-bind [::]5053 -group china
-bind-tcp [::]5053 -group china
-bind [::]7913 -group world # passwall默认端口号
-bind-tcp [::]7913 -group world # passwall默认端口号
-若要全部使用域名形式的DNS，设置bootstrap组，指定nameserver规则：（以下填在custom.conf中）
-server-https https://223.5.5.5/dns-query-group bootstrap-china</description>
+      <description></description>
     </item>
     
     <item>
@@ -253,9 +150,7 @@ server-https https://223.5.5.5/dns-query-group bootstrap-china</description>
       <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
       
       <guid>/post/5/</guid>
-      <description>参考：https://blog.csdn.net/tianlangstudio/article/details/106169242
- 1.安装rust  sudo curl https://sh.rustup.rs -sSf | sh  https://www.rust-lang.org/zh-CN/tools/install
- 2.创建项目  cargo new rust_login &amp;amp;#8211;bin   3.在Cargo.toml文件中配置需要的依赖  [package] name = &amp;quot;rust_login&amp;quot; version = &amp;quot;0.1.0&amp;quot; authors = &amp;amp;#91;&amp;quot;Tianlang &amp;amp;lt;qhlai666@gmail.com&amp;amp;gt;&amp;quot;] edition = &amp;quot;2018&amp;quot; # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html &amp;amp;#91;dependencies] actix-web=&amp;quot;2&amp;quot; #使用的actix-web 提供web服务器、request解析、response生成等功能 actix-rt=&amp;quot;1&amp;quot; #actix-rt actix的运行时，用于运行异步函数等，可以理解为Java　concurrent下的Executor #serde用于序列化和反序列化对象的，比如把对象转换成一个Json字符串，就是序列化；　#把Json字符串转换为一个对象，就是反序列化 serde=&amp;quot;1&amp;quot;  </description>
+      <description></description>
     </item>
     
     <item>
@@ -264,9 +159,7 @@ server-https https://223.5.5.5/dns-query-group bootstrap-china</description>
       <pubDate>Sat, 24 Apr 2021 11:10:53 +0000</pubDate>
       
       <guid>/post/3/</guid>
-      <description>Delta Robot Kinematics with code C++ Matlab
-Forward Kinematics c++
-void robotForward(const double* q, double* TransVector, bool mconfig) { double fi[3] = { 0,120,240 }; double theta_tmp[6]; for (int i = 0; i &amp;lt; 6; i++) { theta_tmp[i] = q[i]; //cout &amp;lt;&amp;lt; &amp;quot;theta：&amp;quot; &amp;lt;&amp;lt; theta_tmp[i] &amp;lt;&amp;lt; endl; } double D[3][3] = { 0 }; for (int i = 0; i &amp;lt; 3; i++) { D[i][0] = (R - r + L * cos_angle(theta_tmp[i])) * cos_angle(fi[i]); D[i][1] = (R - r + L * cos_angle(theta_tmp[i])) * sin_angle(fi[i]); D[i][2] = -L * sin_angle(theta_tmp[i]); //D[i][0] = (R - r - L * sin_angle(theta_tmp[i])) * cos_angle(fi[i]); //D[i][1] = (R - r - L * sin_angle(theta_tmp[i])) * sin_angle(fi[i]); //D[i][2] = -L*cos_angle(theta_tmp[i]); } double a= PointDist(D[0],D[1]); double b = PointDist(D[1], D[2]); double c = PointDist(D[2], D[0]); double p = (a + b + c) / 2; double S = sqrt(p * (p-a) * (p-b) * (p-c)); double FE_norm = (a * a + b * b - c * c) * c / (8 * S); double nFE; nFE = sqrt(pow(a * b * c / 4 / S, 2) - pow(b / 2, 2)); double vD21[3], vD23[3], vD32[3]; VectorSub(D[1], D[0], vD21); VectorSub(D[1], D[2], vD23); VectorSub(D[2], D[1], vD32); double D21xD23[3]; VectorCross(vD21, vD23, D21xD23); double D21xD23xD32[3]; VectorCross(D21xD23, vD32, D21xD23xD32); //double nFE_norm=VectorNorm(nFE); //VectorNumDivide(nFE, nFE_norm, nFE); double nD21xD23 = VectorNorm(D21xD23); double nD21xD23xD32 = VectorNorm(D21xD23xD32); double R11 = a * b * c / 4 / S; for (int i = 0; i &amp;lt; 3; i++) { TransVector[(i+1)*4-1] = nFE * D21xD23xD32[i] / nD21xD23xD32 + sqrt(pow(l, 2) - pow(R11, 2)) * D21xD23[i] / nD21xD23 + (D[2-1][i] + D[3 - 1][i]) / 2; } }  matlab</description>
+      <description></description>
     </item>
     
     <item>
@@ -275,14 +168,7 @@ void robotForward(const double* q, double* TransVector, bool mconfig) { double f
       <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
       
       <guid>/post/2/</guid>
-      <description>以腾讯云为例
- root密码设置：   sudo passwd root
-输入密码
- 卸载监控   一、云镜&amp;amp;安全监控卸载
-/usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh  二、验证卸载
-ps aux | grep -i agent | grep -v grep`   测试   参考：https://zhuanlan.zhihu.com/p/117547388
-Bench.sh  秋水逸冰大佬的写的Bench.sh脚本
-特点  显示当前测试的各种系统信息； 取自世界多处的知名数据中心的测试点，下载测试比较全面； 支持 IPv6 下载测速； IO 测试三次，并显示平均值。  使用 wget -qO- bench.sh | bash #或者 curl -Lso- bench.sh | bash #或者 wget -qO- 86.re/bench.sh | bash #或者 curl -so- 86.re/bench.sh | bash  演示 SuperBench.sh 老鬼大佬的SuperBench测试脚本</description>
+      <description></description>
     </item>
     
   </channel>

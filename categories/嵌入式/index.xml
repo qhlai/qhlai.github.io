@@ -15,23 +15,7 @@
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
       
       <guid>/post/11/</guid>
-      <description>宣传图
-拆机
-AX6与AX3600对比
-红米 AX6 和小米 AX3600 配置基本相同，少了ROM和功放，性价比极高。
-解锁 SSH 比较麻烦。
-教程主要参考了：
-https://xn--m80a.ml/openwrt/dev/10.html ，GitHub 非常感谢 CN_SZTL天灵巨佬
-https://qust.me/post/hong-mi-ax6-jie-suo-ssh-an-zhuang-shi-yong-shellclash-jiao-cheng/
-https://www.right.com.cn/forum/thread-4032490-1-1.html
-准备 一台电脑（Windows Mac均可）
-另外一台已经是 openwrt 的路由器（打开了 SSH，用来当服务器）
-Windows 需要安装 Xshell，mobaXterm，Putty 和 WinSCP｜Mac 使用命令行即可
-下载好降级固件 红米 ax6 1.0.18 固件 以及 下载 GitHub 脚本
-第一步｜降级并恢复出厂设置 降级
-打开路由器后台选择 系统升级—手动升级—然后选择下载好的固件，勾选恢复出厂设置，等待重启。放在一旁即可
-第二步｜准备 openwrt 服务 我这里准备的是一台刷了 openwrt 的 r2s，插上了usb网卡，配置好wifi，只需要接上电源有 Wi-Fi 信号，然后使用网线连接此 openwrt 路由器。我的这台 openwrt 路由器的地址是 10.0.0.1 你的应该不是，下面也记得改。scp 上传 wireless.sh 到 openwrt 路由器。（如果你是 Windows 命令提示符里没有 scp 功能的话你可以单独下载一个 WinSCP）
-scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 openwrt 路由器。</description>
+      <description></description>
     </item>
     
     <item>
@@ -40,9 +24,7 @@ scp wireless.sh root@10.0.0.1:/root/wireless.sh  然后 ssh 连接到这台 open
       <pubDate>Sat, 24 Apr 2021 11:10:53 +0000</pubDate>
       
       <guid>/post/3/</guid>
-      <description>Delta Robot Kinematics with code C++ Matlab
-Forward Kinematics c++
-void robotForward(const double* q, double* TransVector, bool mconfig) { double fi[3] = { 0,120,240 }; double theta_tmp[6]; for (int i = 0; i &amp;lt; 6; i++) { theta_tmp[i] = q[i]; //cout &amp;lt;&amp;lt; &amp;quot;theta：&amp;quot; &amp;lt;&amp;lt; theta_tmp[i] &amp;lt;&amp;lt; endl; } double D[3][3] = { 0 }; for (int i = 0; i &amp;lt; 3; i++) { D[i][0] = (R - r + L * cos_angle(theta_tmp[i])) * cos_angle(fi[i]); D[i][1] = (R - r + L * cos_angle(theta_tmp[i])) * sin_angle(fi[i]); D[i][2] = -L * sin_angle(theta_tmp[i]); //D[i][0] = (R - r - L * sin_angle(theta_tmp[i])) * cos_angle(fi[i]); //D[i][1] = (R - r - L * sin_angle(theta_tmp[i])) * sin_angle(fi[i]); //D[i][2] = -L*cos_angle(theta_tmp[i]); } double a= PointDist(D[0],D[1]); double b = PointDist(D[1], D[2]); double c = PointDist(D[2], D[0]); double p = (a + b + c) / 2; double S = sqrt(p * (p-a) * (p-b) * (p-c)); double FE_norm = (a * a + b * b - c * c) * c / (8 * S); double nFE; nFE = sqrt(pow(a * b * c / 4 / S, 2) - pow(b / 2, 2)); double vD21[3], vD23[3], vD32[3]; VectorSub(D[1], D[0], vD21); VectorSub(D[1], D[2], vD23); VectorSub(D[2], D[1], vD32); double D21xD23[3]; VectorCross(vD21, vD23, D21xD23); double D21xD23xD32[3]; VectorCross(D21xD23, vD32, D21xD23xD32); //double nFE_norm=VectorNorm(nFE); //VectorNumDivide(nFE, nFE_norm, nFE); double nD21xD23 = VectorNorm(D21xD23); double nD21xD23xD32 = VectorNorm(D21xD23xD32); double R11 = a * b * c / 4 / S; for (int i = 0; i &amp;lt; 3; i++) { TransVector[(i+1)*4-1] = nFE * D21xD23xD32[i] / nD21xD23xD32 + sqrt(pow(l, 2) - pow(R11, 2)) * D21xD23[i] / nD21xD23 + (D[2-1][i] + D[3 - 1][i]) / 2; } }  matlab</description>
+      <description></description>
     </item>
     
   </channel>

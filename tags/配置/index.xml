@@ -8,17 +8,23 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Sun, 02 May 2021 13:33:00 +0000</lastBuildDate><atom:link href="/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iptable使用小记</title>
+      <link>/post/18/</link>
+      <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/18/</guid>
+      <description>&lt;p&gt;iptable.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>宝塔面板安装笔记</title>
       <link>/post/7/</link>
       <pubDate>Sun, 02 May 2021 13:33:00 +0000</pubDate>
       
       <guid>/post/7/</guid>
-      <description>宝塔面板安装与配置指令
-指令参考宝塔官网 https://www.bt.cn/
- 宝塔安装指令：  ubuntu：
-wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;&amp;amp; sudo bash install.sh&amp;lt;br&amp;gt;nano /www/server/panel/BTPanel/static/js/index.js   去除账号绑定  sed -i &amp;quot;s|bind_user == &#39;True&#39;|bind_user == &#39;XXXX&#39;|&amp;quot; /www/server/panel/BTPanel/static/js/index.js /etc/init.d/bt restart   基本配置  sudo bt  </description>
+      <description></description>
     </item>
     
     <item>
@@ -27,14 +33,7 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;amp;
       <pubDate>Tue, 20 Apr 2021 13:43:00 +0000</pubDate>
       
       <guid>/post/2/</guid>
-      <description>以腾讯云为例
- root密码设置：   sudo passwd root
-输入密码
- 卸载监控   一、云镜&amp;amp;安全监控卸载
-/usr/local/qcloud/stargate/admin/uninstall.sh /usr/local/qcloud/YunJing/uninst.sh /usr/local/qcloud/monitor/barad/admin/uninstall.sh  二、验证卸载
-ps aux | grep -i agent | grep -v grep`   测试   参考：https://zhuanlan.zhihu.com/p/117547388
-Bench.sh  秋水逸冰大佬的写的Bench.sh脚本
-特点  显示当前测试的各种系统信息； 取自世界多处的知名数据中心的测试点，下载测试比较全面； 支持 IPv6 下载测速； IO 测试三次，并显示平均值。  使用 wget -qO- bench.sh | bash #或者 curl -Lso- bench.sh | bash #或者 wget -qO- 86.re/bench.sh | bash #或者 curl -so- 86.re/bench.sh | bash  演示 SuperBench.sh 老鬼大佬的SuperBench测试脚本</description>
+      <description></description>
     </item>
     
   </channel>
