@@ -112,7 +112,7 @@
     },
     "headline": "第一周 | 2022年实习文档 | 博客","datePublished": "2022-05-16T00:00:00+00:00",
     "dateModified": "2022-05-23T00:00:00+00:00",
-    "wordCount":  7 ,
+    "wordCount":  130 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -351,9 +351,52 @@
 <h2 id="周一">周一</h2>
 <p>入职，拿回车子。装新的vmware。</p>
 <p>找镜像先把环境搭好。</p>
-<p>vmware下载地址：
-<a href="https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html">https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html</a></p>
+<h3 id="vmware-install">vmware install</h3>
+<p>vmware下载地址：</p>
+<p><a href="https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html">https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html</a></p>
 <p>vmware激活许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF</p>
+<h3 id="ubuntu-init">ubuntu init</h3>
+<p>ubuntu 有很多种桌面版，对于系统我自己喜欢用的是kde，建议新手用gnome，可能网上中文资料多点。</p>
+<p>ubuntu (gnome)</p>
+<p><a href="https://releases.ubuntu.com/18.04.6/ubuntu-18.04.6-desktop-amd64.iso">https://releases.ubuntu.com/18.04.6/ubuntu-18.04.6-desktop-amd64.iso</a></p>
+<p>kubuntu (kde)</p>
+<p><a href="https://cdimage.ubuntu.com/kubuntu/releases/18.04/release/kubuntu-18.04.5-desktop-amd64.iso">https://cdimage.ubuntu.com/kubuntu/releases/18.04/release/kubuntu-18.04.5-desktop-amd64.iso</a></p>
+<p>换源</p>
+<pre><code class="language-shell">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+#nano /etc/apt/sources.list
+sudo apt update &amp;&amp; sudo apt upgrade
+# 常用软件
+sudo apt install -y net-tools curl wget htop powertop
+sudo apt autoremove
+
+</code></pre>
+<h3 id="ros-install">ros install</h3>
+<pre><code class="language-shell">sudo sh -c '. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt install -y ros-melodic-desktop-full
+sudo apt-get install ros-melodic-desktop-full
+sudo apt-get install -y ros-melodic-rqt*
+
+sudo apt install -y python-rosdep2
+sudo rosdep fix-permissions
+rosdep update #github 被干扰严重多试几次 或者参考
+#https://blog.csdn.net/QLeelq/article/details/119041164
+#https://mp.weixin.qq.com/s/VGs8oWdhHH6XsHcx21lN4Q
+#或者直接上软路由
+sudo rosdep init
+</code></pre>
+<p>打算写个ros安装一键脚本，顺便用一种很dirty的方式实现rosdep update 国内访问不畅</p>
+<p>注意脚本还没写好，新建文件夹doge</p>
+<pre><code class="language-shell">wget uwp.cc/s/install/install.sh &amp;&amp; chmod +x install.sh &amp;&amp; ./install.sh
+</code></pre>
+<p>关于</p>
+<pre><code class="language-shell">
+</code></pre>
+<h3 id="第二天">第二天</h3>
+<p>翻译文档，周五完成</p>
+<p>4 5 6 8 14章</p>
 </article>
 
                     
@@ -388,7 +431,14 @@
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#周一">周一</a></li>
+    <li><a href="#周一">周一</a>
+      <ul>
+        <li><a href="#vmware-install">vmware install</a></li>
+        <li><a href="#ubuntu-init">ubuntu init</a></li>
+        <li><a href="#ros-install">ros install</a></li>
+        <li><a href="#第二天">第二天</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
