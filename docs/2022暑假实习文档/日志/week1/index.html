@@ -112,7 +112,7 @@
     },
     "headline": "第一周 | 2022年实习文档 | 博客","datePublished": "2022-05-16T00:00:00+00:00",
     "dateModified": "2022-05-23T00:00:00+00:00",
-    "wordCount":  363 ,
+    "wordCount":  393 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -397,6 +397,17 @@ rosdep update #github 被干扰严重多试几次 或者参考
 #https://mp.weixin.qq.com/s/VGs8oWdhHH6XsHcx21lN4Q
 #或者直接上软路由
 sudo rosdep init
+
+sudo apt-get -y install python-rosinstall
+
+sudo apt-get  -y install ros-melodic-catkin python-catkin-tools
+sudo apt-get install ros-melodic-ros-tutorials
+sudo apt-get install ros-melodic-rqt-graph
+sudo apt install rosbash
+
+echo &quot;source /opt/ros/melodic/setup.bash&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+
 </code></pre>
 <p>打算写个ros安装一键脚本，顺便用一种很dirty的方式实现rosdep update 国内访问不畅</p>
 <p>注意脚本还没写好，新建文件夹doge</p>
