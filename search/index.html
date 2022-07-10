@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Example Author | 博客</title>
+<title>Search | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -71,13 +71,13 @@
   integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
 
 
-
+<meta name="robots" content="noindex" />
 
 <link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Self Introduction Cras ex dui, tristique a libero eget, consectetur semper ligula. Nunc augue arcu, malesuada a nisi et, molestie finibus metus. Sed lacus odio, ultricies a nisl vitae, sollicitudin tempor ipsum. Vivamus quis feugiat arcu. Sed mi nunc, efficitur quis tellus vitae, posuere mattis metus. Phasellus in mattis dui. Nullam blandit, augue non ullamcorper dapibus, lacus dui molestie massa, in iaculis purus lectus eu lectus. Duis hendrerit lacinia tellus, sit amet feugiat dolor placerat id.">
+  content="Eureka is a elegant and powerful theme for Hugo.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -85,41 +85,53 @@
   "itemListElement": [{
       "@type": "ListItem",
       "position": 1 ,
-      "name":"Authors",
-      "item":"/authors/"},{
+      "name":"博客",
+      "item":"/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Example Author",
-      "item":"/authors/example-author/"}]
+      "name":"Search",
+      "item":"/search/"}]
 }
 </script>
 
 
 
-<meta property="og:title" content="Example Author | 博客" />
-<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/search/"
+    },
+    "headline": "Search | 博客","publisher": {
+        "@type": "Person",
+        "name": "WANG Chucheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "Eureka is a elegant and powerful theme for Hugo."
+}
+</script><meta property="og:title" content="Search | 博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/authors/example-author/" />
+<meta property="og:url" content="/search/" />
 
 
 
 
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
+<meta property="og:description" content="" />
 
 
 
 
 <meta property="og:locale" content="zh" />
-
-
-
-<meta property="og:locale:alternate" content="en" />
 
 
 
@@ -133,10 +145,11 @@
 
 
 
-<meta property="article:section" content="authors" />
+
+<meta property="article:section" content="" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/authors/example-author/index.xml" title="博客" />
+<link rel="alternate" type="application/json" href="/search/index.json" title="博客" />
 
 
   <body class="flex min-h-screen flex-col">
@@ -178,19 +191,6 @@
                     <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
             </div>
-            <div class="relative pt-4 ps-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="languageMode">
-                    <i class="fas fa-globe"></i>
-                    <span class="ps-1">简中</span>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='languageOptions'>
-                    <a class="px-4 py-1 hover:text-eureka" href="/authors/example-author/">简中</a>
-                    <a class="px-4 py-1 hover:text-eureka" href="/en/authors/example-author/">English</a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -218,115 +218,30 @@
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
-        switchLanguage()
     });
 </script>
 </div>
     </header>
     <main class="grow pt-16">
-  <div class="pl-scrollbar bg-secondary-bg">
-    <div class="mx-auto max-w-screen-xl">
-      <div class="mx-auto px-6 py-12 md:px-8 lg:w-3/4 xl:px-12">
-        <div class="mb-12 flex flex-col items-center justify-center md:flex-row">
-  
-  
-    <div class="md:ms-0 md:me-8 md:pe-8 md:border-e mx-auto w-48 flex-none">
-      <img src="/images/icon.png" class="rounded-full" alt="Avatar" />
-    </div>
-  
-  <div class="mt-4 w-full grow md:mt-0">
-    <h1 class="py-4 text-3xl">Example Author</h1>
-    <div class="w-3/12 border-b xl:w-2/12"></div>
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
 
-    <div class="flex items-center pt-4">
-      
-        <i class="fas fa-user"></i>
-      
-      <div class="flex flex-wrap">
-        
-          <span class="ps-4">Example Role</span>
-        
-
-        
-          <a href="https://example.com/" class="ps-4">Example Organization</a>
-        
-      </div>
-    </div>
-
-    
-      <div class="py-8 text-lg leading-normal">
-        Aenean vel bibendum quam. Aliquam at mollis quam. Proin efficitur.
-      </div>
-    
-  </div>
-  <div class="md:ms-8 flex items-end justify-center md:flex-col">
-    
-    
-      
-      
-      
-      
-      
-      <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="mailto:example@example.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    
-      
-      
-      
-      
-      
-      <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="https://example.com/"><i class="fab fa-twitter"></i></a>
-      </div>
-    
-      
-      
-      
-      
-      
-      <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href="https://example.com/"><i class="fab fa-github"></i></a>
-      </div>
-    
-  </div>
-</div>
-<div class="prose">
-  <h2 id="self-introduction">Self Introduction</h2>
-<p>Cras ex dui, tristique a libero eget, consectetur semper ligula. Nunc augue arcu, malesuada a nisi et, molestie finibus metus. Sed lacus odio, ultricies a nisl vitae, sollicitudin tempor ipsum. Vivamus quis feugiat arcu. Sed mi nunc, efficitur quis tellus vitae, posuere mattis metus. Phasellus in mattis dui. Nullam blandit, augue non ullamcorper dapibus, lacus dui molestie massa, in iaculis purus lectus eu lectus. Duis hendrerit lacinia tellus, sit amet feugiat dolor placerat id. Aenean ac velit massa. Vivamus feugiat dui at magna viverra, ut dictum nunc rutrum. Duis eget sapien finibus, lobortis orci id, vestibulum tellus. Maecenas lobortis urna libero, quis fermentum lectus lobortis nec. Nullam laoreet volutpat libero, ac mattis magna ullamcorper quis. Duis eget ipsum eu nisi mattis cursus et vitae turpis.</p>
-<p>Aliquam pretium diam eget leo feugiat finibus. Donec malesuada commodo ipsum. Aenean a massa in lacus venenatis vestibulum. Duis vel sem quis elit iaculis consectetur et quis dolor. Morbi eu ipsum hendrerit, malesuada ante sed, dapibus est. Suspendisse feugiat nulla ut gravida convallis. Phasellus id massa posuere, rhoncus justo ut, porttitor dolor. Nulla ultrices malesuada egestas. Nunc fermentum tincidunt sem ac vulputate. Donec mollis sollicitudin justo eget varius. Donec ornare velit et felis blandit, id molestie sapien lobortis. Morbi eget tristique justo. Mauris posuere, nibh eu laoreet ultricies, ligula erat iaculis sapien, vel dapibus lacus libero ut diam. Etiam viverra ante felis, et scelerisque nunc pellentesque vitae. Praesent feugiat dictum molestie.</p>
-<h2 id="details">Details</h2>
-<p>Nunc pellentesque vitae:</p>
-<ul>
-<li>Morbi accumsan nibh efficitur diam molestie, non dignissim diam facilisis.</li>
-<li>Donec dignissim leo in mollis faucibus.</li>
-<li>Donec blandit lacus a pellentesque fermentum.</li>
-</ul>
-<p>Donec mollis sollicitudin:</p>
-<ul>
-<li>Nunc dictum purus ornare purus consectetur, eu pellentesque massa ullamcorper.</li>
-<li>Aliquam eu leo vitae justo aliquam tincidunt.</li>
-<li>Fusce non massa id augue interdum feugiat sed et nulla.</li>
-<li>Vivamus molestie augue in tristique laoreet.</li>
-</ul>
-
+<script defer type="text/javascript" src="/js/fuse.4797300d3405208f8d68611b28c989f5d874a901a50e1548cb1fcedb726ca1bba58265288946205c206da2398d37d4f5.js"></script>
+<div id="search-wrapper" class="bg-secondary-bg rounded px-6 py-8 lg:mt-12">
+  <form action="/search/" class="flex">   
+    <input type="text" id="search-input" name="q" class="bg-primary-bg text-primary-text rounded-lg w-full pl-4" placeholder="Search" required>
+    <button type="submit" class="p-2 ml-2 text-primary-text bg-primary-bg rounded-lg">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+    </button>
+  </form>
+  <div id="search-results" class="prose py-4"></div>
 </div>
 
-      </div>
-    </div>
-  </div>
-  <div class="pl-scrollbar bg-primary-bg">
-    <div class="mx-auto max-w-screen-xl">
-      <div class="mx-auto px-6 py-12 md:px-8 lg:w-3/4 xl:px-12">
-        <div class="overflow-hidden divide-y">
-  
-</div>
-
-
-      </div>
-    </div>
-  </div>
-
+          </div>
+        </div>
+      
     </main>
     <footer class="pl-scrollbar">
       <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
