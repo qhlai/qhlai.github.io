@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>iptable使用小记 | 博客</title>
+<title>PVE (PROXMOX) 使用笔记 | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -79,7 +79,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="iptable">
+  content="PVE (PROXMOX) project">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,8 +91,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"iptable使用小记",
-      "item":"/post/18/"}]
+      "name":"PVE (PROXMOX) 使用笔记",
+      "item":"/post/19/"}]
 }
 </script>
 
@@ -104,11 +104,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/post/18/"
+        "@id": "/post/19/"
     },
-    "headline": "iptable使用小记 | 博客","datePublished": "2022-05-16T00:00:00+00:00",
-    "dateModified": "2022-05-16T00:00:00+00:00",
-    "wordCount":  374 ,
+    "headline": "PVE (PROXMOX) 使用笔记 | 博客","datePublished": "2022-07-13T00:00:00+00:00",
+    "dateModified": "2022-07-14T00:00:00+00:00",
+    "wordCount":  443 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -117,20 +117,20 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "iptable"
+    "description": "PVE (PROXMOX) project"
 }
-</script><meta property="og:title" content="iptable使用小记 | 博客" />
+</script><meta property="og:title" content="PVE (PROXMOX) 使用笔记 | 博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/post/18/" />
+<meta property="og:url" content="/post/19/" />
 
 
 
-<meta property="og:description" content="iptable" />
+<meta property="og:description" content="PVE (PROXMOX) project" />
 
 
 
@@ -146,17 +146,15 @@
 
 
 
-<meta property="article:published_time" content="2022-05-16T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-07-13T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-05-16T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-07-14T00:00:00&#43;00:00" />
 
 
 
 <meta property="article:section" content="posts" />
 
-
-<meta property="article:tag" content="vps" />
 
 <meta property="article:tag" content="配置" />
 
@@ -164,9 +162,11 @@
 
 
 
-<meta property="og:see_also" content="/post/2/" />
+<meta property="og:see_also" content="/post/18/" />
 
 <meta property="og:see_also" content="/post/7/" />
+
+<meta property="og:see_also" content="/post/2/" />
 
 
 
@@ -251,7 +251,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">iptable使用小记</h1>
+  <h1 class="mb-4">PVE (PROXMOX) 使用笔记</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -259,20 +259,26 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2022-05-16</span
+      >2022-07-13</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
+    <span>3分钟阅读时长</span>
   </div>
 
   
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
-        <a href="/categories/%E7%BD%91%E7%BB%9C/" class="hover:text-eureka"
-          >网络</a
+        <a href="/categories/linux/" class="hover:text-eureka"
+          >Linux</a
+        >
+      
+        
+          <span>, </span>
+        <a href="/categories/server/" class="hover:text-eureka"
+          >server</a
         >
       
     </div>
@@ -285,73 +291,214 @@
   
   
 
-  <p>iptable.</p>
-<p>下列规则将会阻止来自某一特定IP范围内的数据包，因为该IP地址范围被管理员怀疑有大量恶意攻击者在活动：</p>
-<pre><code class="language-shell">iptables -t filter -A INPUT -s 123.456.789.0/24 -j DROP 
+  <p>pve 安装 分区修改扩容 openwrt安装</p>
+<h1 id="安装">安装</h1>
+<p>官方镜像地址: <a href="https://www.proxmox.com/en/downloads/category/iso-images-pve">https://www.proxmox.com/en/downloads/category/iso-images-pve</a></p>
+<h1 id="openwrt-安装">openwrt 安装</h1>
+<p>使用winscp上传openwrt.img镜像到<code>/var/lib/vz/template/iso/</code></p>
+<pre><code class="language-shell">cd /var/lib/vz/template/iso/
+#转换格式至qcow2，如果原openwrt镜像为qcow2格式可略过
+qemu-img convert -f raw -O qcow2 synoboot.img synoboot.qcow2
+qemu-img check synoboot.qcow2
+#将镜像挂载在指定id 虚拟机上
+qm importdisk 100 synoboot.qcow2 local-lvm
 </code></pre>
-<p>也可以很轻易地阻止所有流向攻击者IP地址的数据包，该命令稍有不同：</p>
-<pre><code class="language-shell">iptables -t filter -A OUTPUT -d 123.456.789.0/24 -j DROP 
+<h1 id="外设">外设</h1>
+<h2 id="网卡">网卡</h2>
+<h3 id="直通">直通</h3>
+<p>待添加</p>
+<h3 id="无线网卡">无线网卡</h3>
+<p>athreo网卡报错修复</p>
+<p>ar242x  网卡</p>
+<pre><code class="language-shell">nano  /etc/pve/local/qemu-server/100.conf
 </code></pre>
-<p>注意这里的A选项，使用它说明是给现有的链添加规则
-基于TCP协议的原理，为了彻底阻断攻击IP的连接，所以需要把流入流出到该IP的数据包都DROP掉</p>
-<p>最后补充一下，如果想针对某IP进行单独开放端口可以如下配置：
-如果我需要对内网某机器单独开放mysql端口，应该如下配置：</p>
-<pre><code class="language-shell">iptables -A INPUT -s 192.168.2.6 -p tcp -m tcp --dport 3306 -j ACCEPT   
-iptables -A OUTPUT -s 192.168.2.6 -p tcp -m tcp --sport 3306 -j ACCEPT  
+<p>#加入</p>
+<pre><code class="language-draft">hostpci3: 0000:02:00.0
+args: -set device.hostpci3.x-msix-relocation=bar2
 </code></pre>
-<h3 id="彻底禁止某ip访问">彻底禁止某IP访问:</h3>
-<pre><code class="language-shell">#屏蔽单个IP的命令是   
-iptables -I INPUT -s 123.45.6.7 -j DROP   
-iptables -I INPUT -s  16.162.21.186 -j DROP
-#封整个段即从123.0.0.1到123.255.255.254的命令   
-iptables -I INPUT -s 123.0.0.0/8 -j DROP   
-#封IP段即从123.45.0.1到123.45.255.254的命令   
-iptables -I INPUT -s 124.45.0.0/16 -j DROP   
-#封IP段即从123.45.6.1到123.45.6.254的命令是   
-iptables -I INPUT -s 123.45.6.0/24 -j DROP   
-指令I是insert指令 但是该指令会insert在正确位置并不像A指令看你自己的排序位置，因此用屏蔽因为必须在一开始就要加载屏蔽IP，所以必须使用I命令加载，然后注意执行/etc/rc.d/init.d/iptables save进行保存后重启服务即可  
+<h1 id="硬盘">硬盘</h1>
+<h2 id="扩容">扩容</h2>
+<p>pve将原来的小硬盘换成容量更大的硬盘</p>
+<h3 id="初始">初始</h3>
+<p>使用dd 傲梅等工具，将原先硬盘克隆到新硬盘，如果一切顺利新的硬盘能正常启动</p>
+<p>执行fdisk -l</p>
+<pre><code class="language-shell">fdisk -l
 </code></pre>
-<p>屏蔽或开启常见端口</p>
-<h3 id="屏蔽或开启常用的tcpudp端口">屏蔽或开启常用的TCP、UDP端口：</h3>
-<pre><code class="language-shell">#可以使用DROP替换ACCEPT，实现端口屏蔽。  
-#打开22端口（SSH）  
-# iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT  
-# iptables -A INPUT -p tcp -s 192.168.1.0/24 -m state --state NEW --dport 22 -j ACCEPT  
-#打开TCP/UDP631端口（打印服务）  
-# iptables -A INPUT -p udp -s 192.168.1.0/24 -m udp --dport 631 -j ACCEPT  
-# iptables -A INPUT -p tcp -s 192.168.1.0/24 -m tcp --dport 631 -j ACCEPT  
-# 打开123端口，允许局域网用户进行NTP时间同步  
-# iptables -A INPUT -p udp -s 192.168.1.0/24 -m state --state NEW --dport 123 -j ACCEPT  
-#打开25端口（SMTP）  
-# iptables -A INPUT -p tcp -m state --state NEW --dport 25 -j ACCEPT  
-# 打开DNS端口  
-# iptables -A INPUT -p udp -m state --state NEW --dport 53 -j ACCEPT  
-# iptables -A INPUT -p tcp -m state --state NEW --dport 53 -j ACCEPT  
-#打开http/https端口  
-# iptables -A INPUT -p tcp -m state --state NEW --dport 80 -j ACCEPT  
-# iptables -A INPUT -p tcp -m state --state NEW --dport 443 -j ACCEPT  
-#打开TCP110端口（POP3）  
-# iptables -A INPUT -p tcp -m state --state NEW --dport 110 -j ACCEPT  
-#打开TCP143端口  
-# iptables -A INPUT -p tcp -m state --state NEW --dport 143 -j ACCEPT  
-#为局域网用户开启Samba访问  
+<p>会出现红色提示，就是提示空间不匹配</p>
+<pre><code class="language-error">GPT PMBR size mismatch (1065503 != 1073151) will be corrected by write.
+The backup GPT table is corrupt, but the primary appears OK, so that will be used.
+The backup GPT table is not on the end of the device.
+</code></pre>
+<h3 id="修复">修复</h3>
+<pre><code class="language-shell">apt-get update
+apt-get install parted
+parted -l
+</code></pre>
+<p>提示（例如）</p>
+<pre><code>Warning: Not all of the space available to /dev/mapper/local--poor-vm--100--disk--0 appears
+to be used, you can fix the GPT to use all of the space (an extra 7647 blocks) or continue
+with the current setting?
+Fix/Ignore?
+</code></pre>
+<p>不停FIx就完事。</p>
+<h3 id="扩容-1">扩容</h3>
+<p>通过执行</p>
+<pre><code>parted -l 
+</code></pre>
+<p>输出</p>
+<pre><code>Device           Start       End   Sectors   Size Type
+/dev/nvme0n1p1    4096      6109      2014  1007K BIOS boot
+/dev/nvme0n1p2    8192   1056767   1048576   512M EFI System
+/dev/nvme0n1p3 1060864 900194408 899133545 428.7G Linux LVM
+</code></pre>
+<p>选择需扩容的硬盘</p>
+<pre><code class="language-shell">parted /dev/nvme0n1
+</code></pre>
+<p>进入程序后，输入</p>
+<pre><code>print
+</code></pre>
+<p>显示</p>
+<pre><code>Model: SAMSUNG MZALQ512HALU-000L2 (nvme)
+Disk /dev/nvme0n1: 512GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags:
 
-# iptables -A INPUT -p tcp -s 192.168.1.0/24 -m state --state NEW --dport 137 -j ACCEPT  
-# iptables -A INPUT -p tcp -s 192.168.1.0/24 -m state --state NEW --dport 138 -j ACCEPT  
-# iptables -A INPUT -p tcp -s 192.168.1.0/24 -m state --state NEW --dport 139 -j ACCEPT  
-# iptables -A INPUT -p tcp -s 192.168.1.0/24 -m state --state NEW --dport 445 -j ACCEPT  
-#为局域网用户开启代理服务器访问  
-# iptables -A INPUT -p tcp -s 192.168.1.0/24 -m state --state NEW --dport 3128 -j ACCEPT  
-#为局域网用户开启MySQL访问  
-# iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
+Number  Start   End     Size    File system  Name  Flags
+ 1      2097kB  3128kB  1031kB                     bios_grub
+ 2      4194kB  541MB   537MB   fat32              boot, esp
+ 3      543MB   461GB   460GB                      lvm
 </code></pre>
+<p>扩容分区3</p>
+<pre><code>resizepart 3 100%
+quit
+fdisk -l
+</code></pre>
+<p>再次查看</p>
+<p>显示</p>
+<pre><code>Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name  Flags
+ 1      2097kB  3128kB  1031kB                     bios_grub
+ 2      4194kB  541MB   537MB   fat32              boot, esp
+ 3      543MB   461GB   460GB                      lvm
+</code></pre>
+<p>lvm 扩容</p>
+<pre><code>pvresize /dev/nvme0n1p3
+</code></pre>
+<p>扩容lvm 逻辑卷</p>
+<pre><code>lvextend [-L +/- &lt;增减容量&gt;] &lt;逻辑卷名称&gt;
+lvextend -l +100%FREE /dev/pve/data
+</code></pre>
+<p>查看逻辑卷是否分配完成</p>
+<pre><code>nano /etc/pve/storage.cfg
+lvdisplay
+pvs
+</code></pre>
+<p>修复文件系统(注意此命令在磁盘挂载情况下，一般只能修复扩容，缩减一般必须卸载后执行)</p>
+<pre><code>resize2fs &lt;逻辑卷名称&gt;
+resize2fs /dev/pve/data
+</code></pre>
+<h1 id="local-lvm的删除与创建">local-lvm的删除与创建</h1>
+<h2 id="删除">删除</h2>
+<p>先打开PVE的web页面，在数据中心-&gt;存储页面 手动删除对应的local-lvm</p>
+<ol>
+<li>
+<p>进入PVE的终端</p>
+</li>
+<li>
+<p>卸载与删除 lvm-thin</p>
+</li>
+</ol>
+<pre><code>umount /dev/pve/data
+lvremove /dev/pve/data
+</code></pre>
+<ol start="3">
+<li>检查有效空间</li>
+</ol>
+<pre><code>vgdisplay pve | grep Free
+</code></pre>
+<h2 id="创建">创建</h2>
+<p>如果要将local-lvm的容量归并到local, 则删除local-lvm 后使用 <code>lvextend</code> <code>resizefs</code> 修复</p>
+<h3 id="ext4-文件格式">EXT4 文件格式</h3>
+<ol>
+<li>进入PVE的终端</li>
+</ol>
+<p>此处介绍两种方式，一种是lvm ext4 另一种是原先的lvm-thin，创建新的lvm分区（非lvm-thin）</p>
+<ol start="2">
+<li>将多余空间</li>
+</ol>
+<p><strong>Note</strong>: 空余存储节点数 可从 <code>lvdisplay</code> <code>pvs</code>中见得。</p>
+<pre><code>lvcreate -l &lt;空余存储节点数&gt; -n data pve
+</code></pre>
+<p>1.5 格式化 与 挂载</p>
+<pre><code>mkfs.ext4 /dev/pve/data
+mkdir /mnt/data
+mount /dev/pve/data /mnt/data
+</code></pre>
+<p><strong>Note</strong>: <code>mkfs.ext4</code> 用于格式化为 ext4 ,  <code>mkfs.xfs -f</code> 用于格式化为 xfs</p>
+<p>1.6 修改 fstab文件, 使硬盘在系统启动时自动挂载，</p>
+<pre><code>nano /etc/fstab
+#最后一行加入
+/dev/pve/data /mnt/data ext4 defaults 0 0
+</code></pre>
+<p><strong>Note</strong>: 如果使用 xfs, 就把上面的ext4 改为xfs</p>
+<h3 id="lvm-thin-格式">LVM-thin 格式</h3>
+<ol>
+<li>卸载分区（如果有的话,路径自己通过pvs lvdisplay 查看）</li>
+</ol>
+<pre><code>unmount umount /mnt/data
+lvremove /dev/pve/data
+</code></pre>
+<ol start="2">
+<li>创建一存储块的分区，避免后续错误</li>
+</ol>
+<pre><code>lvcreate -l 1 -n data pve
+</code></pre>
+<ol start="3">
+<li>转换成 thin-pool 格式</li>
+</ol>
+<pre><code>lvconvert --type thin-pool pve/data
+</code></pre>
+<ol start="4">
+<li>拓展剩余分区</li>
+</ol>
+<pre><code>lvextend -l +99%FREE pve/data
+</code></pre>
+<ol start="5">
+<li>
+<p>重新修改 /etc/fstab 文件</p>
+<p>大致像这样</p>
+</li>
+</ol>
+<pre><code># &lt;file system&gt; &lt;mount point&gt; &lt;type&gt; &lt;options&gt; &lt;dump&gt; &lt;pass&gt;
+/dev/pve/root / ext4 errors=remount-ro 0 1
+UUID=3218-10BF /boot/efi vfat defaults 0 1
+/dev/pve/swap none swap sw 0 0
+proc /proc proc defaults 0 0
+</code></pre>
+<h2 id="proxmox使用创建的硬盘">Proxmox使用创建的硬盘</h2>
+<ol>
+<li>
+<p>登录PVE web 页面</p>
+</li>
+<li>
+<p>在数据中心-&gt;存储页面， 点击添加</p>
+</li>
+</ol>
+<h1 id="reference">Reference:</h1>
+<blockquote>
+<p><a href="https://dannyda.com/2020/05/10/how-to-delete-remove-local-lvm-from-proxmox-ve-pve-and-some-lvm-basics-commands/">https://dannyda.com/2020/05/10/how-to-delete-remove-local-lvm-from-proxmox-ve-pve-and-some-lvm-basics-commands/</a></p>
+<p><a href="https://qu1u1.cn/archives/pve%E5%88%A0%E9%99%A4local-lvm%E7%BB%99local%E6%89%A9%E5%AE%B9%E5%88%9B%E5%BB%BAlvm-thin">https://qu1u1.cn/archives/pve%E5%88%A0%E9%99%A4local-lvm%E7%BB%99local%E6%89%A9%E5%AE%B9%E5%88%9B%E5%BB%BAlvm-thin</a></p>
+<p><a href="https://blog.csdn.net/William_Lee1333/article/details/109148533">https://blog.csdn.net/William_Lee1333/article/details/109148533</a></p>
+<p><a href="https://www.wnark.com/archives/118.html">https://www.wnark.com/archives/118.html</a></p>
+</blockquote>
 </article>
 
 
       
         <div class="my-4">
-    
-    <a href="/tags/vps/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#vps</a>
     
     <a href="/tags/%E9%85%8D%E7%BD%AE/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#配置</a>
     
@@ -370,16 +517,11 @@ iptables -I INPUT -s 123.45.6.0/24 -j DROP
   >
     <div>
       
-        <span class="text-primary-text block font-bold"
-          >上一页</span
-        >
-        <a href="/post/19/" class="block">PVE (PROXMOX) 使用笔记</a>
-      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="/post/17/" class="block">matomo防屏蔽</a>
+        <a href="/post/18/" class="block">iptable使用小记</a>
       
     </div>
   </div>
@@ -406,12 +548,33 @@ iptables -I INPUT -s 123.45.6.0/24 -j DROP
 >
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#网卡">网卡</a>
       <ul>
-        <li><a href="#彻底禁止某ip访问">彻底禁止某IP访问:</a></li>
-        <li><a href="#屏蔽或开启常用的tcpudp端口">屏蔽或开启常用的TCP、UDP端口：</a></li>
+        <li><a href="#直通">直通</a></li>
+        <li><a href="#无线网卡">无线网卡</a></li>
       </ul>
     </li>
+  </ul>
+
+  <ul>
+    <li><a href="#扩容">扩容</a>
+      <ul>
+        <li><a href="#初始">初始</a></li>
+        <li><a href="#修复">修复</a></li>
+        <li><a href="#扩容-1">扩容</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#删除">删除</a></li>
+    <li><a href="#创建">创建</a>
+      <ul>
+        <li><a href="#ext4-文件格式">EXT4 文件格式</a></li>
+        <li><a href="#lvm-thin-格式">LVM-thin 格式</a></li>
+      </ul>
+    </li>
+    <li><a href="#proxmox使用创建的硬盘">Proxmox使用创建的硬盘</a></li>
   </ul>
 </nav>
 </div>
@@ -432,10 +595,13 @@ iptables -I INPUT -s 123.45.6.0/24 -j DROP
       >
         <h3>相关</h3>
         
-          <a href="/post/2/" class="no-underline">vps 初始配置与性能测试</a>
+          <a href="/post/18/" class="no-underline">iptable使用小记</a>
           <br />
         
           <a href="/post/7/" class="no-underline">宝塔面板安装笔记</a>
+          <br />
+        
+          <a href="/post/2/" class="no-underline">vps 初始配置与性能测试</a>
           <br />
         
       </div>
