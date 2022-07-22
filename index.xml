@@ -8,7 +8,26 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rust交叉编译</title>
+      <link>/post/20/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/20/</guid>
+      <description>&lt;p&gt;pve 安装 扩容&lt;/p&gt;
+&lt;p&gt;rust交叉编译流程记录&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PVE (PROXMOX) 使用笔记</title>
+      <link>/post/19/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/19/</guid>
+      <description>&lt;p&gt;pve 安装 分区修改扩容 openwrt安装&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>第二周</title>
       <link>/docs/2022%E6%9A%91%E5%81%87%E5%AE%9E%E4%B9%A0%E6%96%87%E6%A1%A3/%E6%97%A5%E5%BF%97/week2/</link>

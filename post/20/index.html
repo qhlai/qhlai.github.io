@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>博客</title>
+<title>rust交叉编译 | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -79,34 +79,62 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Eureka is a elegant and powerful theme for Hugo.">
+  content="PVE (PROXMOX) project">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"rust交叉编译",
+      "item":"/post/20/"}]
+}
+</script>
 
 
 
-<meta property="og:title" content="博客" />
-<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/post/20/"
+    },
+    "headline": "rust交叉编译 | 博客","datePublished": "2022-07-22T00:00:00+00:00",
+    "dateModified": "2022-07-22T00:00:00+00:00",
+    "wordCount":  167 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "WANG Chucheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "PVE (PROXMOX) project"
+}
+</script><meta property="og:title" content="rust交叉编译 | 博客" />
+<meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/" />
+<meta property="og:url" content="/post/20/" />
 
 
 
-
-
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
-
-
+<meta property="og:description" content="PVE (PROXMOX) project" />
 
 
 
 <meta property="og:locale" content="zh" />
-
-
-
-<meta property="og:locale:alternate" content="en" />
 
 
 
@@ -118,14 +146,21 @@
 
 
 
-<meta property="og:updated_time" content="2022-07-22T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-07-22T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-07-22T00:00:00&#43;00:00" />
 
 
 
-<meta property="article:section" content="" />
+<meta property="article:section" content="posts" />
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="博客" />
+<meta property="article:tag" content="rust" />
+
+
+
+
 
 
   <body class="flex min-h-screen flex-col">
@@ -167,19 +202,6 @@
                     <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
             </div>
-            <div class="relative pt-4 ps-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="languageMode">
-                    <i class="fas fa-globe"></i>
-                    <span class="ps-1">简中</span>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='languageOptions'>
-                    <a class="px-4 py-1 hover:text-eureka" href="/">简中</a>
-                    <a class="px-4 py-1 hover:text-eureka" href="/en/">English</a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -207,387 +229,240 @@
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
-        switchLanguage()
     });
 </script>
 </div>
     </header>
     <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
   
   
-  
-    
-      
-  
-
-  
-
-  
-  
-  
-
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-  
-
-  
-  
-
-  
-    
-    
-    
-    
-      
-      
-    
-
-    
-    
-    
-    
-    
-  
-
-
-  <div
-    class="pl-scrollbar bg-secondary-bg"
-    
-  >
-    <div class="mx-auto max-w-screen-xl">
-      <div
-        id="about"
-        class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12"
-      >
-        
-  
-
-  
-    
-      
-      <div class="mb-12 flex flex-col items-center justify-center md:flex-row">
-  
-  
-  <div class="mt-4 w-full grow md:mt-0">
-    <h1 class="py-4 text-3xl">关于</h1>
-    <div class="w-3/12 border-b xl:w-2/12"></div>
-
-    <div class="flex items-center pt-4">
-      
-      <div class="flex flex-wrap">
-        
-
-        
-          <a href="" class="ps-4"></a>
-        
-      </div>
-    </div>
-
-    
-  </div>
-  <div class="md:ms-8 flex items-end justify-center md:flex-col">
-    
-    
-      
-      
-      
-      
-      
-      <div class="mx-2 mb-2 mt-4 md:mx-0 md:mt-2">
-        <a href=""><i class="&lt;nil&gt; fa-&lt;nil&gt;"></i></a>
-      </div>
-    
-  </div>
-</div>
-<div class="prose">
-  <p>学生/打工人/码农 的低质博客</p>
-<p>精通C/C++, Python, Rust, Javascript, MATLAB, PHP, solid works, Multisim, Cadence, AutoCAD, OpenCV ROS, stm32, Linux开发板, msp430, postpreSql, nginx, Archlinux, kvm, docker的拼写</p>
-<p>公开专用匿名联系邮箱: miraexxvlub*gmail.com  *为@</p>
-<p>禁止CSDN 等一切采集站采集</p>
-
-</div>
-
-      
-    
-  
-
-      </div>
-    </div>
-  </div>
-
-    
-
-    
-  
-    
-      
-  
-
-  
-
-  
-  
-  
-
-  
-    
-    
-    
-    
-      
-      
-    
-  
-
-  
-  
-
-  
-    
-    
-    
-    
-      
-      
-    
-
-    
-    
-    
-    
-    
-  
-
-
-  <div
-    class="pl-scrollbar bg-primary-bg"
-    
-  >
-    <div class="mx-auto max-w-screen-xl">
-      <div
-        id="some"
-        class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12"
-      >
-        
-  
-
-  
-    
-      
-      
-<style type="text/css">
-  #wrap {
-     width:600px;
-     margin:0 auto;
-  }
-  #left_col {
-     float:left;
-     width:300px;
-  }
-  #right_col {
-     float:right;
-     width:300px;
-  }
-  </style>
-
-  <div class="container">
-    <h3>友情链接:(原则上不添加死链和免费域名 排序不分先后)</h3>
-    <div style="text-align:center">
-    <a href="http://vaala.cat ">vaala.cat </a> 
-    <a href="http://blog.sorashu.tech">blog.sorashu.tech  </a>
-    <a href="http://blog.origami404.top">blog.origami404.top  </a>
-    <a href="http://roy1994.top">roy1994.top  </a>
-    <a href="http://huangblog.com">huangblog.com  </a>
-    <!--p>hopp.top blog.imakiseki.cf graph.eu.org</p--> 
-    </div>
-    <h3>博客更新log:</h3>
-    <p>2022.07.11 增加友链，更新主题</p> 
-    <p>2022.05.15 hugo+Eureka+托管+Cloudflare 静态文件出错+简洁化</p> 
-    <p>2021.08.30 hugo+nextT+托管+Cloudflare 随便攻击吧，资源耗完拉倒</p> 
-    <p>2021.04.20 公网域名建站 wordpress+vps</p> 
-    <p>2020.07.01 hexo建站 静态托管</p> 
-  </div>
-  <div id="wrap">
-      <div id="left_col">
-      
-      </div>
-      <div id="right_col">
-         
-      </div>
-  </div>
-  
-  </div>
-</div>
-
-      
-    
-  
-
-      </div>
-    </div>
-  </div>
-
-    
-
-    
-  
-    
-      
-  
-
-  
-
-  
-  
-  
-
-  
-    
-    
-    
-    
-      
-      
-    
-  
-
-  
-  
-
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-
-    
-    
-    
-    
-    
-  
-
-
-  <div
-    class="pl-scrollbar bg-primary-bg"
-    
-  >
-    <div class="mx-auto max-w-screen-xl">
-      <div
-        id="experience"
-        class="lg:w-4/5 mx-auto px-6 md:px-8 xl:px-12 py-12"
-      >
-        
-  
-
-  
-
-    
-    
-    
-    
-    
-      
-    
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
     <div
-      class="lg:flex-row flex flex-col"
+      class="lg:col-start-2 bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
-      <div
-        class="lg:w-1/4 lg:me-4 flex-none"
-      >
-        <h2 class="my-4 text-3xl font-bold">经历</h2>
-      </div>
-      <div
-        class="lg:ms-4 grow"
-      >
+      <article class="prose">
+  <h1 class="mb-4">rust交叉编译</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-07-22</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>1分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="/categories/linux/" class="hover:text-eureka"
+          >Linux</a
+        >
+      
         
-          
-          
-  <div class="mb-6">
-    <div
-      class="bg-secondary-bg prose dark:border-tertiary-bg rounded border p-6 transition duration-200 ease-in-out hover:shadow-lg"
-    >
-      <h3 class="">学生</h3>
-      <div class="flex flex-col md:flex-row md:justify-between">
-        <div>
-          
-            <span>9</span>
-          
+          <span>, </span>
+        <a href="/categories/rust/" class="hover:text-eureka"
+          >rust</a
+        >
+      
+    </div>
+  
 
-          
-            <span class="ms-2 me-2">·</span>
-          
+  
+</div>
 
 
-          <span>China </span>
+  
+  
+
+  <p>pve 安装 扩容</p>
+<p>rust交叉编译流程记录</p>
+<p>rust安装不多做赘述</p>
+<p>交叉编译即在本机编译出能在其它系统或架构运行的程序，需要对应编译工具链，本文介绍主机为linux的rust交叉编译</p>
+<p>查看本机编译工具链</p>
+<pre><code class="language-bash">rustup show
+</code></pre>
+<p>显示为</p>
+<pre><code>root@debian:~# rustup show
+Default host: x86_64-unknown-linux-gnu
+rustup home:  /root/.rustup
+
+stable-x86_64-unknown-linux-gnu (default)
+rustc 1.62.1 (e092d0b6b 2022-07-16)
+</code></pre>
+<p>输入</p>
+<pre><code class="language-bash">rustup target list
+</code></pre>
+<p>显示支持的工具链</p>
+<pre><code class="language-shell">aarch64-apple-darwin
+aarch64-apple-ios
+aarch64-apple-ios-sim
+aarch64-fuchsia
+aarch64-linux-android
+aarch64-pc-windows-msvc
+aarch64-unknown-linux-gnu
+aarch64-unknown-linux-musl
+aarch64-unknown-none
+aarch64-unknown-none-softfloat
+arm-linux-androideabi
+arm-unknown-linux-gnueabi
+arm-unknown-linux-gnueabihf
+arm-unknown-linux-musleabi
+arm-unknown-linux-musleabihf
+armebv7r-none-eabi
+armebv7r-none-eabihf
+armv5te-unknown-linux-gnueabi
+armv5te-unknown-linux-musleabi
+armv7-linux-androideabi
+armv7-unknown-linux-gnueabi
+armv7-unknown-linux-gnueabihf
+armv7-unknown-linux-musleabi
+armv7-unknown-linux-musleabihf
+armv7a-none-eabi
+armv7r-none-eabi
+armv7r-none-eabihf
+asmjs-unknown-emscripten
+i586-pc-windows-msvc
+i586-unknown-linux-gnu
+i586-unknown-linux-musl
+i686-linux-android
+i686-pc-windows-gnu
+i686-pc-windows-msvc
+i686-unknown-freebsd
+i686-unknown-linux-gnu
+i686-unknown-linux-musl
+mips-unknown-linux-gnu
+mips-unknown-linux-musl
+mips64-unknown-linux-gnuabi64
+mips64-unknown-linux-muslabi64
+mips64el-unknown-linux-gnuabi64
+mips64el-unknown-linux-muslabi64
+mipsel-unknown-linux-gnu
+mipsel-unknown-linux-musl
+nvptx64-nvidia-cuda
+powerpc-unknown-linux-gnu
+powerpc64-unknown-linux-gnu
+powerpc64le-unknown-linux-gnu
+riscv32i-unknown-none-elf
+riscv32imac-unknown-none-elf
+riscv32imc-unknown-none-elf
+riscv64gc-unknown-linux-gnu
+riscv64gc-unknown-none-elf
+riscv64imac-unknown-none-elf
+s390x-unknown-linux-gnu
+sparc64-unknown-linux-gnu
+sparcv9-sun-solaris
+thumbv6m-none-eabi
+thumbv7em-none-eabi
+thumbv7em-none-eabihf
+thumbv7m-none-eabi
+thumbv7neon-linux-androideabi
+thumbv7neon-unknown-linux-gnueabihf
+thumbv8m.base-none-eabi
+thumbv8m.main-none-eabi
+thumbv8m.main-none-eabihf
+wasm32-unknown-emscripten
+wasm32-unknown-unknown
+wasm32-wasi
+x86_64-apple-darwin
+x86_64-apple-ios
+x86_64-fortanix-unknown-sgx
+x86_64-fuchsia
+x86_64-linux-android
+x86_64-pc-solaris
+x86_64-pc-windows-gnu
+x86_64-pc-windows-msvc
+x86_64-sun-solaris
+x86_64-unknown-freebsd
+x86_64-unknown-illumos
+x86_64-unknown-linux-gnu (installed)
+x86_64-unknown-linux-gnux32
+x86_64-unknown-linux-musl
+x86_64-unknown-netbsd
+x86_64-unknown-none
+x86_64-unknown-redox
+</code></pre>
+<p>加入对应平台编译工具链和gcc</p>
+<pre><code class="language-bash">rustup target add aarch64-unknown-linux-gnu
+sudo apt-get install -qq gcc-aarch64-linux-gnu
+#rustup toolchain install stable-aarch64-unknown-linux-gnu --force-non-host
+rustup target add x86_64-pc-windows-gnu
+apt-get install mingw-w64 -y 
+#rustup toolchain install stable-x86_64-pc-windows-gnu --force-non-host
+#cross-x86_64-w64-mingw32
+</code></pre>
+<p>可运行命令确认</p>
+<pre><code class="language-bash">rustup show
+aarch64-linux-gnu-gcc -v
+</code></pre>
+<p>编译</p>
+<pre><code class="language-sh">cargo build --target=aarch64-unknown-linux-gnu --release
+cargo build --target=x86_64-pc-windows-gnu --release
+
+cargo run --target=x86_64-pc-windows-gnu --release --bin example
+</code></pre>
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="/tags/rust/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#rust</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="/post/19/" class="block">PVE (PROXMOX) 使用笔记</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
         </div>
-        <div class="shrink-0"></div>
-      </div>
-
-      <div class="mt-5"><ul>
-<li>硕士</li>
-</ul>
-</div>
-    </div>
-  </div>
-
-  <div class="mb-6">
-    <div
-      class="bg-secondary-bg prose dark:border-tertiary-bg rounded border p-6 transition duration-200 ease-in-out hover:shadow-lg"
-    >
-      <h3 class="">学生</h3>
-      <div class="flex flex-col md:flex-row md:justify-between">
-        <div>
-          
-            <span>9</span>
-          
-
-          
-            <span class="ms-2 me-2">·</span>
-          
-
-
-          <span>China </span>
-        </div>
-        <div class="shrink-0"></div>
-      </div>
-
-      <div class="mt-5"><ul>
-<li>学士</li>
-</ul>
-</div>
-    </div>
-  </div>
-
-
-          
-        
-
-      </div>
-    </div>
-  
-
-      </div>
-    </div>
-  </div>
-
-    
-
-    
-  
+      
     </main>
     <footer class="pl-scrollbar">
       <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">

@@ -2,8 +2,59 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/categories/"
+                />
+  </url><url>
+    <loc>/categories/linux/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/posts/"
+                />
+  </url><url>
+    <loc>/tags/rust/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/rust/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/20/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="/tags/"
+                />
+  </url><url>
     <loc>/</loc>
-    <lastmod>2022-05-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-07-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +65,15 @@
                 hreflang="zh"
                 href="/"
                 />
+  </url><url>
+    <loc>/post/19/</loc>
+    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/server/</loc>
+    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/docs/2022%E6%9A%91%E5%81%87%E5%AE%9E%E4%B9%A0%E6%96%87%E6%A1%A3/%E6%97%A5%E5%BF%97/week2/</loc>
     <lastmod>2022-05-30T00:00:00+00:00</lastmod>
@@ -31,56 +91,14 @@
                 href="/docs/"
                 />
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2022-05-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/categories/"
-                />
-  </url><url>
     <loc>/post/18/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2022-05-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/posts/"
-                />
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-05-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="/tags/"
-                />
   </url><url>
     <loc>/tags/vps/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/docs/2022%E6%9A%91%E5%81%87%E5%AE%9E%E4%B9%A0%E6%96%87%E6%A1%A3/%E6%97%A5%E5%BF%97/week1/</loc>
     <lastmod>2022-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2022-05-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
@@ -154,9 +172,6 @@
     <loc>/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/linux/</loc>
-    <lastmod>2022-05-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/post/11/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -210,9 +225,6 @@
   </url><url>
     <loc>/post/4/</loc>
     <lastmod>2022-05-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/rust/</loc>
-    <lastmod>2021-04-26T11:30:06+00:00</lastmod>
   </url><url>
     <loc>/post/5/</loc>
     <lastmod>2021-04-26T11:30:06+00:00</lastmod>

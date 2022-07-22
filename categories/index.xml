@@ -8,7 +8,34 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>/categories/linux/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>/categories/rust/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>/categories/server/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/server/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>网络</title>
       <link>/categories/%E7%BD%91%E7%BB%9C/</link>
@@ -82,15 +109,6 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>/categories/linux/</link>
-      <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
-      
-      <guid>/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>嵌入式</title>
       <link>/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
       <pubDate>Wed, 09 Jun 2021 15:33:11 +0000</pubDate>
@@ -123,15 +141,6 @@
       <pubDate>Mon, 26 Apr 2021 14:00:00 +0000</pubDate>
       
       <guid>/categories/dns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rust</title>
-      <link>/categories/rust/</link>
-      <pubDate>Mon, 26 Apr 2021 11:30:06 +0000</pubDate>
-      
-      <guid>/categories/rust/</guid>
       <description></description>
     </item>
     

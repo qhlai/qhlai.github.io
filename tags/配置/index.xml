@@ -8,7 +8,16 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 16 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PVE (PROXMOX) 使用笔记</title>
+      <link>/post/19/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/19/</guid>
+      <description>&lt;p&gt;pve 安装 分区修改扩容 openwrt安装&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>iptable使用小记</title>
       <link>/post/18/</link>
