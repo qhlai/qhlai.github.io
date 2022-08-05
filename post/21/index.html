@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>rust交叉编译 | 博客</title>
+<title>Cmake 使用 | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -79,7 +79,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="PVE (PROXMOX) project">
+  content="Cmake usage">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,8 +91,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"rust交叉编译",
-      "item":"/post/20/"}]
+      "name":"Cmake 使用",
+      "item":"/post/21/"}]
 }
 </script>
 
@@ -104,11 +104,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/post/20/"
+        "@id": "/post/21/"
     },
-    "headline": "rust交叉编译 | 博客","datePublished": "2022-07-22T00:00:00+00:00",
-    "dateModified": "2022-07-22T00:00:00+00:00",
-    "wordCount":  167 ,
+    "headline": "Cmake 使用 | 博客","datePublished": "2022-08-05T00:00:00+00:00",
+    "dateModified": "2022-08-05T00:00:00+00:00",
+    "wordCount":  315 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -117,20 +117,20 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "PVE (PROXMOX) project"
+    "description": "Cmake usage"
 }
-</script><meta property="og:title" content="rust交叉编译 | 博客" />
+</script><meta property="og:title" content="Cmake 使用 | 博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/post/20/" />
+<meta property="og:url" content="/post/21/" />
 
 
 
-<meta property="og:description" content="PVE (PROXMOX) project" />
+<meta property="og:description" content="Cmake usage" />
 
 
 
@@ -146,17 +146,17 @@
 
 
 
-<meta property="article:published_time" content="2022-07-22T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-08-05T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-07-22T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-08-05T00:00:00&#43;00:00" />
 
 
 
 <meta property="article:section" content="posts" />
 
 
-<meta property="article:tag" content="rust" />
+<meta property="article:tag" content="cmake" />
 
 
 
@@ -240,10 +240,10 @@
   
   <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
     <div
-      class="lg:col-start-2 bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">rust交叉编译</h1>
+  <h1 class="mb-4">Cmake 使用</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -251,26 +251,32 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2022-07-22</span
+      >2022-08-05</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>1分钟阅读时长</span>
+    <span>2分钟阅读时长</span>
   </div>
 
   
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
+        <a href="/categories/windows/" class="hover:text-eureka"
+          >windows</a
+        >
+      
+        
+          <span>, </span>
         <a href="/categories/linux/" class="hover:text-eureka"
           >Linux</a
         >
       
         
           <span>, </span>
-        <a href="/categories/rust/" class="hover:text-eureka"
-          >rust</a
+        <a href="/categories/cpp/" class="hover:text-eureka"
+          >cpp</a
         >
       
     </div>
@@ -283,131 +289,197 @@
   
   
 
-  <p>pve 安装 扩容</p>
-<p>rust交叉编译流程记录</p>
-<p>rust安装不多做赘述</p>
-<p>交叉编译即在本机编译出能在其它系统或架构运行的程序，需要对应编译工具链，本文介绍主机为linux的rust交叉编译</p>
-<p>查看本机编译工具链</p>
-<pre><code class="language-bash">rustup show
-</code></pre>
-<p>显示为</p>
-<pre><code>root@debian:~# rustup show
-Default host: x86_64-unknown-linux-gnu
-rustup home:  /root/.rustup
+  <p>Cmake</p>
+<h1 id="windows">Windows</h1>
+<h3 id="创建新项目">创建新项目</h3>
+<p><img src="image-20220805171902490.png" alt="image-20220805171902490"></p>
+<p>main 函数内容如下</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+#include &lt;windows.h&gt;
 
-stable-x86_64-unknown-linux-gnu (default)
-rustc 1.62.1 (e092d0b6b 2022-07-16)
+int main()
+{
+    std::cout&lt;&lt;&quot;Hello world&quot;&lt;&lt;std::endl;
+    system(&quot;pause&quot;);
+    return 0;
+}
 </code></pre>
-<p>输入</p>
-<pre><code class="language-bash">rustup target list
-</code></pre>
-<p>显示支持的工具链</p>
-<pre><code class="language-shell">aarch64-apple-darwin
-aarch64-apple-ios
-aarch64-apple-ios-sim
-aarch64-fuchsia
-aarch64-linux-android
-aarch64-pc-windows-msvc
-aarch64-unknown-linux-gnu
-aarch64-unknown-linux-musl
-aarch64-unknown-none
-aarch64-unknown-none-softfloat
-arm-linux-androideabi
-arm-unknown-linux-gnueabi
-arm-unknown-linux-gnueabihf
-arm-unknown-linux-musleabi
-arm-unknown-linux-musleabihf
-armebv7r-none-eabi
-armebv7r-none-eabihf
-armv5te-unknown-linux-gnueabi
-armv5te-unknown-linux-musleabi
-armv7-linux-androideabi
-armv7-unknown-linux-gnueabi
-armv7-unknown-linux-gnueabihf
-armv7-unknown-linux-musleabi
-armv7-unknown-linux-musleabihf
-armv7a-none-eabi
-armv7r-none-eabi
-armv7r-none-eabihf
-asmjs-unknown-emscripten
-i586-pc-windows-msvc
-i586-unknown-linux-gnu
-i586-unknown-linux-musl
-i686-linux-android
-i686-pc-windows-gnu
-i686-pc-windows-msvc
-i686-unknown-freebsd
-i686-unknown-linux-gnu
-i686-unknown-linux-musl
-mips-unknown-linux-gnu
-mips-unknown-linux-musl
-mips64-unknown-linux-gnuabi64
-mips64-unknown-linux-muslabi64
-mips64el-unknown-linux-gnuabi64
-mips64el-unknown-linux-muslabi64
-mipsel-unknown-linux-gnu
-mipsel-unknown-linux-musl
-nvptx64-nvidia-cuda
-powerpc-unknown-linux-gnu
-powerpc64-unknown-linux-gnu
-powerpc64le-unknown-linux-gnu
-riscv32i-unknown-none-elf
-riscv32imac-unknown-none-elf
-riscv32imc-unknown-none-elf
-riscv64gc-unknown-linux-gnu
-riscv64gc-unknown-none-elf
-riscv64imac-unknown-none-elf
-s390x-unknown-linux-gnu
-sparc64-unknown-linux-gnu
-sparcv9-sun-solaris
-thumbv6m-none-eabi
-thumbv7em-none-eabi
-thumbv7em-none-eabihf
-thumbv7m-none-eabi
-thumbv7neon-linux-androideabi
-thumbv7neon-unknown-linux-gnueabihf
-thumbv8m.base-none-eabi
-thumbv8m.main-none-eabi
-thumbv8m.main-none-eabihf
-wasm32-unknown-emscripten
-wasm32-unknown-unknown
-wasm32-wasi
-x86_64-apple-darwin
-x86_64-apple-ios
-x86_64-fortanix-unknown-sgx
-x86_64-fuchsia
-x86_64-linux-android
-x86_64-pc-solaris
-x86_64-pc-windows-gnu
-x86_64-pc-windows-msvc
-x86_64-sun-solaris
-x86_64-unknown-freebsd
-x86_64-unknown-illumos
-x86_64-unknown-linux-gnu (installed)
-x86_64-unknown-linux-gnux32
-x86_64-unknown-linux-musl
-x86_64-unknown-netbsd
-x86_64-unknown-none
-x86_64-unknown-redox
-</code></pre>
-<p>加入对应平台编译工具链和gcc</p>
-<pre><code class="language-bash">rustup target add aarch64-unknown-linux-gnu
-sudo apt-get install -qq gcc-aarch64-linux-gnu
-#rustup toolchain install stable-aarch64-unknown-linux-gnu --force-non-host
-rustup target add x86_64-pc-windows-gnu
-apt-get install mingw-w64 -y 
-#rustup toolchain install stable-x86_64-pc-windows-gnu --force-non-host
-#cross-x86_64-w64-mingw32
-</code></pre>
-<p>可运行命令确认</p>
-<pre><code class="language-bash">rustup show
-aarch64-linux-gnu-gcc -v
-</code></pre>
-<p>编译</p>
-<pre><code class="language-sh">cargo build --target=aarch64-unknown-linux-gnu --release
-cargo build --target=x86_64-pc-windows-gnu --release
+<p>Cmakelists.txt内容如下</p>
+<pre><code class="language-makefile">cmake_minimum_required(VERSION 3.5)
+project(kinematic)#项目名称
 
-cargo run --target=x86_64-pc-windows-gnu --release --bin example
+# set(CMAKE_BUILD_TYPE Debug)
+# SET(CMAKE_BUILD_TYPE Release)
+
+set(CMAKE_C_STANDARD 11)
+
+#编译级别和优化
+if(CMAKE_BUILD_TYPE AND (CMAKE_BUILD_TYPE STREQUAL &quot;Debug&quot;))
+    set(CMAKE_C_FLAGS_DEBUG &quot;${CMAKE_C_FLAGS_DEBUG} -Wall -O0&quot;)
+    message(&quot;Debug mode:${CMAKE_C_FLAGS_DEBUG}&quot;)
+    #add_executable(test_debug ${src_dirs})
+
+elseif(CMAKE_BUILD_TYPE AND (CMAKE_BUILD_TYPE STREQUAL &quot;Release&quot;))
+    set(CMAKE_C_FLAGS_RELEASE &quot;${CMAKE_C_FLAGS_RELEASE} -Wall -O3&quot;)
+    message(&quot;Release mode:${CMAKE_C_FLAGS_RELEASE}&quot;)
+    #add_executable(test_release ${src_dirs})
+else()
+    message(&quot;else:${CMAKE_BUILD_TYPE}&quot;)
+    message(&quot;else:${CMAKE_C_FLAGS_RELEASE}&quot;)
+    #add_executable(test_release ${src_dirs})
+endif()
+
+# Default to C 11
+if(CMAKE_C_STANDARD)
+  set(CMAKE_C_STANDARD 11)
+endif()
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+  #set(CMAKE_CXX_STANDARD 17)
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
+endif()
+
+#检查安全性
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES &quot;Clang&quot;)
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+#系统检测，备用
+if(WIN32)
+endif()
+if(UNIX AND NOT APPLE AND NOT ANDROID)
+endif()
+if(APPLE)
+endif()
+#库路径
+include_directories(include)
+#源代码路径
+aux_source_directory(src SRC_SUB)
+aux_source_directory(. SRC_CUR)	
+
+MESSAGE(STATUS  &quot;message&quot; ${HELLO_BINARY_DIR})#输出一下
+#可执行文件
+add_executable(kinematic  ${SRC_SUB} ${SRC_CUR})
+</code></pre>
+<p>打开vscode</p>
+<p><img src="image-20220805172542055.png" alt="image-20220805172542055"></p>
+<p>选择Cmake Configure</p>
+<p>该操作实质等同于：</p>
+<pre><code>mkdir build
+cd build
+cmake -G &quot;MinGW Makefiles&quot; ../
+</code></pre>
+<p>如果正常的话当前目录下会多个build文件夹</p>
+<p>cd 进入 build文件夹，输入</p>
+<pre><code>cmake .
+mingw32-make.exe
+</code></pre>
+<p>完成编译。</p>
+<h3 id="vscode调试cmake">vscode调试cmake</h3>
+<p>在工作空间的.vscode文件夹下，创建launch.json和tasks.json</p>
+<p>参考如下：</p>
+<p>launch.json</p>
+<pre><code class="language-json">{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;g++.exe build and debug active file&quot;,
+            &quot;type&quot;: &quot;cppdbg&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;program&quot;: &quot;${workspaceFolder}\\build\\kinematic.exe&quot;,//需要改成自己的可执行文件
+            &quot;args&quot;: [],
+            &quot;stopAtEntry&quot;: false,
+            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,
+            &quot;environment&quot;: [],
+            &quot;externalConsole&quot;: true,
+            &quot;MIMode&quot;: &quot;gdb&quot;,
+            &quot;miDebuggerPath&quot;: &quot;C:\\Program Files\\mingw64\\bin\\gdb.exe&quot;,
+            &quot;setupCommands&quot;: [
+                {
+                    &quot;description&quot;: &quot;为 gdb 启用整齐打印&quot;,
+                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,
+                    &quot;ignoreFailures&quot;: true
+                }
+            ],
+            //需要与task.json的label名称对应
+            &quot;preLaunchTask&quot;: &quot;Build my project&quot;
+        }
+    ]
+}
+</code></pre>
+<ul>
+<li>program: 要调试的可执行程序的路径，里边可以使用一些宏，宏的外部加 ${} 表示取值</li>
+<li>${fileDirname}：文件目录的名字，launch.json 对应的目录名就是 .vscode</li>
+<li>${fileBasenameNoExtension}：不带扩展名的文件名，文件名是 main 函数对应的那个文件</li>
+<li>${workspaceFolder}：工作区目录</li>
+<li>preLaunchTask：调试项目前要执行的任务，C/C++: g++.exe 生成活动文件是 tasks.json 中的一个任务</li>
+</ul>
+<p>tasks.json</p>
+<pre><code class="language-json">{
+    &quot;version&quot;: &quot;2.0.0&quot;,
+    &quot;options&quot;: {
+        &quot;cwd&quot;: &quot;${workspaceFolder}/build/&quot;  //进入build目录
+    },
+
+    &quot;tasks&quot;: [
+        {
+            &quot;label&quot;: &quot;cmake&quot;,
+            &quot;type&quot;: &quot;shell&quot;,
+            &quot;command&quot;: &quot;cmake &quot;,
+            &quot;args&quot;: [
+                &quot;-DCMAKE_BUILD_TYPE=Debug&quot;,//可改为Release
+                &quot;..&quot;
+            ]
+        },
+        {
+            &quot;label&quot;: &quot;make&quot;,
+            &quot;group&quot;:{
+                &quot;kind&quot;:&quot;build&quot;,
+                &quot;isDefault&quot;:true
+            },
+            &quot;command&quot;: &quot;mingw32-make.exe&quot;,//or make.exe
+            &quot;args&quot;:[
+            ]
+        },
+        {
+            &quot;label&quot;:&quot;Build my project&quot;,
+            &quot;dependsOn&quot;:[
+                &quot;cmake&quot;,
+                &quot;make&quot;                
+            ]
+        }
+    ]
+}
+
+</code></pre>
+<p>c_cpp_properties.json 这个文件可有可无，主要便于编程时vscode识别头文件，不会被标红</p>
+<pre><code class="language-json">{
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;Win64&quot;,
+            &quot;includePath&quot;: [
+                &quot;${workspaceFolder}/**&quot;,
+                &quot;C:/Program Files/Opencv/opencv-4.6.0-src/build/x64/mingw/install/include&quot;,
+                &quot;C:/Program Files/Opencv/opencv-4.6.0-src/build/x64/mingw/install/include/opencv2&quot;
+            ],
+            &quot;defines&quot;: [
+                &quot;_DEBUG&quot;,
+                &quot;UNICODE&quot;,
+                &quot;_UNICODE&quot;
+            ],
+            &quot;compilerPath&quot;: &quot;C:\\Program Files\\mingw64\\bin\\gcc.exe&quot;,
+            &quot;cStandard&quot;: &quot;gnu17&quot;,
+            &quot;cppStandard&quot;: &quot;gnu++20&quot;,
+            &quot;intelliSenseMode&quot;: &quot;windows-gcc-x64&quot;
+        }
+    ],
+    &quot;version&quot;: 4
+}
 </code></pre>
 </article>
 
@@ -415,7 +487,7 @@ cargo run --target=x86_64-pc-windows-gnu --release --bin example
       
         <div class="my-4">
     
-    <a href="/tags/rust/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#rust</a>
+    <a href="/tags/cmake/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#cmake</a>
     
 </div>
       
@@ -432,16 +504,11 @@ cargo run --target=x86_64-pc-windows-gnu --release --bin example
   >
     <div>
       
-        <span class="text-primary-text block font-bold"
-          >上一页</span
-        >
-        <a href="/post/21/" class="block">Cmake 使用</a>
-      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="/post/19/" class="block">PVE (PROXMOX) 使用笔记</a>
+        <a href="/post/20/" class="block">rust交叉编译</a>
       
     </div>
   </div>
@@ -452,6 +519,39 @@ cargo run --target=x86_64-pc-windows-gnu --release --bin example
 
 
     </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#创建新项目">创建新项目</a></li>
+        <li><a href="#vscode调试cmake">vscode调试cmake</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
     
 
     
