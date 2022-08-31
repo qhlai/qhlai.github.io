@@ -8,9 +8,29 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Fri, 05 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cmake 使用</title>
+      <title>距离的度量</title>
+      <link>/post/25/</link>
+      <pubDate>Wed, 31 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/25/</guid>
+      <description>&lt;p&gt;更新中&lt;/p&gt;
+&lt;p&gt;欧式距离和马氏距离&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>欧拉角，旋转矩阵，四元数，李群</title>
+      <link>/post/22/</link>
+      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/22/</guid>
+      <description>&lt;p&gt;对于旋转矩阵，欧拉角，四元数，李群概念进行再次厘清与学习&lt;/p&gt;
+&lt;p&gt;更新中, 未完待续&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cmake的简单使用</title>
       <link>/post/21/</link>
       <pubDate>Fri, 05 Aug 2022 00:00:00 +0000</pubDate>
       

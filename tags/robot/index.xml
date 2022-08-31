@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Robot on 博客</title>
-    <link>/categories/robot/</link>
-    <description>Recent content in Robot on 博客</description>
+    <title>robot on 博客</title>
+    <link>/tags/robot/</link>
+    <description>Recent content in robot on 博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/robot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/robot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>欧拉角，旋转矩阵，四元数，李群</title>
       <link>/post/22/</link>
@@ -17,15 +17,6 @@
       <guid>/post/22/</guid>
       <description>&lt;p&gt;对于旋转矩阵，欧拉角，四元数，李群概念进行再次厘清与学习&lt;/p&gt;
 &lt;p&gt;更新中, 未完待续&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Delta Robot 正逆运动学推导与代码</title>
-      <link>/post/3/</link>
-      <pubDate>Sat, 24 Apr 2021 11:10:53 +0000</pubDate>
-      
-      <guid>/post/3/</guid>
-      <description></description>
     </item>
     
   </channel>

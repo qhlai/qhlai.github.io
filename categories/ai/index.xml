@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ai on 博客</title>
+    <link>/categories/ai/</link>
+    <description>Recent content in ai on 博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Wed, 31 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>距离的度量</title>
+      <link>/post/25/</link>
+      <pubDate>Wed, 31 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/25/</guid>
+      <description>&lt;p&gt;更新中&lt;/p&gt;
+&lt;p&gt;欧式距离和马氏距离&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
