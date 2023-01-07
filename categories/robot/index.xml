@@ -8,15 +8,23 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Mon, 22 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/robot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/robot/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>欧拉角，旋转矩阵，四元数，李群</title>
-      <link>/post/22/</link>
-      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
+      <title>视觉slam之三维空间刚体运动的简述</title>
+      <link>/post/25/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>/post/22/</guid>
-      <description>&lt;p&gt;对于旋转矩阵，欧拉角，四元数，李群概念进行再次厘清与学习&lt;/p&gt;
-&lt;p&gt;更新中, 未完待续&lt;/p&gt;</description>
+      <guid>/post/25/</guid>
+      <description>&lt;p&gt;对于旋转矩阵，欧拉角，四元数，李群概念进行简述与再次厘清&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu  ROS2系统安装</title>
+      <link>/post/24/</link>
+      <pubDate>Fri, 06 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/24/</guid>
+      <description>&lt;p&gt;在Ubuntu上安装ROS&lt;/p&gt;</description>
     </item>
     
     <item>

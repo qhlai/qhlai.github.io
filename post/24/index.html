@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Cmake的简单使用 | 博客</title>
+<title>Ubuntu  ROS2系统安装 | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -79,7 +79,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="Cmake usage">
+  content="笔记">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,8 +91,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Cmake的简单使用",
-      "item":"/post/21/"}]
+      "name":"Ubuntu  ROS2系统安装",
+      "item":"/post/24/"}]
 }
 </script>
 
@@ -104,11 +104,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/post/21/"
+        "@id": "/post/24/"
     },
-    "headline": "Cmake的简单使用 | 博客","datePublished": "2022-08-05T00:00:00+00:00",
-    "dateModified": "2023-01-07T00:00:00+00:00",
-    "wordCount":  333 ,
+    "headline": "Ubuntu  ROS2系统安装 | 博客","datePublished": "2023-01-06T00:00:00+00:00",
+    "dateModified": "2022-01-09T00:00:00+00:00",
+    "wordCount":  595 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -117,20 +117,20 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "Cmake usage"
+    "description": "笔记"
 }
-</script><meta property="og:title" content="Cmake的简单使用 | 博客" />
+</script><meta property="og:title" content="Ubuntu  ROS2系统安装 | 博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/post/21/" />
+<meta property="og:url" content="/post/24/" />
 
 
 
-<meta property="og:description" content="Cmake usage" />
+<meta property="og:description" content="笔记" />
 
 
 
@@ -146,17 +146,19 @@
 
 
 
-<meta property="article:published_time" content="2022-08-05T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2023-01-06T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2023-01-07T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-01-09T00:00:00&#43;00:00" />
 
 
 
 <meta property="article:section" content="posts" />
 
 
-<meta property="article:tag" content="cmake" />
+<meta property="article:tag" content="robot" />
+
+<meta property="article:tag" content="linux" />
 
 
 
@@ -243,7 +245,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">Cmake的简单使用</h1>
+  <h1 class="mb-4">Ubuntu  ROS2系统安装</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -251,32 +253,20 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2022-08-05</span
+      >2023-01-06</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>2分钟阅读时长</span>
+    <span>3分钟阅读时长</span>
   </div>
 
   
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
-        <a href="/categories/windows/" class="hover:text-eureka"
-          >windows</a
-        >
-      
-        
-          <span>, </span>
-        <a href="/categories/linux/" class="hover:text-eureka"
-          >Linux</a
-        >
-      
-        
-          <span>, </span>
-        <a href="/categories/cpp/" class="hover:text-eureka"
-          >cpp</a
+        <a href="/categories/robot/" class="hover:text-eureka"
+          >Robot</a
         >
       
     </div>
@@ -289,215 +279,206 @@
   
   
 
-  <p>Cmake</p>
-<h1 id="windows">Windows</h1>
-<h3 id="创建新项目">创建新项目</h3>
-<p><img src="image-20220805171902490.png" alt="image-20220805171902490"></p>
-<p>main 函数内容如下</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;stdio.h&gt;
-#include &lt;windows.h&gt;
+  <p>在Ubuntu上安装ROS</p>
+<h1 id="ubuntu-安装">Ubuntu 安装</h1>
+<p>实体机和虚拟机上都行，去官网下ubuntu 22.04就行，要desktop版本</p>
+<p><a href="https://releases.ubuntu.com/">https://releases.ubuntu.com/</a></p>
+<p>如果需要kde桌面可以下kubuntu</p>
+<p><a href="https://kubuntu.org/">https://kubuntu.org/</a></p>
+<p>如果要使用gazebo等比较大型的图形软件，那么建议用有显卡性能别太弱的物理机，虚拟机建议还是用vmware的。</p>
+<h1 id="ros1">ROS1</h1>
+<h2 id="noetic">noetic</h2>
+<p>ubuntu 20.04</p>
+<pre><code class="language-bash">#ubuntu 换源
+sudo sed -i 's@//.*archive.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list
+#添加ros源, 使用清华源
+sudo sh -c '. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
+#增加key
 
-int main()
-{
-    std::cout&lt;&lt;&quot;Hello world&quot;&lt;&lt;std::endl;
-    system(&quot;pause&quot;);
-    return 0;
-}
-</code></pre>
-<p>Cmakelists.txt内容如下</p>
-<pre><code class="language-makefile">cmake_minimum_required(VERSION 3.5)
-project(kinematic)#项目名称
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+#或者增加key
+curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
 
-# set(CMAKE_BUILD_TYPE Debug)
-# SET(CMAKE_BUILD_TYPE Release)
+sudo apt update
+sudo apt install ros-noetic-desktop-full
+#把ros环境加载脚本添加到bashrc
+echo &quot;source /opt/ros/noetic/setup.bash&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+#安装rosdep
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+#添加清华源　
+echo &quot;export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml&quot; &gt;&gt; ~/.bashrc
 
-set(CMAKE_C_STANDARD 11)
-
-#编译级别和优化
-if(CMAKE_BUILD_TYPE AND (CMAKE_BUILD_TYPE STREQUAL &quot;Debug&quot;))
-    set(CMAKE_C_FLAGS_DEBUG &quot;${CMAKE_C_FLAGS_DEBUG} -Wall -O0&quot;)
-    message(&quot;Debug mode:${CMAKE_C_FLAGS_DEBUG}&quot;)
-    #add_executable(test_debug ${src_dirs})
-
-elseif(CMAKE_BUILD_TYPE AND (CMAKE_BUILD_TYPE STREQUAL &quot;Release&quot;))
-    set(CMAKE_C_FLAGS_RELEASE &quot;${CMAKE_C_FLAGS_RELEASE} -Wall -O3&quot;)
-    message(&quot;Release mode:${CMAKE_C_FLAGS_RELEASE}&quot;)
-    #add_executable(test_release ${src_dirs})
-else()
-    message(&quot;else:${CMAKE_BUILD_TYPE}&quot;)
-    message(&quot;else:${CMAKE_C_FLAGS_RELEASE}&quot;)
-    #add_executable(test_release ${src_dirs})
-endif()
-
-# Default to C 11
-if(CMAKE_C_STANDARD)
-  set(CMAKE_C_STANDARD 11)
-endif()
-
-# Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
-  #set(CMAKE_CXX_STANDARD 17)
-  set(CMAKE_CXX_STANDARD_REQUIRED ON)
-endif()
-
-#检查安全性
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES &quot;Clang&quot;)
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
-#系统检测，备用
-if(WIN32)
-endif()
-if(UNIX AND NOT APPLE AND NOT ANDROID)
-endif()
-if(APPLE)
-endif()
-#库路径
-include_directories(include)
-#源代码路径
-aux_source_directory(src SRC_SUB)
-aux_source_directory(. SRC_CUR)	
-
-MESSAGE(STATUS  &quot;message&quot; ${HELLO_BINARY_DIR})#输出一下
-#可执行文件
-add_executable(kinematic  ${SRC_SUB} ${SRC_CUR})
-</code></pre>
-<p>打开vscode</p>
-<p><img src="image-20220805172542055.png" alt="image-20220805172542055"></p>
-<p>选择Cmake Configure</p>
-<p>该操作实质等同于：</p>
-<pre><code>mkdir build
-cd build
-cmake -G &quot;MinGW Makefiles&quot; ../
-</code></pre>
-<p>如果正常的话当前目录下会多个build文件夹</p>
-<p>cd 进入 build文件夹，输入</p>
-<pre><code>cmake .
-mingw32-make.exe
-</code></pre>
-<p>完成编译。</p>
-<h3 id="vscode调试cmake">vscode调试cmake</h3>
-<p>在工作空间的.vscode文件夹下，创建launch.json和tasks.json</p>
-<p>参考如下：</p>
-<p>launch.json</p>
-<pre><code class="language-json">{
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-    &quot;version&quot;: &quot;0.2.0&quot;,
-    &quot;configurations&quot;: [
-        {
-            &quot;name&quot;: &quot;g++.exe build and debug active file&quot;,
-            &quot;type&quot;: &quot;cppdbg&quot;,
-            &quot;request&quot;: &quot;launch&quot;,
-            &quot;program&quot;: &quot;${workspaceFolder}\\build\\kinematic.exe&quot;,//需要改成自己的可执行文件
-            &quot;args&quot;: [],
-            &quot;stopAtEntry&quot;: false,
-            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,
-            &quot;environment&quot;: [],
-            &quot;externalConsole&quot;: true,
-            &quot;MIMode&quot;: &quot;gdb&quot;,
-            &quot;miDebuggerPath&quot;: &quot;C:\\Program Files\\mingw64\\bin\\gdb.exe&quot;,
-            &quot;setupCommands&quot;: [
-                {
-                    &quot;description&quot;: &quot;为 gdb 启用整齐打印&quot;,
-                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,
-                    &quot;ignoreFailures&quot;: true
-                }
-            ],
-            //需要与task.json的label名称对应
-            &quot;preLaunchTask&quot;: &quot;Build my project&quot;
-        }
-    ]
-}
-</code></pre>
-<ul>
-<li>program: 要调试的可执行程序的路径，里边可以使用一些宏，宏的外部加 ${} 表示取值</li>
-<li>${fileDirname}：文件目录的名字，launch.json 对应的目录名就是 .vscode</li>
-<li>${fileBasenameNoExtension}：不带扩展名的文件名，文件名是 main 函数对应的那个文件</li>
-<li>${workspaceFolder}：工作区目录</li>
-<li>preLaunchTask：调试项目前要执行的任务，C/C++: g++.exe 生成活动文件是 tasks.json 中的一个任务</li>
-</ul>
-<p>tasks.json</p>
-<pre><code class="language-json">{
-    &quot;version&quot;: &quot;2.0.0&quot;,
-    &quot;options&quot;: {
-        &quot;cwd&quot;: &quot;${workspaceFolder}/build/&quot;  //进入build目录
-    },
-
-    &quot;tasks&quot;: [
-        {
-            &quot;label&quot;: &quot;cmake&quot;,
-            &quot;type&quot;: &quot;shell&quot;,
-            &quot;command&quot;: &quot;cmake &quot;,
-            &quot;args&quot;: [
-                &quot;-DCMAKE_BUILD_TYPE=Debug&quot;,//可改为Release
-                &quot;..&quot;
-            ]
-        },
-        {
-            &quot;label&quot;: &quot;make&quot;,
-            &quot;group&quot;:{
-                &quot;kind&quot;:&quot;build&quot;,
-                &quot;isDefault&quot;:true
-            },
-            &quot;command&quot;: &quot;mingw32-make.exe&quot;,//or make.exe
-            &quot;args&quot;:[
-            ]
-        },
-        {
-            &quot;label&quot;:&quot;Build my project&quot;,
-            &quot;dependsOn&quot;:[
-                &quot;cmake&quot;,
-                &quot;make&quot;                
-            ]
-        }
-    ]
-}
+更新
+sudo rosdep init
+rosdep update
 
 </code></pre>
-<p>c_cpp_properties.json 这个文件可有可无，主要便于编程时vscode识别头文件，不会被标红</p>
-<pre><code class="language-json">{
-    &quot;configurations&quot;: [
-        {
-            &quot;name&quot;: &quot;Win64&quot;,
-            &quot;includePath&quot;: [
-                &quot;${workspaceFolder}/**&quot;,
-                &quot;C:/Program Files/Opencv/opencv-4.6.0-src/build/x64/mingw/install/include&quot;,
-                &quot;C:/Program Files/Opencv/opencv-4.6.0-src/build/x64/mingw/install/include/opencv2&quot;
-            ],
-            &quot;defines&quot;: [
-                &quot;_DEBUG&quot;,
-                &quot;UNICODE&quot;,
-                &quot;_UNICODE&quot;
-            ],
-            &quot;compilerPath&quot;: &quot;C:\\Program Files\\mingw64\\bin\\gcc.exe&quot;,
-            &quot;cStandard&quot;: &quot;gnu17&quot;,
-            &quot;cppStandard&quot;: &quot;gnu++20&quot;,
-            &quot;intelliSenseMode&quot;: &quot;windows-gcc-x64&quot;
-        }
-    ],
-    &quot;version&quot;: 4
-}
+<p>一堆包：</p>
+<pre><code class="language-bash">software_version=noetic
+#
+sudo apt-get install ros-${software_version}-serial
+sudo apt-get install -y ros-${software_version}-navigation
+sudo apt-get install -y ros-${software_version}-robot-localization
+sudo apt-get install -y ros-${software_version}-robot-state-publisher
+#
+sudo apt install -y ros-${software_version}-joy 
+sudo apt install -y ros-${software_version}-move-base 
+sudo apt install -y ros-${software_version}-mrpt* 
+sudo apt install -y ros-${software_version}-geographic-msgs 
+sudo apt install -y ros-${software_version}-map-server 
+sudo apt install -y ros-${software_version}-gmapping 
+sudo apt install -y ros-${software_version}-amcl 
+sudo apt install -y ros-${software_version}-rviz-imu-plugin 
+sudo apt install -y ros-${software_version}-dwa-local-planner 
+sudo apt install -y ros-${software_version}-controller-manager
+sudo apt install -y ros-${software_version}-effort-controllers
+sudo apt install -y ros-${software_version}-joint-state-controller 
+sudo apt install -y ros-${software_version}-driver-base 
+sudo apt install -y ros-${software_version}-rtabmap-ros
+sudo apt install -y ros-${software_version}-ackermann-msgs
+sudo apt install -y ros-${software_version}-teb-local-planner 
+sudo apt install -y ros-${software_version}-open-karto
+sudo apt install -y ros-${software_version}-slam-karto 
+sudo apt install -y ros-${software_version}-roslint
+sudo apt install -y ros-${software_version}-joint-state-publisher-gui
+sudo apt install -y ros-${software_version}-ros-controllers
+sudo apt install -y ros-${software_version}-global-planner
+sudo apt install -y ros-${software_version}-driver-base
+sudo apt install -y ros-${software_version}-cv-bridge ros-${software_version}-image-geometry
+sudo apt install -y ros-${software_version}-gazebo-ros-pkgs ros-${software_version}-gazebo-ros-control ros-${software_version}-ros-controllers ros-${software_version}-twist-mux
+    
+    
+
 </code></pre>
-<h1 id="linux">Linux</h1>
-<p>基本操作都和windows差不多，</p>
-<pre><code class="language-shell">sudo apt install cmake gcc
-cd ./test
+<h2 id="gazebo11">gazebo11</h2>
+<pre><code class="language-bash">
+sudo apt-get remove gazebo9 gazebo9-common gazebo9-plugin-base libgazebo9:amd64 libgazebo9-dev:amd64 ros-melodic-gazebo-*      
+
+sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list'
+
+ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+ 
+ sudo apt-get update
+ sudo apt-get install -y gazebo11 libgazebo11-dev
+</code></pre>
+<h2 id="一堆杂七杂八的库">一堆杂七杂八的库</h2>
+<h3 id="eigen">eigen</h3>
+<pre><code class="language-bash">sudo apt-get install libeigen3-dev
+</code></pre>
+<h3 id="pcl">pcl</h3>
+<p>点云库</p>
+<p>能用库就直接用库，直接编译很慢</p>
+<p>库直接装</p>
+<pre><code>sudo apt-get install libcgal-dev pcl-tools
+</code></pre>
+<p>编译安装</p>
+<p>依赖</p>
+<pre><code class="language-bash">
+sudo apt-get update
+sudo apt-get install -y git build-essential linux-libc-dev
+sudo apt-get install -y cmake cmake-gui
+sudo apt-get install -y libusb-1.0-0-dev libusb-dev libudev-dev
+sudo apt-get install -y mpi-default-dev openmpi-bin openmpi-common
+sudo apt-get install -y libflann1.8 libflann-dev
+sudo apt-get install -y libeigen3-dev
+sudo apt-get install -y libboost-all-dev
+sudo apt-get install -y libqhull* libgtest-dev  
+sudo apt-get install -y freeglut3-dev pkg-config  
+sudo apt-get install -y libxmu-dev libxi-dev   
+sudo apt-get install -y mono-complete   
+sudo apt-get install -y libopenni-dev   
+sudo apt-get install -y libopenni2-dev 
+sudo apt-get install -y libx11-dev libxext-dev libxtst-dev libxrender-dev libxmu-dev libxmuu-dev
+sudo apt-get install build-essential libgl1-mesa-dev libglu1-mesa-dev
+sudo apt-get install -y cmake cmake-gui 
+</code></pre>
+<p>安装</p>
+<pre><code class="language-bash">GHPROXY=https://ghproxy.com/
+git clone ${GHPROXY}https://github.com/PointCloudLibrary/pcl.git
+cd pcl
+mkdir release
+cd release
+cmake -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_PREFIX=/usr \ -DBUILD_GPU=ON-DBUILD_apps=ON -DBUILD_examples=ON \ -DCMAKE_INSTALL_PREFIX=/usr ..
+make  
+sudo make install -j2  #很占内存 线程可以少一点
+</code></pre>
+<h3 id="gtsam">GTSAM</h3>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/weixin_40599145/article/details/126929222">https://blog.csdn.net/weixin_40599145/article/details/126929222</a></p>
+<pre><code class="language-bash">git clone https://github.com/borglab/gtsam
+cd gtsam
+mkdir build &amp;&amp; cd build
+# 注意这里要加-DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF这个选项，不然后面运行会报错
+cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF ..
+sudo make install -j8
+sudo ln -s /usr/local/lib/libmetis-gtsam.so /usr/lib/libmetis-gtsam.so
+</code></pre>
+<h3 id="for-r3live">for r3live</h3>
+<pre><code class="language-bash">sudo apt-get install ros-noetic-cv-bridge ros-noetic-tf ros-noetic-message-filters ros-noetic-image-transport ros-noetic-image-transport*
+#可选
+sudo apt-get install libcgal-dev pcl-tools
+</code></pre>
+<h3 id="opencv">opencv</h3>
+<p>库安装编译安装二选一</p>
+<p>库安装</p>
+<pre><code>sudo apt update
+sudo apt install libopencv-dev python3-opencv
+pkg-config --cflags --libs opencv4
+
+</code></pre>
+<p>如果有&lt;opencv/cv.h&gt;找不到报错，则把&lt;opencv/cv.h&gt;改为&lt;opencv2/core.hpp&gt;</p>
+<pre><code>#include &lt;opencv/cv.h&gt;
+#include &lt;opencv2/core.hpp&gt;
+</code></pre>
+<p>编译安装</p>
+<pre><code class="language-bash">sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+GHPROXY=https://ghproxy.com/
+wget -O opencv_build.zip ${GHPROXY}https://github.com/opencv/opencv/archive/refs/tags/4.7.0.zip
+unzip opencv_build.zip
+cd ~/opencv-*
 mkdir build
-cd ./build 
-cmake ..  #..代表读取build上级目录的cmakelist.txt，此时build目录应当生成一堆文件，但最重要的是makefile
-make  #开始编译，二进制文件在build目录下
-
+cd build
+cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..
+sudo make install -j8
+pkg-config --modversion opencv
 </code></pre>
+<h1 id="ros2安装未完成">ROS2安装（未完成）</h1>
+<p>ubuntu 22.04</p>
+<p>参考：https://docs.ros.org/en/dashing/Installation/Ubuntu-Development-Setup.html</p>
+<p>安装密钥：</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install curl gnupg2 lsb-release
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+#如果出现连不上github 等网络问题请自行解决。
+#一种解决方式
+sudo curl -sSL http://ghproxy.com/https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+</code></pre>
+<h3 id="设置语言">设置语言</h3>
+<pre><code class="language-bash">locale  # check for UTF-8
+
+sudo apt update &amp;&amp; sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+locale  # verify settings
+</code></pre>
+<p>设置中文</p>
+<pre><code class="language-bash">sudo locale-gen zh_CN zh_CN.UTF-8
+sudo update-locale LC_ALL=zh_CN.UTF-8 LANG=zh_CN.UTF-8
+export LANG=zh_CNUTF-8
+</code></pre>
+<p>待续</p>
 </article>
 
 
       
         <div class="my-4">
     
-    <a href="/tags/cmake/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#cmake</a>
+    <a href="/tags/robot/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#robot</a>
+    
+    <a href="/tags/linux/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#linux</a>
     
 </div>
       
@@ -517,13 +498,13 @@ make  #开始编译，二进制文件在build目录下
         <span class="text-primary-text block font-bold"
           >上一页</span
         >
-        <a href="/post/25/" class="block">距离的度量</a>
+        <a href="/post/25/" class="block">视觉slam之三维空间刚体运动的简述</a>
       
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="/post/20/" class="block">rust交叉编译</a>
+        <a href="/post/25/" class="block">距离的度量</a>
       
     </div>
   </div>
@@ -550,10 +531,23 @@ make  #开始编译，二进制文件在build目录下
 >
   <nav id="TableOfContents">
   <ul>
+    <li><a href="#noetic">noetic</a></li>
+    <li><a href="#gazebo11">gazebo11</a></li>
+    <li><a href="#一堆杂七杂八的库">一堆杂七杂八的库</a>
+      <ul>
+        <li><a href="#eigen">eigen</a></li>
+        <li><a href="#pcl">pcl</a></li>
+        <li><a href="#gtsam">GTSAM</a></li>
+        <li><a href="#for-r3live">for r3live</a></li>
+        <li><a href="#opencv">opencv</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
     <li>
       <ul>
-        <li><a href="#创建新项目">创建新项目</a></li>
-        <li><a href="#vscode调试cmake">vscode调试cmake</a></li>
+        <li><a href="#设置语言">设置语言</a></li>
       </ul>
     </li>
   </ul>

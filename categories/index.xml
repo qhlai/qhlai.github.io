@@ -8,22 +8,22 @@
     <language>zh</language>
     <copyright>&amp;copy; 2022 &lt;a href=&#34;https://blog.kquark.com/&#34;&gt;Eli&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Wed, 31 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robot</title>
+      <link>/categories/robot/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/robot/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ai</title>
       <link>/categories/ai/</link>
       <pubDate>Wed, 31 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>/categories/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Robot</title>
-      <link>/categories/robot/</link>
-      <pubDate>Mon, 22 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/robot/</guid>
       <description></description>
     </item>
     
