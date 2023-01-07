@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Ubuntu  ROS2系统安装 | 博客</title>
+<title>Ubuntu ROS安装 | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -91,7 +91,7 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Ubuntu  ROS2系统安装",
+      "name":"Ubuntu ROS安装",
       "item":"/post/24/"}]
 }
 </script>
@@ -106,9 +106,9 @@
         "@type": "WebPage",
         "@id": "/post/24/"
     },
-    "headline": "Ubuntu  ROS2系统安装 | 博客","datePublished": "2023-01-06T00:00:00+00:00",
+    "headline": "Ubuntu ROS安装 | 博客","datePublished": "2023-01-06T00:00:00+00:00",
     "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  595 ,
+    "wordCount":  615 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -119,7 +119,7 @@
         },
     "description": "笔记"
 }
-</script><meta property="og:title" content="Ubuntu  ROS2系统安装 | 博客" />
+</script><meta property="og:title" content="Ubuntu ROS安装 | 博客" />
 <meta property="og:type" content="article" />
 
 
@@ -245,7 +245,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">Ubuntu  ROS2系统安装</h1>
+  <h1 class="mb-4">Ubuntu ROS安装</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -287,6 +287,9 @@
 <p><a href="https://kubuntu.org/">https://kubuntu.org/</a></p>
 <p>如果要使用gazebo等比较大型的图形软件，那么建议用有显卡性能别太弱的物理机，虚拟机建议还是用vmware的。</p>
 <h1 id="ros1">ROS1</h1>
+<h2 id="melodic">melodic</h2>
+<p>ubuntu 18.04</p>
+<p>暂略</p>
 <h2 id="noetic">noetic</h2>
 <p>ubuntu 20.04</p>
 <pre><code class="language-bash">#ubuntu 换源
@@ -345,11 +348,18 @@ sudo apt install -y ros-${software_version}-joint-state-publisher-gui
 sudo apt install -y ros-${software_version}-ros-controllers
 sudo apt install -y ros-${software_version}-global-planner
 sudo apt install -y ros-${software_version}-driver-base
-sudo apt install -y ros-${software_version}-cv-bridge ros-${software_version}-image-geometry
+sudo apt install -y ros-${software_version}-cv-bridge 
+sudo apt install -y ros-${software_version}-image-geometry
+
 sudo apt install -y ros-${software_version}-gazebo-ros-pkgs ros-${software_version}-gazebo-ros-control ros-${software_version}-ros-controllers ros-${software_version}-twist-mux
-    
+
+sudo apt-get install -y ros-${software_version}-cv-bridge ros-${software_version}-tf ros-${software_version}-message-filters ros-${software_version}-image-transport ros-${software_version}-image-transport*
     
 
+</code></pre>
+<p>加入环境（可选）</p>
+<pre><code>echo &quot;source ~/robot_ws/devel/setup.bash&quot; &gt;&gt; ~/.bashrc 
+source ../.bashrc
 </code></pre>
 <h2 id="gazebo11">gazebo11</h2>
 <pre><code class="language-bash">
@@ -368,11 +378,11 @@ sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stabl
 </code></pre>
 <h3 id="pcl">pcl</h3>
 <p>点云库</p>
-<p>能用库就直接用库，直接编译很慢</p>
-<p>库直接装</p>
+<p>尽量用库安装，直接编译很慢</p>
+<h4 id="预编译库安装">预编译库安装</h4>
 <pre><code>sudo apt-get install libcgal-dev pcl-tools
 </code></pre>
-<p>编译安装</p>
+<h4 id="编译安装">编译安装</h4>
 <p>依赖</p>
 <pre><code class="language-bash">
 sudo apt-get update
@@ -393,7 +403,7 @@ sudo apt-get install -y libx11-dev libxext-dev libxtst-dev libxrender-dev libxmu
 sudo apt-get install build-essential libgl1-mesa-dev libglu1-mesa-dev
 sudo apt-get install -y cmake cmake-gui 
 </code></pre>
-<p>安装</p>
+<p>编译安装</p>
 <pre><code class="language-bash">GHPROXY=https://ghproxy.com/
 git clone ${GHPROXY}https://github.com/PointCloudLibrary/pcl.git
 cd pcl
@@ -414,24 +424,16 @@ cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF ..
 sudo make install -j8
 sudo ln -s /usr/local/lib/libmetis-gtsam.so /usr/lib/libmetis-gtsam.so
 </code></pre>
-<h3 id="for-r3live">for r3live</h3>
-<pre><code class="language-bash">sudo apt-get install ros-noetic-cv-bridge ros-noetic-tf ros-noetic-message-filters ros-noetic-image-transport ros-noetic-image-transport*
-#可选
-sudo apt-get install libcgal-dev pcl-tools
-</code></pre>
 <h3 id="opencv">opencv</h3>
 <p>库安装编译安装二选一</p>
-<p>库安装</p>
+<h5 id="库安装">库安装</h5>
 <pre><code>sudo apt update
 sudo apt install libopencv-dev python3-opencv
 pkg-config --cflags --libs opencv4
 
 </code></pre>
-<p>如果有&lt;opencv/cv.h&gt;找不到报错，则把&lt;opencv/cv.h&gt;改为&lt;opencv2/core.hpp&gt;</p>
-<pre><code>#include &lt;opencv/cv.h&gt;
-#include &lt;opencv2/core.hpp&gt;
-</code></pre>
-<p>编译安装</p>
+<h5 id="编译安装-1">编译安装</h5>
+<p>以4.7.0版本为例</p>
 <pre><code class="language-bash">sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 GHPROXY=https://ghproxy.com/
 wget -O opencv_build.zip ${GHPROXY}https://github.com/opencv/opencv/archive/refs/tags/4.7.0.zip
@@ -442,6 +444,19 @@ cd build
 cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..
 sudo make install -j8
 pkg-config --modversion opencv
+</code></pre>
+<h2 id="一些问题">一些问题</h2>
+<h4 id="bashrc误删">bashrc误删</h4>
+<p>先恢复主体</p>
+<pre><code class="language-bash">#先恢复主体
+cp /etc/skel/.bashrc ~/
+</code></pre>
+<p>然后把ros安装时需要加的都加回来</p>
+<h4 id="opencvcvh找不到">&lt;opencv/cv.h&gt;找不到</h4>
+<p>如果有&lt;opencv/cv.h&gt;找不到报错，则把&lt;opencv/cv.h&gt;改为&lt;opencv2/core.hpp&gt;</p>
+<pre><code>#include &lt;opencv/cv.h&gt;
+to
+#include &lt;opencv2/core.hpp&gt;
 </code></pre>
 <h1 id="ros2安装未完成">ROS2安装（未完成）</h1>
 <p>ubuntu 22.04</p>
@@ -531,15 +546,39 @@ export LANG=zh_CNUTF-8
 >
   <nav id="TableOfContents">
   <ul>
+    <li><a href="#melodic">melodic</a></li>
     <li><a href="#noetic">noetic</a></li>
     <li><a href="#gazebo11">gazebo11</a></li>
     <li><a href="#一堆杂七杂八的库">一堆杂七杂八的库</a>
       <ul>
         <li><a href="#eigen">eigen</a></li>
-        <li><a href="#pcl">pcl</a></li>
+        <li><a href="#pcl">pcl</a>
+          <ul>
+            <li><a href="#预编译库安装">预编译库安装</a></li>
+            <li><a href="#编译安装">编译安装</a></li>
+          </ul>
+        </li>
         <li><a href="#gtsam">GTSAM</a></li>
-        <li><a href="#for-r3live">for r3live</a></li>
-        <li><a href="#opencv">opencv</a></li>
+        <li><a href="#opencv">opencv</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#库安装">库安装</a></li>
+                <li><a href="#编译安装-1">编译安装</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#一些问题">一些问题</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#bashrc误删">bashrc误删</a></li>
+            <li><a href="#opencvcvh找不到">&lt;opencv/cv.h&gt;找不到</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
