@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>视觉slam之三维空间刚体运动的简述 | 博客</title>
+<title>距离的度量 | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -79,7 +79,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="学习笔记">
+  content="模式识别学习笔记">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,7 +91,7 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"视觉slam之三维空间刚体运动的简述",
+      "name":"距离的度量",
       "item":"/post/25/"}]
 }
 </script>
@@ -106,9 +106,9 @@
         "@type": "WebPage",
         "@id": "/post/25/"
     },
-    "headline": "视觉slam之三维空间刚体运动的简述 | 博客","datePublished": "2023-01-07T00:00:00+00:00",
-    "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  30 ,
+    "headline": "距离的度量 | 博客","datePublished": "2022-08-31T00:00:00+00:00",
+    "dateModified": "2022-08-31T00:00:00+00:00",
+    "wordCount":  12 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -117,9 +117,9 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "学习笔记"
+    "description": "模式识别学习笔记"
 }
-</script><meta property="og:title" content="视觉slam之三维空间刚体运动的简述 | 博客" />
+</script><meta property="og:title" content="距离的度量 | 博客" />
 <meta property="og:type" content="article" />
 
 
@@ -130,7 +130,7 @@
 
 
 
-<meta property="og:description" content="学习笔记" />
+<meta property="og:description" content="模式识别学习笔记" />
 
 
 
@@ -146,25 +146,19 @@
 
 
 
-<meta property="article:published_time" content="2023-01-07T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-08-31T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-01-09T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-08-31T00:00:00&#43;00:00" />
 
 
 
 <meta property="article:section" content="posts" />
 
 
-<meta property="article:tag" content="robot" />
+<meta property="article:tag" content="ai" />
 
 
-
-
-
-<meta property="og:see_also" content="/post/26/" />
-
-<meta property="og:see_also" content="/post/24/" />
 
 
 
@@ -246,10 +240,10 @@
   
   <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
     <div
-      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+      class="lg:col-start-2 bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">视觉slam之三维空间刚体运动的简述</h1>
+  <h1 class="mb-4">距离的度量</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -257,7 +251,7 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2023-01-07</span
+      >2022-08-31</span
     >
   </div>
   <div class="me-6 my-2">
@@ -269,8 +263,8 @@
     <div class="me-6 my-2">
       <i class="fas fa-folder me-1"></i>
       
-        <a href="/categories/robot/" class="hover:text-eureka"
-          >Robot</a
+        <a href="/categories/ai/" class="hover:text-eureka"
+          >ai</a
         >
       
     </div>
@@ -283,28 +277,87 @@
   
   
 
-  <p>对于旋转矩阵，欧拉角，四元数，李群概念进行简述与再次厘清</p>
-<h2 id="旋转矩阵">旋转矩阵</h2>
-<p>三位空间中的物体位置可以由一个线性空间的基（e1,e2,e3）和在该基下的坐标（a1,b1,c1）来描述。</p>
-<p>当然三维空间中同一位置在不同坐标基下的坐标不一样</p>
-<p>(e1,e2,e3)(a1,a2,a3)^T=(e1&rsquo;,e2&rsquo;,e3&rsquo;)(b1,b2,b3)^T</p>
-<p>将等式同时左乘(e1,e2,e3)^T，则上式等号左边出现一个单位矩阵</p>
-<p>(a1,a2,a3)^T=(e1,e2,e3)^T(e1&rsquo;,e2&rsquo;,e3&rsquo;)(b1,b2,b3)^T</p>
-<p>即得此式</p>
-<p><img src="assets/image-20230107160724084.png" alt="image-20230107160724084"></p>
-<p>矩阵R即为旋转矩阵。它是一个行列式为1 的正交矩阵。</p>
-<p>三维空间中刚体运动的平移就引入了变换矩阵T，给坐标增加一个维数，这也称为其次坐标。</p>
-<p><img src="assets/image-20230107162211827.png" alt="image-20230107162211827"></p>
-<p>这样就能让带平移的三维空间表述更加简明。</p>
-<h2 id="欧拉角">欧拉角</h2>
-<p>旋转矩阵用9个参数表示3个自由度，而变换矩阵用16个参数表示6个自由度，存在资源的浪费。</p>
-<p>首先需要意识到的一点是欧拉角描述的是变换，而不是运动。所以后文尽量用“变换”而不是“转动”来强调这一区别。</p>
-<p>对于一个物体来说是对于其自身三维笛卡尔坐标系进行旋转。在相同的参数下，在变换中不同轴变换的先后顺序不同，物体的最终姿态一般情况下并不会相同。</p>
-<p>有些地方欧拉角用翻滚，俯仰，偏航(Roll Pitch Yaw, RPY)来表示，可以用飞机的运动来理解。</p>
-<p><img src="assets/image-20220822225627576.png" alt="image-20220822225627576"></p>
-<p>为了便于说明，我们设定各轴的旋转角度为[x,y,z]=[10°,10°,0°]，旋转顺序为xyz，那么在旋转过程中，先对物体自身坐标系的x轴进行转动，同时物体自身坐标系也发生了改变，所以y轴需要在新的变换后的轴上进行变换，同理z轴也会被xy轴变换影响。</p>
-<p>在设定好坐标变换顺序后，先变换的坐标轴会对后变换的坐标轴造成影响，而后变换的坐标轴不会对先前变换的坐标轴造成影响。</p>
-<p>一些人可能以为经过[x,y,z]=[10°,10°,0°]，xyz顺序变换后，能直接将通过旋转变换后物体的x轴，从而改为[x,y,z]=[11°,10°,0°]。事实上这是一个新的变换，一切都要从初始状态按轴顺序变换而来。即使有所谓的”连续“，实际上是多次不同的变换的叠加而产生的假象，从而强调欧拉角这是变换而不是运动。要从初始状态按轴顺序变换而来就能很容易解释先变换的坐标轴会对后变换的坐标轴造成影响，反之不会。</p>
+  <p>更新中</p>
+<p>欧式距离和马氏距离</p>
+<p>在机器学习中，我们会涉及到距离的度量问题。常用的距离度量有欧式距离和马氏距离。</p>
+<p>欧式距离这边引用</p>
+<p><img src="assets/image-20220831231834652.png" alt="image-20220831231834652"></p>
+<p>对于两个形式为[身高,体重]的样本，求这两个样本的欧式距离，如果使用欧式距离，如何理解sqrt(身高^2+体重^2)的含义，另外身高和体重的取值范围并不同，比如[30,100]kg, [100,250]mm，而且易知一般情况下身高和体重是有正相关性的。在二维坐标系上</p>
+<p>欧式距离之前已经接触过，但是统计距离（马氏距离）的理解仍然具有一定的难度。</p>
+<p>从下图易见，若当Q为中心点，如果使用欧式距离，那么QA QD AC等距离是相等的。</p>
+<p>但是从数据散点来直观感觉，从数据的疏密分布中，在统计距离这个度量下可以有个初步的感觉，QC距离比QD更近。</p>
+<p><img src="assets/image-20220831231534432.png" alt="image-20220831231534432"></p>
+<p>目前的个人认为，马氏距离实质是将统计数据先进行中心化，旋转，放缩</p>
+<p><img src="assets/1661959640991.jpg.jpg" alt="1661959640991.jpg"><img src="assets/image-20220831231722745.png" alt="image-20220831231722745"></p>
+</article>
+
+
+      
+        <div class="my-4">
+    
+    <a href="/tags/ai/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#ai</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="/post/24/" class="block">Ubuntu ROS安装</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="/post/21/" class="block">Cmake的简单使用</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+    </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2022 <a href="https://blog.kquark.com/">Eli</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>
+��续“，实际上是多次不同的变换的叠加而产生的假象，从而强调欧拉角这是变换而不是运动。要从初始状态按轴顺序变换而来就能很容易解释先变换的坐标轴会对后变换的坐标轴造成影响，反之不会。</p>
 <p>了解了这一概念，从而可以解释万向死锁这一问题，我们可以假设有这一种情况[x,y,z]=[5°,90°,0°]，将y轴变换后，此时z轴会与x轴（x轴并不随后续的yz轴发生变换）重合，这意味着[x,y,z]=[5°,90°,0°]可能与[x,y,z]=[0°,90°,5°]变换结果是一样的，同时意味着物体丢失了一个维度。</p>
 <h2 id="四元数">四元数</h2>
 <p>i j k</p>
@@ -392,9 +445,6 @@
         class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
       >
         <h3>相关</h3>
-        
-          <a href="/post/26/" class="no-underline">r3live gazebo仿真(补充开发中)</a>
-          <br />
         
           <a href="/post/24/" class="no-underline">Ubuntu ROS安装</a>
           <br />
