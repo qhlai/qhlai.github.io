@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Ubuntu ROS安装 | 博客</title>
+<title>r3live gazebo仿真(补充开发中) | 博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.285ffbef699dc9f3cf8dcb0803da149f8b646794b7f78a37380928daea2d746cd084512d0a3b592c47d0c71a18a88c7d.css">
@@ -79,7 +79,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="笔记">
+  content="学习笔记">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,8 +91,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Ubuntu ROS安装",
-      "item":"/post/24/"}]
+      "name":"r3live gazebo仿真(补充开发中)",
+      "item":"/post/26/"}]
 }
 </script>
 
@@ -104,11 +104,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/post/24/"
+        "@id": "/post/26/"
     },
-    "headline": "Ubuntu ROS安装 | 博客","datePublished": "2023-01-06T00:00:00+00:00",
+    "headline": "r3live gazebo仿真(补充开发中) | 博客","datePublished": "2023-01-07T00:00:00+00:00",
     "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  1098 ,
+    "wordCount":  507 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -117,20 +117,20 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "笔记"
+    "description": "学习笔记"
 }
-</script><meta property="og:title" content="Ubuntu ROS安装 | 博客" />
+</script><meta property="og:title" content="r3live gazebo仿真(补充开发中) | 博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/post/24/" />
+<meta property="og:url" content="/post/26/" />
 
 
 
-<meta property="og:description" content="笔记" />
+<meta property="og:description" content="学习笔记" />
 
 
 
@@ -146,7 +146,7 @@
 
 
 
-<meta property="article:published_time" content="2023-01-06T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2023-01-07T00:00:00&#43;00:00" />
 
 
 <meta property="article:modified_time" content="2022-01-09T00:00:00&#43;00:00" />
@@ -158,9 +158,13 @@
 
 <meta property="article:tag" content="robot" />
 
-<meta property="article:tag" content="linux" />
 
 
+
+
+<meta property="og:see_also" content="/post/25/" />
+
+<meta property="og:see_also" content="/post/24/" />
 
 
 
@@ -245,7 +249,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">Ubuntu ROS安装</h1>
+  <h1 class="mb-4">r3live gazebo仿真(补充开发中)</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -253,12 +257,12 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2023-01-06</span
+      >2023-01-07</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>6分钟阅读时长</span>
+    <span>3分钟阅读时长</span>
   </div>
 
   
@@ -279,17 +283,24 @@
   
   
 
-  <p>在Ubuntu上安装ROS</p>
-<h1 id="ubuntu-安装">Ubuntu 安装</h1>
-<p>实体机和虚拟机上都行，去官网下ubuntu 22.04就行，要desktop版本</p>
-<p><a href="https://releases.ubuntu.com/">https://releases.ubuntu.com/</a></p>
-<p>如果需要kde桌面可以下kubuntu</p>
-<p><a href="https://kubuntu.org/">https://kubuntu.org/</a></p>
-<p>如果要使用gazebo等比较大型的图形软件，那么建议用有显卡性能别太弱的物理机，虚拟机建议还是用vmware的。</p>
-<h1 id="ros1">ROS1</h1>
-<h2 id="melodic">melodic</h2>
-<p>ubuntu 18.04</p>
-<p>暂略</p>
+  <p>基于melodic gazebo的r3live 仿真</p>
+<h2 id="使用melodic和gazebo9的原因">使用melodic和gazebo9的原因</h2>
+<ol>
+<li>
+<p>melodic比noetic的适配性更好</p>
+</li>
+<li>
+<p>livox雷达的仿真包目前仅支持gazebo9 melodic，如果用noetic需要很多功夫改。</p>
+</li>
+<li>
+<p>r3live 支持16.04-20.04</p>
+</li>
+</ol>
+<p>故本文将基于melodic来介绍</p>
+<h2 id="环境配置">环境配置</h2>
+<p>一般是不全的，结合这篇一起看 <a href="https://blog.kquark.com/post/24">Ubuntu ROS安装</a></p>
+<h3 id="melodic">melodic</h3>
+<p>安装melodic：略</p>
 <p>一堆包：</p>
 <pre><code class="language-bash">software_version=melodic
 #
@@ -333,83 +344,7 @@ sudo apt install ros-${software_version}-libnabo
 sudo apt install ros-${software_version}-libpointmatcher
 </code></pre>
 <p>加入环境（可选）</p>
-<pre><code>echo &quot;source ~/robot_ws/devel/setup.bash&quot; &gt;&gt; ~/.bashrc 
-source ../.bashrc
-</code></pre>
-<h2 id="noetic">noetic</h2>
-<p>ubuntu 20.04</p>
-<pre><code class="language-bash">#ubuntu 换源
-sudo sed -i 's@//.*archive.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list
-#添加ros源, 使用清华源
-sudo sh -c '. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
-#增加key
-
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-#或者增加key
-curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
-
-sudo apt update
-sudo apt install ros-noetic-desktop-full
-#把ros环境加载脚本添加到bashrc
-echo &quot;source /opt/ros/noetic/setup.bash&quot; &gt;&gt; ~/.bashrc
-source ~/.bashrc
-#安装rosdep
-sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-#添加清华源　
-echo &quot;export ROSDISTRO_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml&quot; &gt;&gt; ~/.bashrc
-
-更新
-sudo rosdep init
-rosdep update
-
-</code></pre>
-<p>一堆包：</p>
-<pre><code class="language-bash">software_version=noetic
-#
-sudo apt-get install ros-${software_version}-serial
-sudo apt-get install -y ros-${software_version}-navigation
-sudo apt-get install -y ros-${software_version}-robot-localization
-sudo apt-get install -y ros-${software_version}-robot-state-publisher
-#
-sudo apt install -y ros-${software_version}-joy 
-sudo apt install -y ros-${software_version}-move-base 
-sudo apt install -y ros-${software_version}-mrpt* 
-sudo apt install -y ros-${software_version}-geographic-msgs 
-sudo apt install -y ros-${software_version}-map-server 
-sudo apt install -y ros-${software_version}-gmapping 
-sudo apt install -y ros-${software_version}-amcl 
-sudo apt install -y ros-${software_version}-rviz-imu-plugin 
-sudo apt install -y ros-${software_version}-dwa-local-planner 
-sudo apt install -y ros-${software_version}-controller-manager
-sudo apt install -y ros-${software_version}-effort-controllers
-sudo apt install -y ros-${software_version}-joint-state-controller 
-sudo apt install -y ros-${software_version}-driver-base 
-sudo apt install -y ros-${software_version}-rtabmap-ros
-sudo apt install -y ros-${software_version}-ackermann-msgs
-sudo apt install -y ros-${software_version}-teb-local-planner 
-sudo apt install -y ros-${software_version}-open-karto
-sudo apt install -y ros-${software_version}-slam-karto 
-sudo apt install -y ros-${software_version}-roslint
-sudo apt install -y ros-${software_version}-joint-state-publisher-gui
-sudo apt install -y ros-${software_version}-ros-controllers
-sudo apt install -y ros-${software_version}-global-planner
-sudo apt install -y ros-${software_version}-driver-base
-sudo apt install -y ros-${software_version}-cv-bridge 
-sudo apt install -y ros-${software_version}-image-geometry
-
-sudo apt install -y ros-${software_version}-gazebo-ros-pkgs ros-${software_version}-gazebo-ros-control ros-${software_version}-ros-controllers ros-${software_version}-twist-mux
-
-sudo apt-get install -y ros-${software_version}-cv-bridge ros-${software_version}-tf ros-${software_version}-message-filters ros-${software_version}-image-transport ros-${software_version}-image-transport*
-    
-sudo apt install libignition-math4-dev 
-sudo apt install ros-${software_version}-libnabo
-sudo apt install ros-${software_version}-libpointmatcher
-</code></pre>
-<p>加入环境（可选）</p>
-<pre><code>echo &quot;source ~/robot_ws/devel/setup.bash&quot; &gt;&gt; ~/.bashrc 
-source ../.bashrc
-</code></pre>
-<h2 id="gazebo9">gazebo9</h2>
+<h3 id="gazebo9">gazebo9</h3>
 <p>livox仿真只支持到9</p>
 <pre><code class="language-bash">sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list'
 
@@ -421,7 +356,7 @@ sudo apt-get install -y gazebo9 libgazebo9-dev
 sudo apt-get install -y ros-${software_version}-gazebo9-ros-pkgs ros-${software_version}-gazebo9-ros-control
 sudo apt-get install -y  ros-${software_version}-gazebo-ros*
 </code></pre>
-<p>模型下载</p>
+<p>可选：地图中的模型下载，否则gazebo打开会很慢，要先下载完才能打开地图</p>
 <pre><code class="language-bash">cd ~/.gazebo/
 ls
 mkdir -p models
@@ -434,23 +369,6 @@ wget -i gazebo_models.txt
 #解压
 ls model.tar.g* | xargs -n1 tar xzvf
 </code></pre>
-<h2 id="gazebo11">gazebo11</h2>
-<pre><code class="language-bash">sudo apt-get remove gazebo9 gazebo9-common gazebo9-plugin-base libgazebo9:amd64 libgazebo9-dev:amd64 ros-noetic-gazebo-*   
-
-sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list'
-
-wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
- 
-sudo apt-get update
-sudo apt-get install -y gazebo11 libgazebo11-dev
- 
- gazebo -version
-</code></pre>
-<p>卸载：</p>
-<pre><code>sudo apt-get remove -y gazebo11 libgazebo11-dev
-sudo apt-get remove gazebo11 gazebo11-common gazebo11-plugin-base libgazebo11:amd64 libgazebo11-dev:amd64 ros-noetic-gazebo-*
-</code></pre>
-<h2 id="依赖库安装">依赖库安装</h2>
 <h3 id="eigen">eigen</h3>
 <pre><code class="language-bash">sudo apt-get install libeigen3-dev
 </code></pre>
@@ -462,8 +380,7 @@ sudo apt-get remove gazebo11 gazebo11-common gazebo11-plugin-base libgazebo11:am
 </code></pre>
 <h4 id="编译安装">编译安装</h4>
 <p>依赖</p>
-<pre><code class="language-bash">
-sudo apt-get update
+<pre><code class="language-bash">sudo apt-get update
 sudo apt-get install -y git build-essential linux-libc-dev
 sudo apt-get install -y cmake cmake-gui
 sudo apt-get install -y libusb-1.0-0-dev libusb-dev libudev-dev
@@ -493,27 +410,10 @@ cmake -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_PREFIX=/usr \ -DBUILD_GPU=ON-DBUIL
 make  
 sudo make install -j2  #很占内存 线程可以少一点
 </code></pre>
-<h3 id="gtsam">GTSAM</h3>
-<p>参考：</p>
-<p><a href="https://blog.csdn.net/weixin_40599145/article/details/126929222">https://blog.csdn.net/weixin_40599145/article/details/126929222</a></p>
-<pre><code class="language-bash">git clone https://github.com/borglab/gtsam
-cd gtsam
-mkdir build &amp;&amp; cd build
-# 注意这里要加-DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF这个选项，不然后面运行会报错
-cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF ..
-sudo make install -j8
-sudo ln -s /usr/local/lib/libmetis-gtsam.so /usr/lib/libmetis-gtsam.so
-</code></pre>
 <h3 id="opencv">opencv</h3>
-<p>库安装编译安装二选一 注意ubuntu 18.04的默认opencv库为3.2.0</p>
-<h5 id="库安装">库安装</h5>
-<pre><code>sudo apt update
-sudo apt install libopencv-dev python3-opencv
-pkg-config --cflags --libs opencv4
-
-</code></pre>
-<h5 id="编译安装-1">编译安装</h5>
-<p>以4.7.0版本为例</p>
+<p>注意ubuntu 18.04的默认opencv库为3.2.0，不满足r3live的要求</p>
+<p><strong>必须编译安装</strong></p>
+<p>以3.4.16版本为例</p>
 <pre><code class="language-bash">sudo apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 GHPROXY=https://ghproxy.com/
 #wget -O opencv_build.zip ${GHPROXY}https://github.com/opencv/opencv/archive/refs/tags/4.7.0.zip
@@ -531,35 +431,7 @@ echo &quot;export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig  &quot; &gt;&gt; ~/.b
 echo &quot;export LD_LIBRARY_PATH=/usr/local/lib &quot; &gt;&gt; ~/.bashrc 
 
 </code></pre>
-<h3 id="安装ceres">安装Ceres</h3>
-<p>非线性优化库</p>
-<p>官网下载链接：https://github.com/ceres-solver/ceres-solver
-安装依赖：</p>
-<pre><code class="language-cpp"># CMake
-sudo apt-get install -y cmake
-# google-glog + gflags
-sudo apt-get install -y libgoogle-glog-dev libgflags-dev
-# Use ATLAS for BLAS &amp; LAPACK
-sudo apt-get install -y libatlas-base-dev
-# Eigen3
-sudo apt-get install -y libeigen3-dev
-# SuiteSparse (optional)
-sudo apt-get install -y libsuitesparse-dev
-</code></pre>
-<p>然后：</p>
-<pre><code class="language-cpp">git clone https://ceres-solver.googlesource.com/ceres-solver
-cd ceres-solver
-mkdir build
-cd build
-cmake ..
-make -j8
-sudo make install -j8
-</code></pre>
-<p>安装完后查看Ceres版本：
-因为Ceres库版本的定义在 /usr/local/include/ceres/version.h 里面，所以</p>
-<pre><code class="language-cpp">sudo cat /usr/local/include/ceres/version.h 
-</code></pre>
-<h3 id="livox">livox</h3>
+<h3 id="livox-sdk">livox-sdk</h3>
 <pre><code>cd ~/robot_ws/src/livox_ros_driver_for_R2LIVE/livox_ros_driver
 git clone https://github.com/Livox-SDK/Livox-SDK
 cd Livox-SDK
@@ -567,74 +439,23 @@ cd build &amp;&amp; cmake ..
 make
 sudo make install
 </code></pre>
-<h2 id="一些问题">一些问题</h2>
-<h4 id="bashrc误删">bashrc误删</h4>
-<p>先恢复主体</p>
-<pre><code class="language-bash">#先恢复主体
-cp /etc/skel/.bashrc ~/
+<h2 id="运行">运行</h2>
+<pre><code>mkdir -p robot_ws/src
+cd robot_ws/src
+git clone https://github.com/qhlai/r3live_simulization.git
+cd ..
+catkin_make
 </code></pre>
-<p>然后把ros安装时需要加的都加回来</p>
-<h4 id="opencvcvh找不到">&lt;opencv/cv.h&gt;找不到</h4>
-<p>如果有&lt;opencv/cv.h&gt;找不到报错，则把&lt;opencv/cv.h&gt;改为&lt;opencv2/core.hpp&gt;</p>
-<pre><code>#include &lt;opencv/cv.h&gt;
-to
-#include &lt;opencv2/core.hpp&gt;
+<pre><code>roslaunch livox_laser_simulation livox_simulation.launch
+roslaunch scout_gazebo scout_gazebo.launch
 </code></pre>
-<h4 id="error-no-match-for-call-to-pclgetfieldindexconst-pclpclpointcloud2">error: no match for call to ‘(pcl::getFieldIndex(const pcl::PCLPointCloud2</h4>
-<h4 id="minus-is-not-a-member-of-pcltraits">‘minus’ is not a member of ‘pcl::traits’</h4>
-<p>以上错误的原因大概率是编译时没有设定C++编译器的版本导致的，需要在CMakeLists.txt文件中设定，在CMakeLists.txt文件中添加以下语句，设定为C++14</p>
-<pre><code class="language-cpp">set(CMAKE_CXX_STANDARD 14)
-</code></pre>
-<h4 id="error-conflicting-declaration-typedef-struct-lz4_streamdecode_t-lz4_streamdecode_t">Error: conflicting declaration ‘typedef struct LZ4_streamDecode_t LZ4_streamDecode_t’</h4>
-<p>ubuntu18.04 error: conflicting declaration ‘typedef <a href="https://so.csdn.net/so/search?q=struct&amp;spm=1001.2101.3001.7020">struct</a> LZ4_streamDecode_t LZ4_streamDecode_t’
-在ubuntu18.04上使用ros中的PCL库时会遇到lz4冲突问题解决方法如下：</p>
-<pre><code> sudo mv /usr/include/flann/ext/lz4.h /usr/include/flann/ext/lz4.h.bak
- sudo mv /usr/include/flann/ext/lz4hc.h /usr/include/flann/ext/lz4.h.bak
-
-sudo ln -s /usr/include/lz4.h /usr/include/flann/ext/lz4.h
- sudo ln -s /usr/include/lz4hc.h /usr/include/flann/ext/lz4hc.h
-</code></pre>
-<h4 id="gazebo运行报错unable-to-convert-from-sdf-version-17-to-16">gazebo运行报错：Unable to convert from SDF version 1.7 to 1.6</h4>
-<p>解决方式将.world文件中第一行的<code>&lt;sdf version = '1.7'&gt;</code>该为<code>&lt;sdf version = '1.6'&gt;即可。 </code></p>
-<p>rosrun rqt_tf_tree rqt_tf_tree</p>
-<h1 id="ros问题解决unicodeencodeerror-ascii-codec-cant-encode-characters-in-position-xxx-ordinal">ROS问题解决：UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position xxx ordinal</h1>
-<h4 id="解决方案">解决方案:</h4>
-<ul>
-<li>在目录/opt/ros/${ros_version}/lib/python2.7/dist-packages下，新建一个sitecustomize.py文件，内容为：</li>
-</ul>
-<pre><code class="language-python">#coding=utf8
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
-</code></pre>
-<pre><code class="language-python">sudo nano /opt/ros/melodic/lib/python2.7/dist-packages/sitecustomize.py
-</code></pre>
-<h1 id="ros2安装未完成">ROS2安装（未完成）</h1>
-<p>ubuntu 22.04</p>
-<p>参考：https://docs.ros.org/en/dashing/Installation/Ubuntu-Development-Setup.html</p>
-<p>安装密钥：</p>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install curl gnupg2 lsb-release
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
-
-#如果出现连不上github 等网络问题请自行解决。
-#一种解决方式
-sudo curl -sSL http://ghproxy.com/https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
-</code></pre>
-<h3 id="设置语言">设置语言</h3>
-<pre><code class="language-bash">locale  # check for UTF-8
-
-sudo apt update &amp;&amp; sudo apt install locales
-sudo locale-gen en_US en_US.UTF-8
-sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-locale  # verify settings
-</code></pre>
-<p>设置中文</p>
-<pre><code class="language-bash">sudo locale-gen zh_CN zh_CN.UTF-8
-sudo update-locale LC_ALL=zh_CN.UTF-8 LANG=zh_CN.UTF-8
-export LANG=zh_CNUTF-8
-</code></pre>
+<h2 id="参考">参考</h2>
+<p><a href="https://github.com/search?q=livox+gazebo">https://github.com/search?q=livox+gazebo</a></p>
+<p><a href="https://zhaohailong.blog.csdn.net/article/details/125654079?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125654079?spm=1001.2014.3001.5502</a></p>
+<p><a href="https://zhaohailong.blog.csdn.net/article/details/125741152?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125741152?spm=1001.2014.3001.5502</a></p>
+<p><a href="https://zhaohailong.blog.csdn.net/article/details/125737021?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125737021?spm=1001.2014.3001.5502</a></p>
+<p><a href="https://zhaohailong.blog.csdn.net/article/details/125736088?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125736088?spm=1001.2014.3001.5502</a></p>
+<p><a href="https://zhaohailong.blog.csdn.net/article/details/125676777?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125676777?spm=1001.2014.3001.5502</a></p>
 </article>
 
 
@@ -642,8 +463,6 @@ export LANG=zh_CNUTF-8
         <div class="my-4">
     
     <a href="/tags/robot/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#robot</a>
-    
-    <a href="/tags/linux/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#linux</a>
     
 </div>
       
@@ -660,16 +479,11 @@ export LANG=zh_CNUTF-8
   >
     <div>
       
-        <span class="text-primary-text block font-bold"
-          >上一页</span
-        >
-        <a href="/post/25/" class="block">视觉slam之三维空间刚体运动的简述</a>
-      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">下一页</span>
-        <a href="/post/25/" class="block">距离的度量</a>
+        <a href="/post/25/" class="block">视觉slam之三维空间刚体运动的简述</a>
       
     </div>
   </div>
@@ -696,12 +510,11 @@ export LANG=zh_CNUTF-8
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#melodic">melodic</a></li>
-    <li><a href="#noetic">noetic</a></li>
-    <li><a href="#gazebo9">gazebo9</a></li>
-    <li><a href="#gazebo11">gazebo11</a></li>
-    <li><a href="#依赖库安装">依赖库安装</a>
+    <li><a href="#使用melodic和gazebo9的原因">使用melodic和gazebo9的原因</a></li>
+    <li><a href="#环境配置">环境配置</a>
       <ul>
+        <li><a href="#melodic">melodic</a></li>
+        <li><a href="#gazebo9">gazebo9</a></li>
         <li><a href="#eigen">eigen</a></li>
         <li><a href="#pcl">pcl</a>
           <ul>
@@ -709,55 +522,12 @@ export LANG=zh_CNUTF-8
             <li><a href="#编译安装">编译安装</a></li>
           </ul>
         </li>
-        <li><a href="#gtsam">GTSAM</a></li>
-        <li><a href="#opencv">opencv</a>
-          <ul>
-            <li>
-              <ul>
-                <li><a href="#库安装">库安装</a></li>
-                <li><a href="#编译安装-1">编译安装</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#安装ceres">安装Ceres</a></li>
-        <li><a href="#livox">livox</a></li>
+        <li><a href="#opencv">opencv</a></li>
+        <li><a href="#livox-sdk">livox-sdk</a></li>
       </ul>
     </li>
-    <li><a href="#一些问题">一些问题</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#bashrc误删">bashrc误删</a></li>
-            <li><a href="#opencvcvh找不到">&lt;opencv/cv.h&gt;找不到</a></li>
-            <li><a href="#error-no-match-for-call-to-pclgetfieldindexconst-pclpclpointcloud2">error: no match for call to ‘(pcl::getFieldIndex(const pcl::PCLPointCloud2</a></li>
-            <li><a href="#minus-is-not-a-member-of-pcltraits">‘minus’ is not a member of ‘pcl::traits’</a></li>
-            <li><a href="#error-conflicting-declaration-typedef-struct-lz4_streamdecode_t-lz4_streamdecode_t">Error: conflicting declaration ‘typedef struct LZ4_streamDecode_t LZ4_streamDecode_t’</a></li>
-            <li><a href="#gazebo运行报错unable-to-convert-from-sdf-version-17-to-16">gazebo运行报错：Unable to convert from SDF version 1.7 to 1.6</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#解决方案">解决方案:</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#设置语言">设置语言</a></li>
-      </ul>
-    </li>
+    <li><a href="#运行">运行</a></li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
 </div>
@@ -772,6 +542,19 @@ export LANG=zh_CNUTF-8
     
 
     
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="/post/25/" class="no-underline">视觉slam之三维空间刚体运动的简述</a>
+          <br />
+        
+          <a href="/post/24/" class="no-underline">Ubuntu ROS安装</a>
+          <br />
+        
+      </div>
     
   </div>
 

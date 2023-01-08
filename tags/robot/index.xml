@@ -10,6 +10,15 @@
 </copyright>
     <lastBuildDate>Sat, 07 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/robot/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>r3live gazebo仿真(补充开发中)</title>
+      <link>/post/26/</link>
+      <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/26/</guid>
+      <description>&lt;p&gt;基于melodic gazebo的r3live 仿真&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>视觉slam之三维空间刚体运动的简述</title>
       <link>/post/25/</link>
       <pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate>
