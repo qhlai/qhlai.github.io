@@ -108,7 +108,7 @@
     },
     "headline": "Ubuntu ROS安装 | 博客","datePublished": "2023-01-06T00:00:00+00:00",
     "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  1098 ,
+    "wordCount":  1242 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -290,6 +290,15 @@
 <h2 id="melodic">melodic</h2>
 <p>ubuntu 18.04</p>
 <p>暂略</p>
+<pre><code class="language-sql">sudo sh -c '. /etc/lsb-release &amp;&amp; echo &quot;deb http://mirrors.ustc.edu.cn/ros/ubuntu/ `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+sudo apt install -y ros-melodic-desktop-full
+
+sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo rosdep init
+rosdep update
+</code></pre>
 <p>一堆包：</p>
 <pre><code class="language-bash">software_version=melodic
 #
@@ -328,9 +337,9 @@ sudo apt install -y ros-${software_version}-gazebo-ros-pkgs ros-${software_versi
 
 sudo apt-get install -y ros-${software_version}-cv-bridge ros-${software_version}-tf ros-${software_version}-message-filters ros-${software_version}-image-transport ros-${software_version}-image-transport*
     
-sudo apt install libignition-math4-dev 
-sudo apt install ros-${software_version}-libnabo
-sudo apt install ros-${software_version}-libpointmatcher
+sudo apt install -ylibignition-math4-dev 
+sudo apt install -y ros-${software_version}-libnabo
+sudo apt install -y ros-${software_version}-libpointmatcher
 </code></pre>
 <p>加入环境（可选）</p>
 <pre><code>echo &quot;source ~/robot_ws/devel/setup.bash&quot; &gt;&gt; ~/.bashrc 
@@ -435,14 +444,17 @@ wget -i gazebo_models.txt
 ls model.tar.g* | xargs -n1 tar xzvf
 </code></pre>
 <h2 id="gazebo11">gazebo11</h2>
-<pre><code class="language-bash">sudo apt-get remove gazebo9 gazebo9-common gazebo9-plugin-base libgazebo9:amd64 libgazebo9-dev:amd64 ros-noetic-gazebo-*   
+<pre><code class="language-bash">software_version=melodic
+sudo apt-get remove gazebo9 gazebo9-common gazebo9-plugin-base libgazebo9:amd64 libgazebo9-dev:amd64 ros-${software_version}-gazebo-*   
 
 sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list'
 
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
  
 sudo apt-get update
-sudo apt-get install -y gazebo11 libgazebo11-dev
+sudo apt-get install -y gazebo11 libgazebo11-dev ros-${software_version}-gazebo11-ros-pkgs ros-${software_version}-gazebo11-ros-control
+
+
  
  gazebo -version
 </code></pre>
@@ -559,6 +571,16 @@ sudo make install -j8
 因为Ceres库版本的定义在 /usr/local/include/ceres/version.h 里面，所以</p>
 <pre><code class="language-cpp">sudo cat /usr/local/include/ceres/version.h 
 </code></pre>
+<h2 id="glog">glog</h2>
+<pre><code>git clone https://github.com/google/glog
+sudo apt-get install autoconf automake libtool
+cd glog
+mkdir build
+cd build
+cmake ..
+make -j 24
+sudo make install
+</code></pre>
 <h3 id="livox">livox</h3>
 <pre><code>cd ~/robot_ws/src/livox_ros_driver_for_R2LIVE/livox_ros_driver
 git clone https://github.com/Livox-SDK/Livox-SDK
@@ -566,6 +588,14 @@ cd Livox-SDK
 cd build &amp;&amp; cmake ..
 make
 sudo make install
+</code></pre>
+<h3 id="1804-新版本cmake">18.04 新版本cmake</h3>
+<pre><code>wget https://github.com/Kitware/CMake/releases/download/v3.16.0/cmake-3.16.0.tar.gz
+tar -zxvf cmake-3.16.0.tar.gz
+cd cmake-3.16.0
+apt install libssl-dev build-essential
+
+./bootstrap &amp;&amp; make &amp;&amp; sudo make install
 </code></pre>
 <h2 id="一些问题">一些问题</h2>
 <h4 id="bashrc误删">bashrc误删</h4>
@@ -597,8 +627,8 @@ sudo ln -s /usr/include/lz4.h /usr/include/flann/ext/lz4.h
 <h4 id="gazebo运行报错unable-to-convert-from-sdf-version-17-to-16">gazebo运行报错：Unable to convert from SDF version 1.7 to 1.6</h4>
 <p>解决方式将.world文件中第一行的<code>&lt;sdf version = '1.7'&gt;</code>该为<code>&lt;sdf version = '1.6'&gt;即可。 </code></p>
 <p>rosrun rqt_tf_tree rqt_tf_tree</p>
-<h1 id="ros问题解决unicodeencodeerror-ascii-codec-cant-encode-characters-in-position-xxx-ordinal">ROS问题解决：UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position xxx ordinal</h1>
-<h4 id="解决方案">解决方案:</h4>
+<h4 id="ros问题解决unicodeencodeerror-ascii-codec-cant-encode-characters-in-position-xxx-ordinal">ROS问题解决：UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position xxx ordinal</h4>
+<h5 id="解决方案">解决方案:</h5>
 <ul>
 <li>在目录/opt/ros/${ros_version}/lib/python2.7/dist-packages下，新建一个sitecustomize.py文件，内容为：</li>
 </ul>
@@ -608,6 +638,21 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 </code></pre>
 <pre><code class="language-python">sudo nano /opt/ros/melodic/lib/python2.7/dist-packages/sitecustomize.py
+</code></pre>
+<h4 id="warning-parser_urdfcc1119-multiple-inconsistent-gravity-exists-due-to-fixed-joint-reduction-overwriting-previous-value-1-with-true">Warning [parser_urdf.cc:1119] multiple inconsistent <gravity> exists due to fixed joint reduction overwriting previous value [1] with [true].</h4>
+<p><kinematic>1</kinematic>
+<gravity>9.8</gravity></p>
+<h4 id="the-imported-target-vtkrenderingpythontkwidgets-references-the-file-usrlibx86_64-linux-gnulibvtkrenderingpythontkwidgetssobut-this-file-does-not-exist">The imported target &ldquo;vtkRenderingPythonTkWidgets&rdquo; references the file &ldquo;/usr/lib/x86_64-linux-gnu/libvtkRenderingPythonTkWidgets.so&quot;but this file does not exist.</h4>
+<p>解决办法：创建两个软链接</p>
+<pre><code>sudo ln -s /usr/lib/python2.7/dist-packages/vtk/libvtkRenderingPythonTkWidgets.x86_64-linux-gnu.so /usr/lib/x86_64-linux-g
+sudo ln -s /usr/bin/vtk6 /usr/bin/vtk 
+</code></pre>
+<p>catkin_make</p>
+<p>catkin_make</p>
+<p>catkin_make</p>
+<p>catkin_make</p>
+<p>sudo dpkg -i &ndash;force-overwrite /var/cache/apt/archives/ros-melodic-mrpt1_1.5.9-1bionic.20220514.021711_amd64.deb</p>
+<pre><code>sudo apt-get -f install
 </code></pre>
 <h1 id="ros2安装未完成">ROS2安装（未完成）</h1>
 <p>ubuntu 22.04</p>
@@ -721,7 +766,12 @@ export LANG=zh_CNUTF-8
           </ul>
         </li>
         <li><a href="#安装ceres">安装Ceres</a></li>
+      </ul>
+    </li>
+    <li><a href="#glog">glog</a>
+      <ul>
         <li><a href="#livox">livox</a></li>
+        <li><a href="#1804-新版本cmake">18.04 新版本cmake</a></li>
       </ul>
     </li>
     <li><a href="#一些问题">一些问题</a>
@@ -734,18 +784,13 @@ export LANG=zh_CNUTF-8
             <li><a href="#minus-is-not-a-member-of-pcltraits">‘minus’ is not a member of ‘pcl::traits’</a></li>
             <li><a href="#error-conflicting-declaration-typedef-struct-lz4_streamdecode_t-lz4_streamdecode_t">Error: conflicting declaration ‘typedef struct LZ4_streamDecode_t LZ4_streamDecode_t’</a></li>
             <li><a href="#gazebo运行报错unable-to-convert-from-sdf-version-17-to-16">gazebo运行报错：Unable to convert from SDF version 1.7 to 1.6</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#解决方案">解决方案:</a></li>
+            <li><a href="#ros问题解决unicodeencodeerror-ascii-codec-cant-encode-characters-in-position-xxx-ordinal">ROS问题解决：UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position xxx ordinal</a>
+              <ul>
+                <li><a href="#解决方案">解决方案:</a></li>
+              </ul>
+            </li>
+            <li><a href="#warning-parser_urdfcc1119-multiple-inconsistent-gravity-exists-due-to-fixed-joint-reduction-overwriting-previous-value-1-with-true">Warning [parser_urdf.cc:1119] multiple inconsistent <gravity> exists due to fixed joint reduction overwriting previous value [1] with [true].</a></li>
+            <li><a href="#the-imported-target-vtkrenderingpythontkwidgets-references-the-file-usrlibx86_64-linux-gnulibvtkrenderingpythontkwidgetssobut-this-file-does-not-exist">The imported target &ldquo;vtkRenderingPythonTkWidgets&rdquo; references the file &ldquo;/usr/lib/x86_64-linux-gnu/libvtkRenderingPythonTkWidgets.so&quot;but this file does not exist.</a></li>
           </ul>
         </li>
       </ul>
