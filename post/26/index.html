@@ -108,7 +108,7 @@
     },
     "headline": "r3live gazebo仿真(补充开发中) | 博客","datePublished": "2023-01-08T00:00:00+00:00",
     "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  686 ,
+    "wordCount":  693 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -485,7 +485,7 @@ sudo make install
 </code></pre>
 <h2 id="标定">标定</h2>
 <h3 id="相机标定内参">相机标定内参</h3>
-<p>可选：首先选要把/urdf/base.xarco的livox雷达注释掉，否则太吃性能了</p>
+<p>可选：把/urdf/base.xarco的livox雷达注释掉，否则太吃性能了</p>
 <h4 id="方法1暂时存在问题建议方法2cameracalib-2-process-has-died">方法1（暂时存在问题，建议方法2：[cameraCalib-2] process has died）</h4>
 <p>参考：</p>
 <p><a href="https://zhaohailong.blog.csdn.net/article/details/125644165?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125644165?spm=1001.2014.3001.5502</a></p>
@@ -537,6 +537,11 @@ sudo apt install gnome-themes-standard
 <p><img src="assets/image-20230114132207605.png" alt="image-20230114132207605"></p>
 <h3 id="雷达和相机标定">雷达和相机标定</h3>
 <p>还没写</p>
+<h2 id="一些说明">一些说明</h2>
+<p>在base.xarco中的livox雷达的pointcloud_type</p>
+<p>一下几个case分别代表0 1 2 3选项</p>
+<p>r3live貌似需要它的自建消息类型，所以在搞r3live时用pointcloud_type应当设置为3</p>
+<p><img src="assets/image-20230114134531129.png" alt="image-20230114134531129"></p>
 <h2 id="运行">运行</h2>
 <pre><code>mkdir -p robot_ws/src
 cd robot_ws/src
@@ -647,6 +652,7 @@ roslaunch scout_gazebo show_sensor.launch
         <li><a href="#雷达和相机标定">雷达和相机标定</a></li>
       </ul>
     </li>
+    <li><a href="#一些说明">一些说明</a></li>
     <li><a href="#运行">运行</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
