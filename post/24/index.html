@@ -108,7 +108,7 @@
     },
     "headline": "Ubuntu ROS安装 | 博客","datePublished": "2023-01-06T00:00:00+00:00",
     "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  1289 ,
+    "wordCount":  1316 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -647,7 +647,7 @@ sudo ln -s /usr/include/lz4.h /usr/include/flann/ext/lz4.h
 <p>解决方式将.world文件中第一行的<code>&lt;sdf version = '1.7'&gt;</code>该为<code>&lt;sdf version = '1.6'&gt;即可。 </code></p>
 <p>rosrun rqt_tf_tree rqt_tf_tree</p>
 <h4 id="ros问题解决unicodeencodeerror-ascii-codec-cant-encode-characters-in-position-xxx-ordinal">ROS问题解决：UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position xxx ordinal</h4>
-<h5 id="解决方案">解决方案:</h5>
+<p>解决方案:</p>
 <ul>
 <li>在目录/opt/ros/${ros_version}/lib/python2.7/dist-packages下，新建一个sitecustomize.py文件，内容为：</li>
 </ul>
@@ -669,10 +669,21 @@ sudo ln -s /usr/bin/vtk6 /usr/bin/vtk
 <h4 id="could-not-find-metis-missing-metis_include_dir-metis_library">Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY)</h4>
 <pre><code>sudo apt install libmetis-dev
 </code></pre>
-<p>catkin_make</p>
-<p>catkin_make</p>
-<p>catkin_make</p>
-<p>catkin_make</p>
+<h4 id="sensorsfailed-to-initialize-when-loading-modelscout-via-the-factory-mechanism-plugins-for-the-model-will-not-be-loaded">Sensorsfailed to initialize when loading model[scout] via the factory mechanism, Plugins for the model will not be loaded.</h4>
+<p>报错，经过查gazebo的代码</p>
+<p><img src="assets/image-20230114135028769.png" alt="image-20230114135028769"></p>
+<p>发现旧版本（我的是gazebo9.19）是通过迭代等5s如果插件加载不出来就退出加载，我这边几个插件加载很吃性能，5s不可能加载出来。按照这个思路然后我也找到了相应的issue <a href="https://github.com/gazebosim/gazebo-classic/issues/2382">https://github.com/gazebosim/gazebo-classic/issues/2382</a></p>
+<p>就是加载livox插件太吃性能了，模型应该没啥错</p>
+<p>新版本的gazebo11超时改成了30s</p>
+<p><img src="assets/image-20230114135114101.png" alt="image-20230114135114101"></p>
+<p>所以解决方案是升级gazebo9 到11</p>
+<h4 id="编译错误找不到依赖包">编译错误（找不到依赖包）</h4>
+<p>一种原因是ros的包编译顺序导致的，解决方案就是多编译几次</p>
+<pre><code>catkin_make
+catkin_make
+catkin_make
+catkin_make
+</code></pre>
 <p>sudo dpkg -i &ndash;force-overwrite /var/cache/apt/archives/ros-melodic-mrpt1_1.5.9-1bionic.20220514.021711_amd64.deb</p>
 <pre><code>sudo apt-get -f install
 </code></pre>
@@ -806,14 +817,12 @@ export LANG=zh_CNUTF-8
             <li><a href="#minus-is-not-a-member-of-pcltraits">‘minus’ is not a member of ‘pcl::traits’</a></li>
             <li><a href="#error-conflicting-declaration-typedef-struct-lz4_streamdecode_t-lz4_streamdecode_t">Error: conflicting declaration ‘typedef struct LZ4_streamDecode_t LZ4_streamDecode_t’</a></li>
             <li><a href="#gazebo运行报错unable-to-convert-from-sdf-version-17-to-16">gazebo运行报错：Unable to convert from SDF version 1.7 to 1.6</a></li>
-            <li><a href="#ros问题解决unicodeencodeerror-ascii-codec-cant-encode-characters-in-position-xxx-ordinal">ROS问题解决：UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position xxx ordinal</a>
-              <ul>
-                <li><a href="#解决方案">解决方案:</a></li>
-              </ul>
-            </li>
+            <li><a href="#ros问题解决unicodeencodeerror-ascii-codec-cant-encode-characters-in-position-xxx-ordinal">ROS问题解决：UnicodeEncodeError: ‘ascii’ codec can’t encode characters in position xxx ordinal</a></li>
             <li><a href="#warning-parser_urdfcc1119-multiple-inconsistent-gravity-exists-due-to-fixed-joint-reduction-overwriting-previous-value-1-with-true">Warning [parser_urdf.cc:1119] multiple inconsistent <gravity> exists due to fixed joint reduction overwriting previous value [1] with [true].</a></li>
             <li><a href="#the-imported-target-vtkrenderingpythontkwidgets-references-the-file-usrlibx86_64-linux-gnulibvtkrenderingpythontkwidgetssobut-this-file-does-not-exist">The imported target &ldquo;vtkRenderingPythonTkWidgets&rdquo; references the file &ldquo;/usr/lib/x86_64-linux-gnu/libvtkRenderingPythonTkWidgets.so&quot;but this file does not exist.</a></li>
             <li><a href="#could-not-find-metis-missing-metis_include_dir-metis_library">Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY)</a></li>
+            <li><a href="#sensorsfailed-to-initialize-when-loading-modelscout-via-the-factory-mechanism-plugins-for-the-model-will-not-be-loaded">Sensorsfailed to initialize when loading model[scout] via the factory mechanism, Plugins for the model will not be loaded.</a></li>
+            <li><a href="#编译错误找不到依赖包">编译错误（找不到依赖包）</a></li>
           </ul>
         </li>
       </ul>
