@@ -108,7 +108,7 @@
     },
     "headline": "Ubuntu ROS安装 | 博客","datePublished": "2023-01-06T00:00:00+00:00",
     "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  1242 ,
+    "wordCount":  1289 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -258,7 +258,7 @@
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>6分钟阅读时长</span>
+    <span>7分钟阅读时长</span>
   </div>
 
   
@@ -337,7 +337,7 @@ sudo apt install -y ros-${software_version}-gazebo-ros-pkgs ros-${software_versi
 
 sudo apt-get install -y ros-${software_version}-cv-bridge ros-${software_version}-tf ros-${software_version}-message-filters ros-${software_version}-image-transport ros-${software_version}-image-transport*
     
-sudo apt install -ylibignition-math4-dev 
+sudo apt install -y libignition-math4-dev 
 sudo apt install -y ros-${software_version}-libnabo
 sudo apt install -y ros-${software_version}-libpointmatcher
 </code></pre>
@@ -442,9 +442,10 @@ ls
 wget -i gazebo_models.txt
 #解压
 ls model.tar.g* | xargs -n1 tar xzvf
+rm -r model.tar.g*
 </code></pre>
 <h2 id="gazebo11">gazebo11</h2>
-<pre><code class="language-bash">software_version=melodic
+<pre><code class="language-bash">software_version=noetic
 sudo apt-get remove gazebo9 gazebo9-common gazebo9-plugin-base libgazebo9:amd64 libgazebo9-dev:amd64 ros-${software_version}-gazebo-*   
 
 sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list'
@@ -571,6 +572,18 @@ sudo make install -j8
 因为Ceres库版本的定义在 /usr/local/include/ceres/version.h 里面，所以</p>
 <pre><code class="language-cpp">sudo cat /usr/local/include/ceres/version.h 
 </code></pre>
+<p>for 18.04 20.04 太新版本的ceres ros编译会报错</p>
+<p>要点：glog和ceres的版本要对</p>
+<pre><code>
+wget https://github.com/ceres-solver/ceres-solver/archive/refs/tags/2.0.0.zip
+unzip 2.0.0.zip
+cd ceres-solver-2.0.0
+mkdir build
+cd build
+cmake ..
+make -j8
+sudo make install -j8
+</code></pre>
 <h2 id="glog">glog</h2>
 <pre><code>git clone https://github.com/google/glog
 sudo apt-get install autoconf automake libtool
@@ -580,6 +593,12 @@ cd build
 cmake ..
 make -j 24
 sudo make install
+</code></pre>
+<p>for 18.04</p>
+<pre><code>wget https://github.com/google/glog/archive/refs/tags/v0.5.0.zip
+unzip v0.5.0.zip
+cd glog-0.5.0
+
 </code></pre>
 <h3 id="livox">livox</h3>
 <pre><code>cd ~/robot_ws/src/livox_ros_driver_for_R2LIVE/livox_ros_driver
@@ -646,6 +665,9 @@ sys.setdefaultencoding('utf8')
 <p>解决办法：创建两个软链接</p>
 <pre><code>sudo ln -s /usr/lib/python2.7/dist-packages/vtk/libvtkRenderingPythonTkWidgets.x86_64-linux-gnu.so /usr/lib/x86_64-linux-g
 sudo ln -s /usr/bin/vtk6 /usr/bin/vtk 
+</code></pre>
+<h4 id="could-not-find-metis-missing-metis_include_dir-metis_library">Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY)</h4>
+<pre><code>sudo apt install libmetis-dev
 </code></pre>
 <p>catkin_make</p>
 <p>catkin_make</p>
@@ -791,6 +813,7 @@ export LANG=zh_CNUTF-8
             </li>
             <li><a href="#warning-parser_urdfcc1119-multiple-inconsistent-gravity-exists-due-to-fixed-joint-reduction-overwriting-previous-value-1-with-true">Warning [parser_urdf.cc:1119] multiple inconsistent <gravity> exists due to fixed joint reduction overwriting previous value [1] with [true].</a></li>
             <li><a href="#the-imported-target-vtkrenderingpythontkwidgets-references-the-file-usrlibx86_64-linux-gnulibvtkrenderingpythontkwidgetssobut-this-file-does-not-exist">The imported target &ldquo;vtkRenderingPythonTkWidgets&rdquo; references the file &ldquo;/usr/lib/x86_64-linux-gnu/libvtkRenderingPythonTkWidgets.so&quot;but this file does not exist.</a></li>
+            <li><a href="#could-not-find-metis-missing-metis_include_dir-metis_library">Could NOT find METIS (missing: METIS_INCLUDE_DIR METIS_LIBRARY)</a></li>
           </ul>
         </li>
       </ul>

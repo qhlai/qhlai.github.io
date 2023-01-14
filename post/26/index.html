@@ -108,7 +108,7 @@
     },
     "headline": "r3live gazebo仿真(补充开发中) | 博客","datePublished": "2023-01-08T00:00:00+00:00",
     "dateModified": "2022-01-09T00:00:00+00:00",
-    "wordCount":  518 ,
+    "wordCount":  686 ,
     "publisher": {
         "@type": "Person",
         "name": "WANG Chucheng",
@@ -262,7 +262,7 @@
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>3分钟阅读时长</span>
+    <span>4分钟阅读时长</span>
   </div>
 
   
@@ -283,8 +283,8 @@
   
   
 
-  <p>基于melodic gazebo的r3live 仿真</p>
-<h2 id="使用melodic和gazebo9的原因">使用melodic和gazebo9的原因</h2>
+  <p>基于melodic gazebo的r3live 仿真 文章是半成品</p>
+<h2 id="使用melodic和gazebo11的原因">使用melodic和gazebo11的原因</h2>
 <ol>
 <li>
 <p>melodic比noetic的适配性更好</p>
@@ -297,8 +297,9 @@
 </li>
 </ol>
 <p>故本文将基于melodic来介绍</p>
+<p>gazebo9源代码有问题，现更新为gazebo11并适配了</p>
 <h2 id="环境配置">环境配置</h2>
-<p>一般是不全的，结合这篇一起看 <a href="https://blog.kquark.com/post/24">Ubuntu ROS安装</a></p>
+<p>尽量把一些要装的包给了，但是如果不全，结合这篇一起看 <a href="https://blog.kquark.com/post/24">Ubuntu ROS安装</a></p>
 <h3 id="melodic">melodic</h3>
 <p>安装melodic：略</p>
 <p>一堆包：</p>
@@ -344,17 +345,20 @@ sudo apt install ros-${software_version}-libnabo
 sudo apt install ros-${software_version}-libpointmatcher
 </code></pre>
 <p>加入环境（可选）</p>
-<h3 id="gazebo9">gazebo9</h3>
-<p>livox仿真只支持到9</p>
-<pre><code class="language-bash">sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list'
+<h3 id="gazebo11">gazebo11</h3>
+<pre><code class="language-bash">software_version=noetic
+sudo apt-get remove gazebo9 gazebo9-common gazebo9-plugin-base libgazebo9:amd64 libgazebo9-dev:amd64 ros-${software_version}-gazebo-*   
+
+sudo sh -c 'echo &quot;deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main&quot; &gt; /etc/apt/sources.list.d/gazebo-stable.list'
 
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-
+ 
 sudo apt-get update
-sudo apt-get install -y gazebo9 libgazebo9-dev
+sudo apt-get install -y gazebo11 libgazebo11-dev ros-${software_version}-gazebo11-ros-pkgs ros-${software_version}-gazebo11-ros-control
 
-sudo apt-get install -y ros-${software_version}-gazebo9-ros-pkgs ros-${software_version}-gazebo9-ros-control
-sudo apt-get install -y  ros-${software_version}-gazebo-ros*
+
+ 
+ gazebo -version
 </code></pre>
 <p>可选：地图中的模型下载，否则gazebo打开会很慢，要先下载完才能打开地图</p>
 <pre><code class="language-bash">cd ~/.gazebo/
@@ -410,6 +414,46 @@ cmake -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_PREFIX=/usr \ -DBUILD_GPU=ON-DBUIL
 make  
 sudo make install -j2  #很占内存 线程可以少一点
 </code></pre>
+<h3 id="安装ceres">安装Ceres</h3>
+<p>非线性优化库</p>
+<p>官网下载链接：https://github.com/ceres-solver/ceres-solver
+安装依赖：</p>
+<pre><code class="language-cpp"># CMake
+sudo apt-get install -y cmake
+# google-glog + gflags
+sudo apt-get install -y libgoogle-glog-dev libgflags-dev
+# Use ATLAS for BLAS &amp; LAPACK
+sudo apt-get install -y libatlas-base-dev
+# Eigen3
+sudo apt-get install -y libeigen3-dev
+# SuiteSparse (optional)
+sudo apt-get install -y libsuitesparse-dev
+</code></pre>
+<p>安装完后查看Ceres版本：
+因为Ceres库版本的定义在 /usr/local/include/ceres/version.h 里面，所以</p>
+<pre><code class="language-cpp">sudo cat /usr/local/include/ceres/version.h 
+</code></pre>
+<p>for 18.04 20.04 太新版本的ceres ros编译会报错</p>
+<p>要点：glog和ceres的版本要对</p>
+<pre><code>wget https://github.com/ceres-solver/ceres-solver/archive/refs/tags/2.0.0.zip
+unzip 2.0.0.zip
+cd ceres-solver-2.0.0
+mkdir build
+cd build
+cmake ..
+make -j8
+sudo make install -j8
+</code></pre>
+<h3 id="glog">glog</h3>
+<p>for 18.04</p>
+<pre><code>wget https://github.com/google/glog/archive/refs/tags/v0.5.0.zip
+unzip v0.5.0.zip
+cd glog-0.5.0
+cd build
+cmake ..
+make -j 24
+sudo make install
+</code></pre>
 <h3 id="opencv">opencv</h3>
 <p>注意ubuntu 18.04的默认opencv库为3.2.0，不满足r3live的要求</p>
 <p><strong>必须编译安装</strong></p>
@@ -439,6 +483,60 @@ cd build &amp;&amp; cmake ..
 make
 sudo make install
 </code></pre>
+<h2 id="标定">标定</h2>
+<h3 id="相机标定内参">相机标定内参</h3>
+<p>可选：首先选要把/urdf/base.xarco的livox雷达注释掉，否则太吃性能了</p>
+<h4 id="方法1暂时存在问题建议方法2cameracalib-2-process-has-died">方法1（暂时存在问题，建议方法2：[cameraCalib-2] process has died）</h4>
+<p>参考：</p>
+<p><a href="https://zhaohailong.blog.csdn.net/article/details/125644165?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125644165?spm=1001.2014.3001.5502</a></p>
+<p><a href="https://zhaohailong.blog.csdn.net/article/details/125676777?spm=1001.2014.3001.5502">https://zhaohailong.blog.csdn.net/article/details/125676777?spm=1001.2014.3001.5502</a></p>
+<p><a href="https://github.com/Shelfcol/livox_camera_lidar_calibration_modified/blob/master/doc_resources/README_cn.md">https://github.com/Shelfcol/livox_camera_lidar_calibration_modified/blob/master/doc_resources/README_cn.md</a></p>
+<p><strong>要求:</strong>
+要准备20张以上的照片数据，各个角度和位置都要覆盖</p>
+<pre><code>roslaunch scout_gazebo scout_calibration.launch
+
+</code></pre>
+<p><img src="assets/image-20230114110932015.png" alt="image-20230114110932015"></p>
+<p>通过rqt_image_view来保存获取的图像</p>
+<pre><code class="language-cpp">rqt_image_view
+</code></pre>
+<p><img src="assets/image-20230114113343844.png" alt="image-20230114113343844"></p>
+<p>点击那个保存的图标就行，保存到在livox_camera_lidar_calibration文件夹下,新建data/camera/photos文件夹中</p>
+<p>默认是把照片数据放在data/camera/photos下，然后在data/camera/in.txt中写入所有需要使用的照片名称</p>
+<p>控制小车调整相机位置</p>
+<pre><code> rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+</code></pre>
+<p>在gazebo中将标定板旋转</p>
+<p><img src="assets/image-20230114113737400.png" alt="image-20230114113737400"></p>
+<p>各个角度准备个20+张照片</p>
+<p><img src="assets/image-20230114115422488.png" alt="image-20230114115422488"></p>
+<p>输入指令开始标定</p>
+<pre><code>roslaunch camera_lidar_calibration cameraCalib.launch
+</code></pre>
+<p>然后编辑cameraCalib.launch文件,将里面的配置弄好</p>
+<h4 id="方法2">方法2</h4>
+<p>参考：https://blog.csdn.net/bingda_robot/article/details/126718291</p>
+<p>安装ros包</p>
+<pre><code>sudo apt install ros-melodic-camera-calibration
+sudo apt install gnome-themes-standard
+</code></pre>
+<p>安装完成后启动仿真环境</p>
+<pre><code class="language-bash">roslaunch scout_gazebo scout_calibration.launch
+</code></pre>
+<p>然后启动标定节点，启动这个节点传入的参数比较多，拆分来看一下</p>
+<p><code>--size 5x7</code> 用于指明标定板的内角点数量，如下图每个红圈的位置就是一个内角点，我所使用的仿真标定板有横向有7个内角点，纵向有5个内角点。需要注意的时5x7中的‘x’时小写的英文字母‘x’，不是数学符号‘*’。</p>
+<p>如下图每个红圈的位置就是一个内角点，这图有横向有11个内角点，纵向有8个内角点。</p>
+<p><img src="assets/8a01c1c7a800d08e4a7d4efd876f6ac8.png" alt="img"></p>
+<p>使用时根据你所使用标定板实际尺寸修稿</p>
+<p><code>--square 0.20</code>指明标定板中每个方块的边长0.20m，即20cm，根据你所使用标定板实际尺寸修稿</p>
+<pre><code>rosrun camera_calibration cameracalibrator.py --size 5x7 --square 0.2 image:=/camera/color/image_raw
+</code></pre>
+<p><img src="assets/image-20230114130246234.png" alt="image-20230114130246234"></p>
+<p><img src="assets/image-20230114130907388.png" alt="image-20230114130907388"></p>
+<p>分别在左右移动（X），直到标定界面上X下方的精度条为绿色，然后依次在上下（Y），远近（Size），倾斜（Skew）方向移动，移动过程尽量缓慢，避免大幅度的移动使相机成像产生拖影。持续移动直到所有的进度条都为绿色。</p>
+<p><img src="assets/image-20230114132207605.png" alt="image-20230114132207605"></p>
+<h3 id="雷达和相机标定">雷达和相机标定</h3>
+<p>还没写</p>
 <h2 id="运行">运行</h2>
 <pre><code>mkdir -p robot_ws/src
 cd robot_ws/src
@@ -446,6 +544,7 @@ git clone https://github.com/qhlai/r3live_simulization.git
 cd ..
 catkin_make
 </code></pre>
+<p>一些命令：</p>
 <pre><code>roslaunch livox_laser_simulation livox_simulation.launch
 
 roslaunch scout_gazebo scout_gazebo.launch
@@ -519,11 +618,11 @@ roslaunch scout_gazebo show_sensor.launch
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#使用melodic和gazebo9的原因">使用melodic和gazebo9的原因</a></li>
+    <li><a href="#使用melodic和gazebo11的原因">使用melodic和gazebo11的原因</a></li>
     <li><a href="#环境配置">环境配置</a>
       <ul>
         <li><a href="#melodic">melodic</a></li>
-        <li><a href="#gazebo9">gazebo9</a></li>
+        <li><a href="#gazebo11">gazebo11</a></li>
         <li><a href="#eigen">eigen</a></li>
         <li><a href="#pcl">pcl</a>
           <ul>
@@ -531,8 +630,21 @@ roslaunch scout_gazebo show_sensor.launch
             <li><a href="#编译安装">编译安装</a></li>
           </ul>
         </li>
+        <li><a href="#安装ceres">安装Ceres</a></li>
+        <li><a href="#glog">glog</a></li>
         <li><a href="#opencv">opencv</a></li>
         <li><a href="#livox-sdk">livox-sdk</a></li>
+      </ul>
+    </li>
+    <li><a href="#标定">标定</a>
+      <ul>
+        <li><a href="#相机标定内参">相机标定内参</a>
+          <ul>
+            <li><a href="#方法1暂时存在问题建议方法2cameracalib-2-process-has-died">方法1（暂时存在问题，建议方法2：[cameraCalib-2] process has died）</a></li>
+            <li><a href="#方法2">方法2</a></li>
+          </ul>
+        </li>
+        <li><a href="#雷达和相机标定">雷达和相机标定</a></li>
       </ul>
     </li>
     <li><a href="#运行">运行</a></li>
